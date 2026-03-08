@@ -22,9 +22,8 @@ const CTASection = () => {
 
           <div className="bg-card border border-border/50 rounded-3xl p-8 mb-8 shadow-xl shadow-primary/5">
             <div className="flex items-baseline justify-center gap-2 mb-2">
-              <span className="text-5xl font-bold text-foreground">89,90 €</span>
+              <span className="text-5xl font-bold text-foreground">20,00 €</span>
             </div>
-            <p className="text-sm text-muted-foreground mb-6">ou 3 × 29,97 € sans frais</p>
 
             <Button size="lg" className="rounded-full px-12 text-lg shadow-lg shadow-primary/25 w-full sm:w-auto">
               <ShoppingCart className="w-5 h-5 mr-2" />
