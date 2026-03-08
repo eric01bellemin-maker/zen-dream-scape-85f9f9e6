@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, Battery, Bluetooth, Moon, Check } from "lucide-react";
+import { Volume2, Battery, Bluetooth, Moon, Check, Cable } from "lucide-react";
 import productBlue from "@/assets/product-device.png";
 import productYellow from "@/assets/product-yellow.png";
 import productPink from "@/assets/product-pink.png";
@@ -17,6 +17,7 @@ const features = [
   { icon: Volume2, title: "Son immersif", desc: "Haut-parleur à conduction osseuse ultra-fin" },
   { icon: Battery, title: "8h d'autonomie", desc: "Une nuit complète sur une seule charge" },
   { icon: Bluetooth, title: "Bluetooth 5.3", desc: "Connexion stable et sans latence" },
+  { icon: Cable, title: "Recharge USB-C", desc: "Câble USB inclus pour une recharge rapide" },
   { icon: Moon, title: "Minuterie auto", desc: "Arrêt progressif intelligent" },
 ];
 
