@@ -1,22 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, Battery, Bluetooth, Moon, Check } from "lucide-react";
+import { Volume2, Battery, Bluetooth, Moon, Check, Cable } from "lucide-react";
 import productBlue from "@/assets/product-device.png";
 import productYellow from "@/assets/product-yellow.png";
 import productPink from "@/assets/product-pink.png";
 import productGreen from "@/assets/product-green.png";
 
-const colors = [
-  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)" },
-  { id: "yellow", label: "Jaune Douceur", image: productYellow, swatch: "hsl(48, 60%, 75%)" },
-  { id: "pink", label: "Rose Tendresse", image: productPink, swatch: "hsl(340, 40%, 75%)" },
-  { id: "green", label: "Vert Apaisement", image: productGreen, swatch: "hsl(160, 40%, 72%)" },
-];
-
 const features = [
   { icon: Volume2, title: "Son immersif", desc: "Haut-parleur à conduction osseuse ultra-fin" },
   { icon: Battery, title: "8h d'autonomie", desc: "Une nuit complète sur une seule charge" },
   { icon: Bluetooth, title: "Bluetooth 5.3", desc: "Connexion stable et sans latence" },
+  { icon: Cable, title: "Recharge USB-C", desc: "Câble USB inclus pour une recharge rapide" },
   { icon: Moon, title: "Minuterie auto", desc: "Arrêt progressif intelligent" },
 ];
 
