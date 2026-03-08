@@ -1,6 +1,17 @@
-import { motion } from "framer-motion";
-import { Volume2, Battery, Bluetooth, Moon } from "lucide-react";
-import productImage from "@/assets/product-device.png";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Volume2, Battery, Bluetooth, Moon, Check } from "lucide-react";
+import productBlue from "@/assets/product-device.png";
+import productYellow from "@/assets/product-yellow.png";
+import productPink from "@/assets/product-pink.png";
+import productGreen from "@/assets/product-green.png";
+
+const colors = [
+  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)" },
+  { id: "yellow", label: "Jaune Douceur", image: productYellow, swatch: "hsl(48, 60%, 75%)" },
+  { id: "pink", label: "Rose Tendresse", image: productPink, swatch: "hsl(340, 40%, 75%)" },
+  { id: "green", label: "Vert Apaisement", image: productGreen, swatch: "hsl(160, 40%, 72%)" },
+];
 
 const features = [
   { icon: Volume2, title: "Son immersif", desc: "Haut-parleur à conduction osseuse ultra-fin" },
@@ -10,6 +21,9 @@ const features = [
 ];
 
 const ProductSection = () => {
+  const [selectedColor, setSelectedColor] = useState("blue");
+  const currentProduct = colors.find((c) => c.id === selectedColor)!;
+
   return (
     <section id="produit" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -33,13 +47,43 @@ const ProductSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden bg-zen-cloud p-12 flex items-center justify-center">
+            <div className="relative rounded-3xl overflow-hidden bg-zen-cloud p-12 flex flex-col items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-zen-glow/10" />
-              <img
-                src={productImage}
-                alt="Palet sonore Sonora Zen"
-                className="relative z-10 w-full max-w-md animate-float drop-shadow-2xl"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={selectedColor}
+                  src={currentProduct.image}
+                  alt={`Palet sonore Sonora Zen — ${currentProduct.label}`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative z-10 w-full max-w-md animate-float drop-shadow-2xl"
+                />
+              </AnimatePresence>
+
+              {/* Color picker */}
+              <div className="relative z-10 mt-8 flex flex-col items-center gap-3">
+                <p className="text-sm font-medium text-foreground">{currentProduct.label}</p>
+                <div className="flex gap-3">
+                  {colors.map((color) => (
+                    <button
+                      key={color.id}
+                      onClick={() => setSelectedColor(color.id)}
+                      className="relative w-9 h-9 rounded-full border-2 transition-all duration-200 flex items-center justify-center"
+                      style={{
+                        backgroundColor: color.swatch,
+                        borderColor: selectedColor === color.id ? "hsl(var(--foreground))" : "transparent",
+                      }}
+                      aria-label={color.label}
+                    >
+                      {selectedColor === color.id && (
+                        <Check className="w-4 h-4 text-foreground" />
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -53,8 +97,8 @@ const ProductSection = () => {
               Design minimaliste,<br />technologie avancée
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Le Sonora Zen est un palet sonore ultra-plat recouvert de tissu acoustique premium. 
-              Placez-le sous votre oreiller : il diffuse des sons apaisants par vibrations douces, 
+              Le Sonora Zen est un palet sonore ultra-plat recouvert de tissu acoustique premium.
+              Placez-le sous votre oreiller : il diffuse des sons apaisants par vibrations douces,
               audibles uniquement par vous, sans déranger votre partenaire.
             </p>
 
