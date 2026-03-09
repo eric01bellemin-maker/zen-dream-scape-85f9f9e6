@@ -21,8 +21,10 @@ const CTASection = () => {
           </p>
 
           <div className="bg-card border border-border/50 rounded-3xl p-8 mb-8 shadow-xl shadow-primary/5">
-            <div className="flex items-baseline justify-center gap-2 mb-2">
-              <span className="text-5xl font-bold text-foreground"><span className="text-5xl font-bold text-foreground">15,00 €</span></span>
+            <div className="flex items-baseline justify-center gap-3 mb-2">
+              <span className="text-2xl text-muted-foreground line-through">20,00 €</span>
+              <span className="text-5xl font-bold text-foreground">15,00 €</span>
+              <span className="text-sm font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">PROMO</span>
             </div>
 
             <Button size="lg" className="rounded-full px-12 text-lg shadow-lg shadow-primary/25 w-full sm:w-auto">
