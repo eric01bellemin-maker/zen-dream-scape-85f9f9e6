@@ -49,7 +49,7 @@ const HeroSection = () => {
             >
               <Button size="lg" className="rounded-full px-8 text-base shadow-lg shadow-primary/25">
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                Commander — 20,00 €
+                Commander — 15,00 €
               </Button>
               <Button size="lg" variant="outline" className="rounded-full px-8 text-base bg-background/60 backdrop-blur-sm" asChild>
                 <a href="#produit">Découvrir</a>
