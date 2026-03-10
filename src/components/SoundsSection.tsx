@@ -1,17 +1,47 @@
 import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { Play, Pause } from "lucide-react";
 import soundBirds from "@/assets/sound-birds.jpg";
 import soundRiver from "@/assets/sound-river.jpg";
 import soundWaves from "@/assets/sound-waves.jpg";
 import soundWind from "@/assets/sound-wind.jpg";
 
 const sounds = [
-  { image: soundBirds, title: "Chant d'oiseaux", desc: "Mélodies douces au lever du jour" },
-  { image: soundRiver, title: "Rivière apaisante", desc: "Le murmure continu de l'eau vive" },
-  { image: soundWaves, title: "Douceur des vagues", desc: "Le ressac hypnotique de l'océan" },
-  { image: soundWind, title: "Souffle du vent", desc: "La brise légère à travers les arbres" },
+  { image: soundBirds, title: "Chant d'oiseaux", desc: "Mélodies douces au lever du jour", audio: "/sounds/birds.mp3" },
+  { image: soundRiver, title: "Rivière apaisante", desc: "Le murmure continu de l'eau vive", audio: "/sounds/river.mp3" },
+  { image: soundWaves, title: "Douceur des vagues", desc: "Le ressac hypnotique de l'océan", audio: "/sounds/waves.mp3" },
+  { image: soundWind, title: "Souffle du vent", desc: "La brise légère à travers les arbres", audio: "/sounds/wind.mp3" },
 ];
 
 const SoundsSection = () => {
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const handlePlay = (index: number) => {
+    // If clicking the same sound, toggle pause/play
+    if (playingIndex === index && audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setPlayingIndex(null);
+      return;
+    }
+
+    // Stop any currently playing sound
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    const audio = new Audio(sounds[index].audio);
+    audioRef.current = audio;
+    audio.play();
+    setPlayingIndex(index);
+
+    audio.onended = () => {
+      setPlayingIndex(null);
+    };
+  };
+
   return (
     <section id="sons" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -39,14 +69,41 @@ const SoundsSection = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
               className="group cursor-pointer"
+              onClick={() => handlePlay(i)}
             >
-              <div className="relative rounded-2xl overflow-hidden aspect-square mb-4 border border-border/50 group-hover:border-primary/30 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/10">
+              <div className={`relative rounded-2xl overflow-hidden aspect-square mb-4 border transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/10 ${playingIndex === i ? 'border-primary shadow-lg shadow-primary/20 ring-2 ring-primary/30' : 'border-border/50 group-hover:border-primary/30'}`}>
                 <img
                   src={sound.image}
                   alt={sound.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
+                
+                {/* Play/Pause overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className={`w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center transition-all duration-300 ${playingIndex === i ? 'scale-100 opacity-100' : 'scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100'}`}>
+                    {playingIndex === i ? (
+                      <Pause className="w-6 h-6 text-primary fill-primary" />
+                    ) : (
+                      <Play className="w-6 h-6 text-primary fill-primary ml-1" />
+                    )}
+                  </div>
+                </div>
+
+                {/* Animated sound wave indicator */}
+                {playingIndex === i && (
+                  <div className="absolute top-3 right-3 flex items-end gap-[3px] h-5">
+                    {[0, 1, 2, 3].map((bar) => (
+                      <motion.div
+                        key={bar}
+                        className="w-[3px] bg-primary rounded-full"
+                        animate={{ height: ["40%", "100%", "60%", "90%", "40%"] }}
+                        transition={{ duration: 0.8, repeat: Infinity, delay: bar * 0.15 }}
+                      />
+                    ))}
+                  </div>
+                )}
+
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <p className="text-sm font-semibold text-primary-foreground">{sound.title}</p>
                 </div>
