@@ -1,26 +1,27 @@
 import { motion } from "framer-motion";
 import featuresImage from "@/assets/product-features.avif";
 
-// Covers: positioned to fully hide English text, then show French
 const covers = [
-  // Header text block (top)
-  { text: "Scène stéréo sous l'oreiller\nCanaux gauche/droit indépendants\nDouble conduction osseuse", top: "0%", left: "0%", w: "100%", h: "16%", align: "left" as const, size: "text-[8px] md:text-lg", bold: true, px: "px-4 pt-2" },
-  // Display Lens (right side ~22%)
-  { text: "Lentille", top: "21%", right: "0%", w: "36%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // Display Bracket (right side ~30%)
-  { text: "Support", top: "30%", right: "0%", w: "30%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // Main Faceplate (right ~44%)
-  { text: "Façade principale", top: "44%", right: "0%", w: "32%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // PCBA Circuit Board (right ~50%)
-  { text: "Carte circuit PCBA", top: "49%", right: "0%", w: "34%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // Battery (left ~52%)
-  { text: "Batterie", top: "52%", left: "0%", w: "24%", h: "5%", align: "left" as const, size: "text-[7px] md:text-sm" },
-  // Two Bone Conduction Speakers (right ~62%)
-  { text: "2 haut-parleurs\nà conduction osseuse", top: "60%", right: "0%", w: "42%", h: "10%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // Buttons (left ~67%)
-  { text: "Boutons", top: "67%", left: "0%", w: "28%", h: "5%", align: "left" as const, size: "text-[7px] md:text-sm" },
-  // Main Bottom Shell (center ~76%)
-  { text: "Coque inférieure", top: "76%", left: "20%", w: "40%", h: "6%", align: "center" as const, size: "text-[7px] md:text-sm" },
+  // Header - cover top English text fully
+  { text: "Scène stéréo sous l'oreiller\nCanaux gauche/droit indépendants\nDouble conduction osseuse", top: "0%", left: "0%", w: "100%", h: "21%", align: "left" as const, size: "text-[8px] md:text-lg", px: "px-4 pt-3" },
+  // Display Lens
+  { text: "Lentille", top: "26%", right: "0%", w: "36%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // Display Bracket
+  { text: "Support", top: "34%", right: "0%", w: "32%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // Main Faceplate
+  { text: "Façade principale", top: "50%", right: "0%", w: "32%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // PCBA Circuit Board
+  { text: "Carte circuit PCBA", top: "55%", right: "0%", w: "34%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // Battery
+  { text: "Batterie", top: "57%", left: "0%", w: "24%", h: "5%", align: "left" as const, size: "text-[7px] md:text-sm" },
+  // Two Bone Conduction Speakers
+  { text: "2 haut-parleurs\nà conduction osseuse", top: "66%", right: "0%", w: "44%", h: "9%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // Buttons
+  { text: "Boutons", top: "72%", left: "0%", w: "28%", h: "6%", align: "left" as const, size: "text-[7px] md:text-sm" },
+  // Main Bottom Shell
+  { text: "Coque inférieure", top: "80%", left: "18%", w: "42%", h: "6%", align: "center" as const, size: "text-[7px] md:text-sm" },
+  // Bottom padding cover
+  { text: "", top: "86%", left: "0%", w: "100%", h: "14%", align: "left" as const, size: "text-[7px]" },
 ];
 
 const FeaturesImageSection = () => {
@@ -59,7 +60,7 @@ const FeaturesImageSection = () => {
             {covers.map((c, i) => (
               <div
                 key={i}
-                className={`absolute flex items-center whitespace-pre-line leading-tight font-bold text-foreground ${c.size} ${c.px || 'px-2'}`}
+                className={`absolute flex items-center whitespace-pre-line leading-tight font-bold text-foreground ${c.size} ${c.px || 'px-3'}`}
                 style={{
                   top: c.top,
                   left: c.left,
