@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
 import featuresImage from "@/assets/product-features.avif";
 
-// Each label is positioned to cover the English text on the original image
-const labels = [
-  // Top header area
-  { text: "Scène stéréo sous l'oreiller | Canaux gauche/droit indépendants |\nDouble conduction osseuse", top: "0%", left: "2%", width: "96%", py: "py-3", size: "text-[9px] md:text-base font-extrabold" },
-  // Display Lens
-  { text: "Lentille d'affichage", top: "28%", right: "6%", size: "text-[8px] md:text-sm font-bold" },
-  // Display Bracket  
-  { text: "Support d'affichage", top: "36%", right: "4%", size: "text-[8px] md:text-sm font-bold" },
-  // Main Faceplate
-  { text: "Façade principale", top: "52%", right: "4%", size: "text-[8px] md:text-sm font-bold" },
-  // PCBA Circuit Board
-  { text: "Carte circuit PCBA", top: "58%", right: "2%", size: "text-[8px] md:text-sm font-bold" },
-  // Battery
-  { text: "Batterie", top: "60%", left: "4%", size: "text-[8px] md:text-sm font-bold" },
-  // Two Bone Conduction Speakers
-  { text: "2 haut-parleurs\nà conduction osseuse", top: "72%", right: "4%", size: "text-[8px] md:text-sm font-bold" },
-  // Buttons
-  { text: "Boutons", top: "77%", left: "16%", size: "text-[8px] md:text-sm font-bold" },
-  // Main Bottom Shell
-  { text: "Coque inférieure", top: "86%", left: "30%", size: "text-[8px] md:text-sm font-bold" },
+// Covers: positioned to fully hide English text, then show French
+const covers = [
+  // Header text block (top)
+  { text: "Scène stéréo sous l'oreiller\nCanaux gauche/droit indépendants\nDouble conduction osseuse", top: "0%", left: "0%", w: "100%", h: "16%", align: "left" as const, size: "text-[8px] md:text-lg", bold: true, px: "px-4 pt-2" },
+  // Display Lens (right side ~22%)
+  { text: "Lentille", top: "21%", right: "0%", w: "36%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // Display Bracket (right side ~30%)
+  { text: "Support", top: "30%", right: "0%", w: "30%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // Main Faceplate (right ~44%)
+  { text: "Façade principale", top: "44%", right: "0%", w: "32%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // PCBA Circuit Board (right ~50%)
+  { text: "Carte circuit PCBA", top: "49%", right: "0%", w: "34%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // Battery (left ~52%)
+  { text: "Batterie", top: "52%", left: "0%", w: "24%", h: "5%", align: "left" as const, size: "text-[7px] md:text-sm" },
+  // Two Bone Conduction Speakers (right ~62%)
+  { text: "2 haut-parleurs\nà conduction osseuse", top: "60%", right: "0%", w: "42%", h: "10%", align: "right" as const, size: "text-[7px] md:text-sm" },
+  // Buttons (left ~67%)
+  { text: "Boutons", top: "67%", left: "0%", w: "28%", h: "5%", align: "left" as const, size: "text-[7px] md:text-sm" },
+  // Main Bottom Shell (center ~76%)
+  { text: "Coque inférieure", top: "76%", left: "20%", w: "40%", h: "6%", align: "center" as const, size: "text-[7px] md:text-sm" },
 ];
 
 const FeaturesImageSection = () => {
@@ -49,29 +49,29 @@ const FeaturesImageSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative rounded-3xl overflow-hidden shadow-xl shadow-primary/5"
-            style={{ backgroundColor: "hsl(var(--card))" }}
           >
             <img
               src={featuresImage}
               alt="Vue éclatée du Sonora Zen montrant ses composants internes"
-              className="w-full h-auto"
+              className="w-full h-auto block"
               loading="lazy"
             />
-            {/* French labels covering English text */}
-            {labels.map((label, i) => (
+            {covers.map((c, i) => (
               <div
                 key={i}
-                className={`absolute px-2 ${label.py || 'py-0.5'} rounded whitespace-pre-line leading-tight ${label.size} text-foreground`}
+                className={`absolute flex items-center whitespace-pre-line leading-tight font-bold text-foreground ${c.size} ${c.px || 'px-2'}`}
                 style={{
-                  top: label.top,
-                  left: label.left,
-                  right: label.right,
-                  width: label.width,
-                  backgroundColor: "hsl(var(--card))",
-                  textAlign: label.right ? "right" : "left",
+                  top: c.top,
+                  left: c.left,
+                  right: c.right,
+                  width: c.w,
+                  height: c.h,
+                  textAlign: c.align,
+                  justifyContent: c.align === "right" ? "flex-end" : c.align === "center" ? "center" : "flex-start",
+                  backgroundColor: "white",
                 }}
               >
-                {label.text}
+                {c.text}
               </div>
             ))}
           </motion.div>
