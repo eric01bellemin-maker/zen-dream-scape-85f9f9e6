@@ -7,8 +7,8 @@ import productPink from "@/assets/product-pink.png";
 import productGreen from "@/assets/product-green.png";
 
 const colors = [
-  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)" },
-  { id: "grey", label: "Gris Douceur", image: productBlue, swatch: "hsl(0, 0%, 65%)" },
+  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)", overlay: "hsla(220, 60%, 55%, 0.25)" },
+  { id: "grey", label: "Gris Douceur", image: productBlue, swatch: "hsl(0, 0%, 65%)", overlay: "transparent" },
 ];
 
 const features = [
@@ -60,6 +60,11 @@ const ProductSection = () => {
                   className="relative z-10 w-full max-w-md animate-float drop-shadow-2xl"
                 />
               </AnimatePresence>
+              {/* Color overlay */}
+              <div
+                className="absolute inset-0 z-20 rounded-3xl pointer-events-none mix-blend-color transition-colors duration-300"
+                style={{ backgroundColor: currentProduct.overlay }}
+              />
 
               {/* Color picker */}
               <div className="relative z-10 mt-8 flex flex-col items-center gap-3">
