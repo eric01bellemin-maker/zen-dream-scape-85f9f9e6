@@ -1,13 +1,26 @@
 import { motion } from "framer-motion";
 import featuresImage from "@/assets/product-features.avif";
 
+// Each label is positioned to cover the English text on the original image
 const labels = [
-  { text: "Façade principale", top: "18%", right: "4%", origin: "right" },
-  { text: "Carte circuit PCBA", top: "27%", right: "2%", origin: "right" },
-  { text: "Batterie", top: "30%", left: "6%", origin: "left" },
-  { text: "Boutons", top: "50%", left: "14%", origin: "left" },
-  { text: "2 haut-parleurs\nà conduction osseuse", top: "44%", right: "4%", origin: "right" },
-  { text: "Coque inférieure", top: "60%", left: "30%", origin: "left" },
+  // Top header area
+  { text: "Scène stéréo sous l'oreiller | Canaux gauche/droit indépendants |\nDouble conduction osseuse", top: "0%", left: "2%", width: "96%", py: "py-3", size: "text-[9px] md:text-base font-extrabold" },
+  // Display Lens
+  { text: "Lentille d'affichage", top: "28%", right: "6%", size: "text-[8px] md:text-sm font-bold" },
+  // Display Bracket  
+  { text: "Support d'affichage", top: "36%", right: "4%", size: "text-[8px] md:text-sm font-bold" },
+  // Main Faceplate
+  { text: "Façade principale", top: "52%", right: "4%", size: "text-[8px] md:text-sm font-bold" },
+  // PCBA Circuit Board
+  { text: "Carte circuit PCBA", top: "58%", right: "2%", size: "text-[8px] md:text-sm font-bold" },
+  // Battery
+  { text: "Batterie", top: "60%", left: "4%", size: "text-[8px] md:text-sm font-bold" },
+  // Two Bone Conduction Speakers
+  { text: "2 haut-parleurs\nà conduction osseuse", top: "72%", right: "4%", size: "text-[8px] md:text-sm font-bold" },
+  // Buttons
+  { text: "Boutons", top: "77%", left: "16%", size: "text-[8px] md:text-sm font-bold" },
+  // Main Bottom Shell
+  { text: "Coque inférieure", top: "86%", left: "30%", size: "text-[8px] md:text-sm font-bold" },
 ];
 
 const FeaturesImageSection = () => {
@@ -35,7 +48,8 @@ const FeaturesImageSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-3xl overflow-hidden shadow-xl shadow-primary/5 bg-card"
+            className="relative rounded-3xl overflow-hidden shadow-xl shadow-primary/5"
+            style={{ backgroundColor: "hsl(var(--card))" }}
           >
             <img
               src={featuresImage}
@@ -43,24 +57,22 @@ const FeaturesImageSection = () => {
               className="w-full h-auto"
               loading="lazy"
             />
-            {/* French labels with opaque background to cover English text */}
+            {/* French labels covering English text */}
             {labels.map((label, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + i * 0.1 }}
-                className="absolute px-2 py-1 bg-card/95 rounded text-[10px] md:text-sm font-bold text-foreground whitespace-pre-line leading-tight"
+                className={`absolute px-2 ${label.py || 'py-0.5'} rounded whitespace-pre-line leading-tight ${label.size} text-foreground`}
                 style={{
                   top: label.top,
                   left: label.left,
                   right: label.right,
-                  textAlign: label.origin === "right" ? "right" : "left",
+                  width: label.width,
+                  backgroundColor: "hsl(var(--card))",
+                  textAlign: label.right ? "right" : "left",
                 }}
               >
                 {label.text}
-              </motion.div>
+              </div>
             ))}
           </motion.div>
         </motion.div>
