@@ -13,7 +13,7 @@ const colors = [
 
 const features = [
   { icon: Volume2, title: "Son immersif", desc: "Haut-parleur à conduction osseuse ultra-fin" },
-  { icon: Battery, title: "8h d'autonomie", desc: "Une nuit complète sur une seule charge" },
+  { icon: Battery, title: "16h d'autonomie", desc: "Batterie 400 mAh, 150 jours en veille" },
   { icon: Bluetooth, title: "Bluetooth 5.3", desc: "Connexion stable et sans latence" },
   { icon: Cable, title: "Recharge USB-C", desc: "Câble USB inclus pour une recharge rapide" },
   { icon: Moon, title: "Minuterie auto", desc: "Arrêt progressif intelligent" },
