@@ -65,7 +65,6 @@ const ProductSection = () => {
                 className="absolute inset-0 z-20 rounded-3xl pointer-events-none mix-blend-color transition-colors duration-300"
                 style={{ backgroundColor: currentProduct.overlay }}
               />
-              </AnimatePresence>
 
               {/* Color picker */}
               <div className="relative z-10 mt-8 flex flex-col items-center gap-3">
