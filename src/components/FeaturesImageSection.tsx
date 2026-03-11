@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import featuresImage from "@/assets/product-features.avif";
 
 const labels = [
-  { text: "Façade principale", top: "14%", left: "72%", align: "left" as const },
-  { text: "Carte circuit PCBA", top: "24%", left: "72%", align: "left" as const },
-  { text: "Batterie", top: "28%", left: "8%", align: "right" as const },
-  { text: "Boutons", top: "46%", left: "18%", align: "right" as const },
-  { text: "2 haut-parleurs\nà conduction osseuse", top: "40%", left: "58%", align: "left" as const },
-  { text: "Coque inférieure", top: "55%", left: "38%", align: "center" as const },
+  { text: "Façade principale", top: "18%", right: "4%", origin: "right" },
+  { text: "Carte circuit PCBA", top: "27%", right: "2%", origin: "right" },
+  { text: "Batterie", top: "30%", left: "6%", origin: "left" },
+  { text: "Boutons", top: "50%", left: "14%", origin: "left" },
+  { text: "2 haut-parleurs\nà conduction osseuse", top: "44%", right: "4%", origin: "right" },
+  { text: "Coque inférieure", top: "60%", left: "30%", origin: "left" },
 ];
 
 const FeaturesImageSection = () => {
@@ -35,7 +35,7 @@ const FeaturesImageSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-3xl overflow-hidden shadow-xl shadow-primary/5"
+            className="relative rounded-3xl overflow-hidden shadow-xl shadow-primary/5 bg-card"
           >
             <img
               src={featuresImage}
@@ -43,9 +43,7 @@ const FeaturesImageSection = () => {
               className="w-full h-auto"
               loading="lazy"
             />
-            {/* Overlay to hide English text */}
-            <div className="absolute inset-0 bg-background/60" />
-            {/* French labels */}
+            {/* French labels with opaque background to cover English text */}
             {labels.map((label, i) => (
               <motion.div
                 key={i}
@@ -53,8 +51,13 @@ const FeaturesImageSection = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                className="absolute text-xs md:text-sm font-semibold text-foreground whitespace-pre-line leading-tight"
-                style={{ top: label.top, left: label.left, textAlign: label.align }}
+                className="absolute px-2 py-1 bg-card/95 rounded text-[10px] md:text-sm font-bold text-foreground whitespace-pre-line leading-tight"
+                style={{
+                  top: label.top,
+                  left: label.left,
+                  right: label.right,
+                  textAlign: label.origin === "right" ? "right" : "left",
+                }}
               >
                 {label.text}
               </motion.div>
