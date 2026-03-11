@@ -1,27 +1,14 @@
 import { motion } from "framer-motion";
-import featuresImage from "@/assets/product-features.avif";
+import productImage from "@/assets/product-device.png";
+import { Speaker, Battery, Bluetooth, Cable, Power, Disc } from "lucide-react";
 
-const covers = [
-  // Header - cover top English text fully
-  { text: "Scène stéréo sous l'oreiller\nCanaux gauche/droit indépendants\nDouble conduction osseuse", top: "0%", left: "0%", w: "100%", h: "21%", align: "left" as const, size: "text-[8px] md:text-lg", px: "px-4 pt-3" },
-  // Display Lens
-  { text: "Lentille", top: "26%", right: "0%", w: "36%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // Display Bracket
-  { text: "Support", top: "34%", right: "0%", w: "32%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // Main Faceplate
-  { text: "Façade principale", top: "50%", right: "0%", w: "32%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // PCBA Circuit Board
-  { text: "Carte circuit PCBA", top: "55%", right: "0%", w: "34%", h: "5%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // Battery
-  { text: "Batterie", top: "57%", left: "0%", w: "24%", h: "5%", align: "left" as const, size: "text-[7px] md:text-sm" },
-  // Two Bone Conduction Speakers
-  { text: "2 haut-parleurs\nà conduction osseuse", top: "66%", right: "0%", w: "44%", h: "9%", align: "right" as const, size: "text-[7px] md:text-sm" },
-  // Buttons
-  { text: "Boutons", top: "72%", left: "0%", w: "28%", h: "6%", align: "left" as const, size: "text-[7px] md:text-sm" },
-  // Main Bottom Shell
-  { text: "Coque inférieure", top: "80%", left: "18%", w: "42%", h: "6%", align: "center" as const, size: "text-[7px] md:text-sm" },
-  // Bottom padding cover
-  { text: "", top: "86%", left: "0%", w: "100%", h: "14%", align: "left" as const, size: "text-[7px]" },
+const specs = [
+  { icon: Disc, label: "Façade en tissu acoustique", desc: "Tissu premium doux au toucher" },
+  { icon: Speaker, label: "2 haut-parleurs à conduction osseuse", desc: "Son audible uniquement par vous" },
+  { icon: Battery, label: "Batterie 400 mAh", desc: "16h d'autonomie, 150 jours en veille" },
+  { icon: Bluetooth, label: "Bluetooth 5.3", desc: "Connexion stable et sans latence" },
+  { icon: Cable, label: "Recharge USB-C", desc: "Câble inclus, recharge rapide" },
+  { icon: Power, label: "Boutons intégrés", desc: "Contrôle du volume et des sons" },
 ];
 
 const FeaturesImageSection = () => {
@@ -29,54 +16,82 @@ const FeaturesImageSection = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto"
+          className="text-center mb-12"
         >
-          <div className="text-center mb-10">
-            <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">
-              Caractéristiques
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Conçu pour votre <span className="text-gradient-zen">bien-être</span>
-            </h2>
+          <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">
+            Caractéristiques
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            Conçu pour votre <span className="text-gradient-zen">bien-être</span>
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8 items-center max-w-5xl mx-auto">
+          {/* Left specs */}
+          <div className="flex flex-col gap-6">
+            {specs.slice(0, 3).map((spec, i) => (
+              <motion.div
+                key={spec.label}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-right md:text-right text-left"
+              >
+                <div className="flex items-center gap-3 md:flex-row-reverse">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <spec.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm text-foreground">{spec.label}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">{spec.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
+          {/* Center product image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative rounded-3xl overflow-hidden shadow-xl shadow-primary/5"
+            transition={{ duration: 0.6 }}
+            className="flex justify-center"
           >
             <img
-              src={featuresImage}
-              alt="Vue éclatée du Sonora Zen montrant ses composants internes"
-              className="w-full h-auto block"
-              loading="lazy"
+              src={productImage}
+              alt="Sonora Zen — palet sonore vue de dessus"
+              className="w-full max-w-[280px] drop-shadow-2xl animate-float"
             />
-            {covers.map((c, i) => (
-              <div
-                key={i}
-                className={`absolute flex items-center whitespace-pre-line leading-tight font-bold text-foreground ${c.size} ${c.px || 'px-3'}`}
-                style={{
-                  top: c.top,
-                  left: c.left,
-                  right: c.right,
-                  width: c.w,
-                  height: c.h,
-                  textAlign: c.align,
-                  justifyContent: c.align === "right" ? "flex-end" : c.align === "center" ? "center" : "flex-start",
-                  backgroundColor: "white",
-                }}
-              >
-                {c.text}
-              </div>
-            ))}
           </motion.div>
-        </motion.div>
+
+          {/* Right specs */}
+          <div className="flex flex-col gap-6">
+            {specs.slice(3).map((spec, i) => (
+              <motion.div
+                key={spec.label}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                    <spec.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm text-foreground">{spec.label}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">{spec.desc}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
