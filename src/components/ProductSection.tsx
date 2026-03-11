@@ -7,8 +7,8 @@ import productPink from "@/assets/product-pink.png";
 import productGreen from "@/assets/product-green.png";
 
 const colors = [
-  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)" },
-  { id: "grey", label: "Gris Douceur", image: productBlue, swatch: "hsl(0, 0%, 65%)" },
+  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)", overlay: "hsla(220, 60%, 55%, 0.25)" },
+  { id: "grey", label: "Gris Douceur", image: productBlue, swatch: "hsl(0, 0%, 65%)", overlay: "transparent" },
 ];
 
 const features = [
