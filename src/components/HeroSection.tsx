@@ -47,10 +47,6 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Button size="lg" className="rounded-full px-8 text-base shadow-lg shadow-primary/25">
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Commander — <span className="line-through opacity-70 mr-1">20€</span> 15,00 €
-              </Button>
               <Button size="lg" variant="outline" className="rounded-full px-8 text-base bg-background/60 backdrop-blur-sm" asChild>
                 <a href="#produit">Découvrir</a>
               </Button>
