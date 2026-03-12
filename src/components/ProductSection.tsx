@@ -97,30 +97,32 @@ const ProductSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-semibold mb-6 text-foreground">
-              Design minimaliste,<br />technologie avancée
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Le Sonora Zen est un palet sonore ultra-plat recouvert de tissu acoustique premium.
-              Placez-le sous votre oreiller : il diffuse des sons apaisants par vibrations douces,
-              audibles uniquement par vous, sans déranger votre partenaire.
-            </p>
+            <div className="rounded-3xl bg-muted/50 p-8">
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">
+                Design minimaliste,<br />technologie avancée
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Le Sonora Zen est un palet sonore ultra-plat recouvert de tissu acoustique premium.
+                Placez-le sous votre oreiller : il diffuse des sons apaisants par vibrations douces,
+                audibles uniquement par vous, sans déranger votre partenaire.
+              </p>
 
-            <div className="grid grid-cols-2 gap-4">
-              {features.map((feat, i) => (
-                <motion.div
-                  key={feat.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-4 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-colors"
-                >
-                  <feat.icon className="w-6 h-6 text-primary mb-2" />
-                  <p className="font-semibold text-sm text-foreground">{feat.title}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{feat.desc}</p>
-                </motion.div>
-              ))}
+              <div className="grid grid-cols-2 gap-4">
+                {features.map((feat, i) => (
+                  <motion.div
+                    key={feat.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="p-4 rounded-2xl bg-background/60 border border-border/30 hover:border-primary/30 transition-colors"
+                  >
+                    <feat.icon className="w-6 h-6 text-primary mb-2" />
+                    <p className="font-semibold text-sm text-foreground">{feat.title}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{feat.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
