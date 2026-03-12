@@ -29,7 +29,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-6xl font-bold leading-tight mb-4"
             >
-              <span className="text-gradient-zen">Sonora Zen</span>
+              <span className="text-white">Sonora Zen</span>
             </motion.h1>
 
             <motion.p
