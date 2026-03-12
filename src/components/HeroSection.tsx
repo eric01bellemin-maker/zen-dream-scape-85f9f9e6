@@ -29,7 +29,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-6xl font-bold leading-tight mb-4"
             >
-              <span className="text-gradient-zen">Sonora Zen</span>
+              <span className="text-white">Sonora Zen</span>
             </motion.h1>
 
             <motion.p
@@ -47,10 +47,6 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Button size="lg" className="rounded-full px-8 text-base shadow-lg shadow-primary/25">
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Commander — <span className="line-through opacity-70 mr-1">20€</span> 15,00 €
-              </Button>
               <Button size="lg" variant="outline" className="rounded-full px-8 text-base bg-background/60 backdrop-blur-sm" asChild>
                 <a href="#produit">Découvrir</a>
               </Button>
