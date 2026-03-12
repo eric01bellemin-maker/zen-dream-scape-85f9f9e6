@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import productImage from "@/assets/product-device.png";
-import { Speaker, Battery, Bluetooth, Cable, Power, Disc } from "lucide-react";
+import productImage from "@/assets/product-features.png";
+import { Bluetooth, Brain, Timer, Monitor, Waves, Lightbulb } from "lucide-react";
 
 const specs = [
-  { icon: Disc, label: "Façade en tissu acoustique", desc: "Tissu premium doux au toucher" },
-  { icon: Speaker, label: "2 haut-parleurs à conduction osseuse", desc: "Son audible uniquement par vous" },
-  { icon: Battery, label: "Batterie 400 mAh", desc: "16h d'autonomie, 150 jours en veille" },
-  { icon: Bluetooth, label: "Bluetooth 5.3", desc: "Connexion stable et sans latence" },
-  { icon: Cable, label: "Recharge USB-C", desc: "Câble inclus, recharge rapide" },
-  { icon: Power, label: "Boutons intégrés", desc: "Contrôle du volume et des sons" },
+  { icon: Bluetooth, label: "Bluetooth/TF" },
+  { icon: Waves, label: "Conduction osseuse" },
+  { icon: Lightbulb, label: "Affichage LED" },
+  { icon: Monitor, label: "Double mode audio" },
+  { icon: Brain, label: "Aide au sommeil" },
+  { icon: Timer, label: "Arrêt programmeé" },
 ];
 
 const FeaturesImageSection = () => {
@@ -31,7 +31,7 @@ const FeaturesImageSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 items-center max-w-5xl mx-auto">
           {/* Left specs */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-5">
             {specs.slice(0, 3).map((spec, i) => (
               <motion.div
                 key={spec.label}
@@ -39,16 +39,13 @@ const FeaturesImageSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="text-right md:text-right text-left"
+                className="flex justify-end"
               >
-                <div className="flex items-center gap-3 md:flex-row-reverse">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <spec.icon className="w-5 h-5 text-primary" />
+                <div className="bg-muted/60 rounded-full px-4 py-2 flex items-center gap-2 flex-row-reverse">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <spec.icon className="w-4 h-4 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-sm text-foreground">{spec.label}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{spec.desc}</p>
-                  </div>
+                  <p className="font-medium text-sm text-foreground">{spec.label}</p>
                 </div>
               </motion.div>
             ))}
@@ -64,13 +61,13 @@ const FeaturesImageSection = () => {
           >
             <img
               src={productImage}
-              alt="Sonora Zen — palet sonore vue de dessus"
-              className="w-full max-w-[280px] drop-shadow-2xl animate-float"
+              alt="Sonora Zen — caractéristiques du produit"
+              className="w-full max-w-[320px] drop-shadow-2xl"
             />
           </motion.div>
 
           {/* Right specs */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-5">
             {specs.slice(3).map((spec, i) => (
               <motion.div
                 key={spec.label}
@@ -79,14 +76,11 @@ const FeaturesImageSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <spec.icon className="w-5 h-5 text-primary" />
+                <div className="bg-muted/60 rounded-full px-4 py-2 inline-flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <spec.icon className="w-4 h-4 text-primary" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-sm text-foreground">{spec.label}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{spec.desc}</p>
-                  </div>
+                  <p className="font-medium text-sm text-foreground">{spec.label}</p>
                 </div>
               </motion.div>
             ))}
