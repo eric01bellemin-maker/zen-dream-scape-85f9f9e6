@@ -107,7 +107,7 @@ const ProductSection = () => {
                 audibles uniquement par vous, sans déranger votre partenaire.
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {features.map((feat, i) => (
                   <motion.div
                     key={feat.title}

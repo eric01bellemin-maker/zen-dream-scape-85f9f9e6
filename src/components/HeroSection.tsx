@@ -36,7 +36,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base md:text-lg text-muted-foreground mb-8 max-w-md mx-auto"
+              className="text-sm md:text-lg text-muted-foreground mb-6 max-w-md mx-auto"
             >
               Le palet sonore qui vous guide vers un sommeil doux et serein.
             </motion.p>

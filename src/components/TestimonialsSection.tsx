@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">Témoignages</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             Ils ont retrouvé le <span className="text-gradient-zen">sommeil</span>
           </h2>
         </motion.div>
