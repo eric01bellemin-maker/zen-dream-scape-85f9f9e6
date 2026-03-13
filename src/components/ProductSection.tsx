@@ -32,8 +32,8 @@ const ProductSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">Le produit</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs md:text-sm mb-3">Le produit</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             Un concentré de <span className="text-gradient-zen">sérénité</span>
           </h2>
         </motion.div>
