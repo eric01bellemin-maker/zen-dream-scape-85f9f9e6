@@ -21,7 +21,7 @@ const BenefitsSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">Les bienfaits</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             Pourquoi choisir <span className="text-gradient-zen">Sonora Zen</span> ?
           </h2>
         </motion.div>

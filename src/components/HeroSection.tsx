@@ -20,14 +20,14 @@ const HeroSection = () => {
       <div className="flex-1" />
 
       {/* Content at bottom over the gradient */}
-      <div className="relative z-10 pb-20">
+      <div className="relative z-10 pb-12 md:pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-4xl md:text-6xl font-bold leading-tight mb-4"
+              className="text-3xl md:text-6xl font-bold leading-tight mb-3"
             >
               <span className="text-white">Sonora Zen</span>
             </motion.h1>
@@ -36,7 +36,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-base md:text-lg text-muted-foreground mb-8 max-w-md mx-auto"
+              className="text-sm md:text-lg text-muted-foreground mb-6 max-w-md mx-auto"
             >
               Le palet sonore qui vous guide vers un sommeil doux et serein.
             </motion.p>

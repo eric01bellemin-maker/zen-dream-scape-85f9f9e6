@@ -52,7 +52,7 @@ const SoundsSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">Univers sonore</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             4 ambiances pour <span className="text-gradient-zen">s'évader</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">

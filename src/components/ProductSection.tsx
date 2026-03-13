@@ -32,13 +32,13 @@ const ProductSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">Le produit</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs md:text-sm mb-3">Le produit</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             Un concentré de <span className="text-gradient-zen">sérénité</span>
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -107,7 +107,7 @@ const ProductSection = () => {
                 audibles uniquement par vous, sans déranger votre partenaire.
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {features.map((feat, i) => (
                   <motion.div
                     key={feat.title}

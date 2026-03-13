@@ -13,7 +13,7 @@ const CTASection = () => {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Prêt à <span className="text-gradient-zen">mieux dormir</span> ?
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
@@ -21,10 +21,10 @@ const CTASection = () => {
           </p>
 
           <div className="bg-card border border-border/50 rounded-3xl p-8 mb-8 shadow-xl shadow-primary/5">
-            <div className="flex items-baseline justify-center gap-3 mb-2">
-              <span className="text-2xl text-muted-foreground line-through">30,00 €</span>
-              <span className="text-5xl font-bold text-foreground">25,00 €</span>
-              <span className="text-sm font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">-17% ÉCONOMISÉ</span>
+            <div className="flex flex-wrap items-baseline justify-center gap-2 md:gap-3 mb-4">
+              <span className="text-lg md:text-2xl text-muted-foreground line-through">30,00 €</span>
+              <span className="text-4xl md:text-5xl font-bold text-foreground">25,00 €</span>
+              <span className="text-xs md:text-sm font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">-17%</span>
             </div>
 
             <Button size="lg" className="rounded-full px-12 text-lg shadow-lg shadow-primary/25 w-full sm:w-auto">
