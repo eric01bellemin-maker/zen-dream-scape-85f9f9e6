@@ -18,12 +18,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
-        <a href="#accueil" className="font-bold text-2xl font-['Cormorant_Garamond'] text-gradient-zen">
-          Sonora Zen
-        </a>
-
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
+        {/* Left links */}
+        <div className="hidden md:flex items-center gap-6 flex-1">
+          {links.slice(0, Math.ceil(links.length / 2)).map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -34,15 +31,31 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <Button size="sm" className="hidden md:inline-flex rounded-full px-6">
+        {/* Center logo */}
+        <a href="#accueil" className="font-bold text-2xl font-['Cormorant_Garamond'] text-gradient-zen">
+          Sonora Zen
+        </a>
+
+        {/* Right links + button */}
+        <div className="hidden md:flex items-center gap-6 flex-1 justify-end">
+          {links.slice(Math.ceil(links.length / 2)).map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+          <Button size="sm" className="rounded-full px-6">
             <ShoppingCart className="w-4 h-4 mr-2" />
             Commander
           </Button>
-          <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
+
+        <button className="md:hidden text-foreground" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
       <AnimatePresence>
