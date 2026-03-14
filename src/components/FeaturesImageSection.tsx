@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import productImage from "@/assets/product-features.png";
+// on ajoute un petit "truc" à la fin pour forcer vercel à rafraichir
+import productImage from "@/assets/product-features.png?v=1";
 
 const FeaturesImageSection = () => {
   return (
