@@ -18,7 +18,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-xs md:text-sm text-foreground mb-2">Contact</h4>
             <div className="flex flex-col gap-1.5 text-xs md:text-sm text-muted-foreground">
-              <span>contact@sonorazen.fr</span>
+              <a href="mailto:contact@sonorazen.fr" className="hover:text-primary transition-colors">contact@sonorazen.fr</a>
               <span>Support 7j/7</span>
             </div>
           </div>
