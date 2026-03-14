@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import productImage from "../assets/product-device-CU45iowk.png";
+import productImage = "https://raw.githubusercontent.com/eric01bellemin-marker/zen-dream-scape/main/src/assets/product-device-CU45iowk.png";
 
 const FeaturesImageSection = () => {
   return (
