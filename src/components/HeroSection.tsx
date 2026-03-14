@@ -2,17 +2,23 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-sleeping.png";
+import heroImageMobile from "@/assets/hero-sleeping-mobile.png";
+import heroImageTablet from "@/assets/hero-sleeping-tablet.png";
 
 const HeroSection = () => {
   return (
     <section id="accueil" className="relative min-h-[100svh] flex flex-col overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Femme dormant paisiblement avec Sonora Zen — Votre bien-être commence par des nuits apaisées"
-          className="w-full h-full object-cover object-center md:object-top"
-        />
+        <picture>
+          <source media="(max-width: 639px)" srcSet={heroImageMobile} />
+          <source media="(max-width: 1023px)" srcSet={heroImageTablet} />
+          <img
+            src={heroImage}
+            alt="Femme dormant paisiblement avec Sonora Zen"
+            className="w-full h-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
       </div>
 
