@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, Battery, Bluetooth, Moon, Check, Cable } from "lucide-react";
+import { Volume1, Battery, Bluetooth, Moon, Check, Cable } from "lucide-react";
 import productBlue from "@/assets/product-device.png";
 
 const colors = [
@@ -9,7 +9,7 @@ const colors = [
 ];
 
 const features = [
-  { icon: Volume2, title: "Son immersif", desc: "Conduction osseuse ultra-fin" },
+  { icon: Volume1, title: "Son immersif", desc: "Conduction osseuse ultra-fin" },
   { icon: Battery, title: "16h d'autonomie", desc: "Batterie 400 mAh" },
   { icon: Bluetooth, title: "Bluetooth 5.3", desc: "Connexion stable" },
   { icon: Cable, title: "Recharge USB-C", desc: "Câble USB inclus" },
