@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-// on ajoute un petit "truc" à la fin pour forcer vercel à rafraichir
+// on utilise le nom exact avec le "cache buster" ?v=2 pour forcer le changement
 import productImage from "@/assets/product-features.png?v=1";
 
 const FeaturesImageSection = () => {
