@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProductSection from "@/components/ProductSection";
-import ProductSheetSection from "@/components/ProductSheetSection";
 import FeaturesImageSection from "@/components/FeaturesImageSection";
 import SoundsSection from "@/components/SoundsSection";
 import BenefitsSection from "@/components/BenefitsSection";
