@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 // on utilise le nom exact avec le "cache buster" ?v=2 pour forcer le changement
-import productImage from "@/assets/product-lifestyle.png ?v=5";
-
+import productImage from "@/assets/palet-final-v1.png"; 
+  
 const FeaturesImageSection = () => {
   return (
     <section className="py-12 md:py-20 bg-background">
