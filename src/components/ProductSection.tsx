@@ -1,11 +1,25 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, Battery, Bluetooth, Moon, Check, Cable } from "lucide-react";
-import productBlue from "@/assets/product-device.png";
+import { Volume2, Battery, Bluetooth, Moon, Cable } from "lucide-react";
+// On importe les deux nouvelles images
+import productBlue from "@/assets/product-blue.png";
+import productGrey from "@/assets/product-grey.png";
 
 const colors = [
-  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)", overlay: "hsla(220, 70%, 50%, 0.4)" },
-  { id: "grey", label: "Gris Douceur", image: productBlue, swatch: "hsl(0, 0%, 65%)", overlay: "transparent" },
+  { 
+    id: "blue", 
+    label: "Bleu Sérénité", 
+    image: productBlue, 
+    swatch: "hsl(220, 40%, 70%)", 
+    overlay: "hsla(220, 70%, 50%, 0.4)" 
+  },
+  { 
+    id: "grey", 
+    label: "Gris Douceur", 
+    image: productGrey, 
+    swatch: "hsl(0, 0%, 65%)", 
+    overlay: "transparent" 
+  },
 ];
 
 const features = [
