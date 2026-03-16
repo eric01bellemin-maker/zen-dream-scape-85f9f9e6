@@ -1,22 +1,20 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, Battery, Bluetooth, Moon, Cable } from "lucide-react";
-// On importe les deux nouvelles images
-import productBlue from "@/assets/Product-blue.png";
-import productGrey from "@/assets/palet-final-v1.png";
 
+// On utilise maintenant des chemins directs vers le dossier public
 const colors = [
   { 
     id: "blue", 
     label: "Bleu Sérénité", 
-    image: productBlue, 
+    image: "/Product-blue.png", // Chemin direct vers public
     swatch: "hsl(220, 40%, 70%)", 
     overlay: "hsla(220, 70%, 50%, 0.4)" 
   },
   { 
     id: "grey", 
     label: "Gris Douceur", 
-    image: productGrey, 
+    image: "/palet-final-v1.png", // Chemin direct vers public
     swatch: "hsl(0, 0%, 65%)", 
     overlay: "transparent" 
   },
