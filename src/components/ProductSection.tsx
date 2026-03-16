@@ -46,17 +46,7 @@ const ProductSection = () => {
             <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-zen-cloud p-6 md:p-12 flex flex-col items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-zen-glow/10" />
               <AnimatePresence mode="wait">
-                <motion.img
-                  key={selectedColor}
-                  src={currentProduct.image}
-                  alt={`Palet sonore Sonora Zen — ${currentProduct.label}`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative z-10 w-full max-w-[200px] sm:max-w-xs md:max-w-md animate-float drop-shadow-2xl"
-                />
-              </AnimatePresence>
+                              </AnimatePresence>
               <div
                 className="absolute inset-0 z-20 rounded-2xl md:rounded-3xl pointer-events-none mix-blend-color transition-colors duration-300"
                 style={{ backgroundColor: currentProduct.overlay }}
