@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, Battery, Bluetooth, Moon, Cable } from "lucide-react";
 // On importe les deux nouvelles images
-import productBlue from "@/assets/product-blue.png";
+import productBlue from "@/assets/Product-blue.png";
 import productGrey from "@/assets/product-grey.png";
 
 const colors = [
