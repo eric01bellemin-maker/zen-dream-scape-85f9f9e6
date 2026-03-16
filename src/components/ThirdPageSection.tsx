@@ -16,20 +16,27 @@ export default function ThirdPageSection() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cards.map((card) => (
             <div key={card.title} className="overflow-hidden rounded-3xl bg-white shadow-sm">
-              <img src={card.image} alt={card.title} className="h-48 w-full object-cover" />
-              <div className="p-6">
-                <h3 className="font-semibold">{card.title}</h3>
+              <div className="h-48 w-full bg-gray-100">
+                <img 
+                  src={card.image} 
+                  alt={card.title} 
+                  className="h-full w-full object-cover"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                />
+              </div>
+              <div className="p-6 text-left">
+                <h3 className="font-semibold text-[#14233d]">{card.title}</h3>
                 <p className="mt-2 text-sm text-gray-600">{card.text}</p>
               </div>
             </div>
           ))}
         </div>
-        <div className="mt-16 rounded-3xl bg-white p-8 shadow-sm lg:flex lg:items-center lg:gap-8">
-          <div className="text-left lg:w-1/2">
-            <h3 className="text-2xl font-bold">Retrouvez le calme</h3>
-            <p className="mt-4 text-gray-600">Découvrez Sonora Zen en action.</p>
+        <div className="mt-16 rounded-3xl bg-white p-8 shadow-sm md:flex md:items-center md:gap-8">
+          <div className="text-left md:w-1/2">
+            <h3 className="text-2xl font-bold text-[#14233d]">Retrouvez le calme</h3>
+            <p className="mt-4 text-gray-600">Découvrez Sonora Zen en action pour un endormissement profond.</p>
           </div>
-          <div className="mt-6 flex justify-center lg:mt-0 lg:w-1/2">
+          <div className="mt-6 flex justify-center md:mt-0 md:w-1/2">
             <video autoPlay muted loop playsInline className="w-full max-w-md rounded-2xl shadow-lg">
               <source src="/videos/sonora-zen.mp4" type="video/mp4" />
             </video>
@@ -39,4 +46,3 @@ export default function ThirdPageSection() {
     </section>
   );
 }
-       
