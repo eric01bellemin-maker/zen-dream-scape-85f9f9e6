@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import imgVoyage from "@/assets/voyage.jpg";
 import imgInsomnie from "@/assets/insomnie.jpg";
 import imgEnfant from "@/assets/enfant.jpg";
-import imgMaman from "@/assets/maman.jpg";
+import imgMaman from "@/assets/maman.jpg"; 
 import imgCouple from "@/assets/couple.jpg";
 
 const cards = [
@@ -13,7 +13,7 @@ const cards = [
   },
   {
     title: "Difficultés à s’endormir",
-    text: "Quand le mental ne s’arrête pas, Sonora Zen vous aide à retrouver le calme et l’endormissement.",
+    text: "Quand le mental ne s’arrête pas, Sonora Zen vous aide à retrouver le calme.",
     image: imgInsomnie,
   },
   {
@@ -22,7 +22,7 @@ const cards = [
     image: imgEnfant,
   },
   {
-    title: "Pour les mamans seules",
+    title: "Pour les mamans",
     text: "Après une longue journée, accordez-vous enfin un vrai moment de repos et de sérénité.",
     image: imgMaman,
   },
@@ -38,32 +38,29 @@ export default function ThirdPageSection() {
     <section id="solutions" className="relative overflow-hidden bg-[#f8f6f2] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* En-tête */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
           className="mx-auto mb-14 max-w-3xl text-center"
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#63c7bd]">
             Sonora Zen
           </p>
-          <h2 className="text-3xl font-bold leading-tight text-[#14233d] sm:text-4xl md:text-5xl">
-            Une solution pensée pour les nuits difficiles
+          <h2 className="text-3xl font-bold text-[#14233d] sm:text-4xl">
+            Une solution pensée pour vous
           </h2>
         </motion.div>
 
-        {/* Grille de cartes */}
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, index) => (
             <motion.div
               key={card.title}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="group overflow-hidden rounded-3xl bg-white shadow-[0_12px_35px_rgba(20,35,61,0.08)]"
+              transition={{ delay: index * 0.1 }}
+              className="group overflow-hidden rounded-3xl bg-white shadow-sm"
             >
               <div className="relative h-64 overflow-hidden">
                 <img
@@ -73,56 +70,29 @@ export default function ThirdPageSection() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#14233d]">{card.title}</h3>
-                <p className="mt-3 text-[#5f6b7a]">{card.text}</p>
+                <h3 className="font-semibold text-[#14233d]">{card.title}</h3>
+                <p className="mt-2 text-sm text-[#5f6b7a]">{card.text}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Bloc avec la VIDÉO */}
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-14 rounded-[32px] bg-white p-8 shadow-[0_12px_35px_rgba(20,35,61,0.08)] md:p-10"
-        >
+        {/* Bloc VIDÉO */}
+        <div className="mt-16 rounded-[32px] bg-white p-8 shadow-sm">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-[#63c7bd]">
-                En action
-              </p>
-              <h3 className="text-2xl font-bold text-[#14233d] md:text-3xl">
-                Retrouvez enfin le calme du soir
-              </h3>
+              <h3 className="text-2xl font-bold text-[#14233d]">Retrouvez le calme</h3>
               <p className="mt-4 text-[#5f6b7a]">
-                Découvrez comment Sonora Zen s'intègre parfaitement à votre rituel nocturne 
-                pour un endormissement rapide et profond.
+                Découvrez Sonora Zen en action pour un endormissement profond.
               </p>
-              <ul className="mt-6 space-y-3 text-[#5f6b7a]">
-                <li>• Son sommeil vous suit partout</li>
-                <li>• Enfin des nuits plus paisibles</li>
-                <li>• Une solution douce pour tous</li>
-              </ul>
             </div>
-
-            {/* LA VIDÉO ICI */}
             <div className="flex justify-center">
-              <div className="overflow-hidden rounded-3xl bg-[#f8fbfb] shadow-2xl">
-                <video 
-                  autoPlay 
-                  muted 
-                  loop 
-                  playsInline 
-                  className="h-auto w-full max-w-[520px] rounded-3xl object-contain"
-                >
-                  <source src="/videos/sonora-zen.mp4" type="video/mp4" />
-                  Votre navigateur ne supporte pas la vidéo.
-                </video>
-              </div>
+              <video autoPlay muted loop playsInline className="w-full max-w-[500px] rounded-2xl shadow-lg">
+                <source src="/videos/sonora-zen.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
