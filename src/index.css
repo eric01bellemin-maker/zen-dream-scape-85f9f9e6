@@ -6,10 +6,10 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
+    --background: 0 0% 100%; /* Blanc pur */
     --foreground: 220 30% 15%;
 
-    --card: 210 40% 99%;
+    --card: 0 0% 100%;
     --card-foreground: 220 30% 15%;
 
     --popover: 0 0% 100%;
@@ -51,35 +51,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 220 50% 5%;
-    --foreground: 210 40% 95%;
-    --card: 220 50% 8%;
-    --card-foreground: 210 40% 95%;
-    --popover: 220 50% 8%;
-    --popover-foreground: 210 40% 95%;
-    --primary: 174 42% 51%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 30% 15%;
-    --secondary-foreground: 210 40% 95%;
-    --muted: 220 30% 15%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 220 30% 15%;
-    --accent-foreground: 210 40% 95%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 220 30% 18%;
-    --input: 220 30% 18%;
-    --ring: 174 42% 51%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  /* J'ai supprimé la section .dark ici pour que le site reste blanc partout */
 }
 
 @layer base {
