@@ -37,18 +37,6 @@ const ProductSection = () => {
 
         <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-center">
           <motion.div
-           <motion.img
-                  key={selectedColor}
-                  src={currentProduct.image}
-                  alt={`Palet sonore Sonora Zen — ${currentProduct.label}`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative z-10 w-full max-w-[200px] sm:max-w-xs md:max-w-md animate-float drop-shadow-2xl"
-                />                     
-                  
-            
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
