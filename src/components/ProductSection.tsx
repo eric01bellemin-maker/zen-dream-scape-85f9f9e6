@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, Battery, Bluetooth, Moon, Check, Cable } from "lucide-react";
-import productBlue from "@/assets/product-device.png";
+import { Button } from "@/components/ui/button";
 
 const colors = [
-  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)", overlay: "hsla(220, 70%, 50%, 0.4)" },
-  { id: "grey", label: "Gris Douceur", image: productBlue, swatch: "hsl(0, 0%, 65%)", overlay: "transparent" },
+  { id: "blue", label: "Bleu Sérénité", swatch: "hsl(220, 40%, 70%)", overlay: "hsla(220, 70%, 50%, 0.4)" },
+  { id: "grey", label: "Gris Douceur", swatch: "hsl(0, 0%, 65%)", overlay: "transparent" },
 ];
 
 const features = [
-  { icon: Volume1, title: "Son immersif", desc: "Conduction osseuse ultra-fine" },
+  { icon: Volume2, title: "Son immersif", desc: "Conduction osseuse ultra-fine" },
   { icon: Battery, title: "16h d'autonomie", desc: "Batterie 400 mAh" },
   { icon: Bluetooth, title: "Bluetooth 5.3", desc: "Connexion stable" },
   { icon: Cable, title: "Recharge USB-C", desc: "Câble USB inclus" },
@@ -43,32 +43,27 @@ const ProductSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-zen-cloud p-6 md:p-12 flex flex-col items-center justify-center">
+            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-zen-cloud p-6 md:p-12 flex flex-col items-center justify-center min-h-[300px]">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-zen-glow/10" />
-              <AnimatePresence mode="wait">
-                              </AnimatePresence>
-              <div
-                className="absolute inset-0 z-20 rounded-2xl md:rounded-3xl pointer-events-none mix-blend-color transition-colors duration-300"
-                style={{ backgroundColor: currentProduct.overlay }}
-              />
+              
+              {/* L'IMAGE A ÉTÉ SUPPRIMÉE ICI POUR RÉGLER LE BUG */}
+              <div className="text-muted-foreground text-sm italic z-10">
+                Aperçu du coloris : {currentProduct.label}
+              </div>
 
-              <div className="relative z-10 mt-4 md:mt-8 flex flex-col items-center gap-2">
-                <p className="text-xs md:text-sm font-medium text-foreground">{currentProduct.label}</p>
+              <div className="relative z-10 mt-8 flex flex-col items-center gap-2">
                 <div className="flex gap-2">
                   {colors.map((color) => (
                     <button
                       key={color.id}
                       onClick={() => setSelectedColor(color.id)}
-                      className="relative w-7 h-7 md:w-9 md:h-9 rounded-full border-2 transition-all duration-200 flex items-center justify-center"
+                      className="relative w-8 h-8 rounded-full border-2 transition-all flex items-center justify-center"
                       style={{
                         backgroundColor: color.swatch,
-                        borderColor: selectedColor === color.id ? "hsl(var(--foreground))" : "transparent",
+                        borderColor: selectedColor === color.id ? "white" : "transparent",
                       }}
-                      aria-label={color.label}
                     >
-                      {selectedColor === color.id && (
-                        <Check className="w-3 h-3 md:w-4 md:h-4 text-foreground" />
-                      )}
+                      {selectedColor === color.id && <Check className="w-4 h-4 text-white" />}
                     </button>
                   ))}
                 </div>
@@ -76,40 +71,23 @@ const ProductSection = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="rounded-2xl md:rounded-3xl bg-muted/50 p-5 md:p-8">
-              <h3 className="text-lg md:text-2xl font-semibold mb-3 md:mb-6 text-foreground">
-                Design minimaliste,<br />technologie avancée
-              </h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5 md:mb-8">
-                Le Sonora Zen est un palet sonore ultra-plat recouvert de tissu acoustique premium.
-                Placez-le sous votre oreiller : il diffuse des sons apaisants par vibrations douces,
-                audibles uniquement par vous.
-              </p>
-
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 md:gap-4">
-                {features.map((feat, i) => (
-                  <motion.div
-                    key={feat.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="p-3 md:p-4 rounded-xl md:rounded-2xl bg-background/60 border border-border/30 hover:border-primary/30 transition-colors"
-                  >
-                    <feat.icon className="w-5 h-5 md:w-6 md:h-6 text-primary mb-1 md:mb-2" />
-                    <p className="font-semibold text-xs md:text-sm text-foreground">{feat.title}</p>
-                    <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5">{feat.desc}</p>
-                  </motion.div>
-                ))}
-              </div>
+          <div className="space-y-6">
+            <h3 className="text-xl md:text-3xl font-semibold text-foreground">
+              Design minimaliste, technologie avancée
+            </h3>
+            <p className="text-muted-foreground">
+              Le Sonora Zen est un palet sonore ultra-plat conçu pour se glisser sous votre oreiller.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {features.map((feat) => (
+                <div key={feat.title} className="p-4 rounded-xl bg-background/50 border border-border">
+                  <feat.icon className="w-6 h-6 text-primary mb-2" />
+                  <h4 className="font-bold text-sm">{feat.title}</h4>
+                  <p className="text-xs text-muted-foreground">{feat.desc}</p>
+                </div>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
