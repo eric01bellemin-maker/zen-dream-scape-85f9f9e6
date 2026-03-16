@@ -1,24 +1,17 @@
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import ProductSection from "@/components/ProductSection";
-import SoundsSection from "@/components/SoundsSection";
-import BenefitsSection from "@/components/BenefitsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
+import Hero from "@/components/Hero";
+import SecondPageSection from "@/components/SecondPageSection";
+import ThirdPageSection from "@/components/ThirdPageSection"; // On importe ta nouvelle section
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen !bg-white text-slate-900">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <HeroSection />
-      <ProductSection />
-           <SoundsSection />
-      <BenefitsSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
+      <Hero />
+      <SecondPageSection />
+      {/* On ajoute la section avec la vidéo ici */}
+      <ThirdPageSection /> 
       <Footer />
     </div>
   );
