@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function ThirdPageSection() {
+  // On définit les données ici sans "import" pour ne pas bloquer GitHub
   const cards = [
     { title: "Emporté en voyage", text: "Un sommeil apaisé, même loin de chez vous.", img: "voyage.jpg" },
     { title: "Difficultés à s’endormir", text: "Retrouvez le calme quand le mental s'emballe.", img: "insomnie.jpg" },
@@ -20,7 +21,7 @@ export default function ThirdPageSection() {
               <div className="h-48 w-full bg-gray-200 flex items-center justify-center">
                 <p className="text-xs text-gray-400">Image: {card.img}</p>
               </div>
-              <div className="p-6 text-left">
+              <div className="p-6">
                 <h3 className="font-semibold text-[#14233d]">{card.title}</h3>
                 <p className="mt-2 text-sm text-gray-600">{card.text}</p>
               </div>
@@ -29,7 +30,7 @@ export default function ThirdPageSection() {
         </div>
 
         <div className="mt-16 rounded-3xl bg-white p-8 shadow-sm md:flex md:items-center md:gap-8">
-          <div className="md:w-1/2 text-left">
+          <div className="md:w-1/2">
             <h3 className="text-2xl font-bold text-[#14233d]">Découvrez Sonora Zen</h3>
             <p className="mt-4 text-gray-600">Retrouvez un endormissement profond et serein.</p>
           </div>
