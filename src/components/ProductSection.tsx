@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, Battery, Bluetooth, Moon, Check, Cable } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import productBlue from "@/assets/product-device.png";
 
 const colors = [
-  { id: "blue", label: "Bleu Sérénité", swatch: "hsl(220, 40%, 70%)", overlay: "hsla(220, 70%, 50%, 0.4)" },
-  { id: "grey", label: "Gris Douceur", swatch: "hsl(0, 0%, 65%)", overlay: "transparent" },
+  { id: "blue", label: "Bleu Sérénité", image: productBlue, swatch: "hsl(220, 40%, 70%)", overlay: "hsla(220, 70%, 50%, 0.4)" },
+  { id: "grey", label: "Gris Douceur", image: productBlue, swatch: "hsl(0, 0%, 65%)", overlay: "transparent" },
 ];
 
 const features = [
@@ -43,28 +43,35 @@ const ProductSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-zen-cloud p-6 md:p-12 flex flex-col items-center justify-center min-h-[300px]">
+            <div className="relative rounded-2xl md:rounded-3xl overflow-hidden bg-zen-cloud p-6 md:p-12 flex flex-col items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-zen-glow/10" />
               
-              {/* L'IMAGE A ÉTÉ SUPPRIMÉE ICI POUR RÉGLER LE BUG */}
-              <div className="text-muted-foreground text-sm italic z-10">
-                Aperçu du coloris : {currentProduct.label}
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={selectedColor}
+                  src={currentProduct.image}
+                  alt={`Palet sonore Sonora Zen — ${currentProduct.label}`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative z-10 w-full max-w-[200px] sm:max-w-xs md:max-w-md drop-shadow-2xl"
+                />
+              </AnimatePresence>
 
               <div className="relative z-10 mt-8 flex flex-col items-center gap-2">
+                <p className="text-sm font-medium">{currentProduct.label}</p>
                 <div className="flex gap-2">
                   {colors.map((color) => (
                     <button
                       key={color.id}
                       onClick={() => setSelectedColor(color.id)}
-                      className="relative w-8 h-8 rounded-full border-2 transition-all flex items-center justify-center"
+                      className="w-8 h-8 rounded-full border-2 transition-all"
                       style={{
                         backgroundColor: color.swatch,
-                        borderColor: selectedColor === color.id ? "white" : "transparent",
+                        borderColor: selectedColor === color.id ? "black" : "transparent",
                       }}
-                    >
-                      {selectedColor === color.id && <Check className="w-4 h-4 text-white" />}
-                    </button>
+                    />
                   ))}
                 </div>
               </div>
@@ -76,14 +83,14 @@ const ProductSection = () => {
               Design minimaliste, technologie avancée
             </h3>
             <p className="text-muted-foreground">
-              Le Sonora Zen est un palet sonore ultra-plat conçu pour se glisser sous votre oreiller.
+              Le Sonora Zen est un palet sonore ultra-plat recouvert de tissu acoustique premium. Placez-le sous votre oreiller : il diffuse des sons apaisants par vibrations douces.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {features.map((feat) => (
                 <div key={feat.title} className="p-4 rounded-xl bg-background/50 border border-border">
                   <feat.icon className="w-6 h-6 text-primary mb-2" />
-                  <h4 className="font-bold text-sm">{feat.title}</h4>
-                  <p className="text-xs text-muted-foreground">{feat.desc}</p>
+                  <p className="font-bold text-xs md:text-sm">{feat.title}</p>
+                  <p className="text-[10px] md:text-xs text-muted-foreground">{feat.desc}</p>
                 </div>
               ))}
             </div>
