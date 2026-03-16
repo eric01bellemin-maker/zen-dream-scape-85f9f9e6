@@ -1,35 +1,31 @@
 import { motion } from "framer-motion";
-import imgVoyage from "@/assets/voyage.jpg";
-import imgInsomnie from "@/assets/insomnie.jpg";
-import imgEnfant from "@/assets/enfant.jpg";
-import imgMaman from "@/assets/maman.jpg"; 
-import imgCouple from "@/assets/couple.jpg";
 
+// On utilise des chemins relatifs directs pour éviter les erreurs de compilation
 const cards = [
   {
     title: "Emporté en voyage",
     text: "Glissez Sonora Zen dans votre sac et retrouvez un sommeil apaisé, même loin de chez vous.",
-    image: imgVoyage,
+    image: "/src/assets/voyage.jpg",
   },
   {
     title: "Difficultés à s’endormir",
     text: "Quand le mental ne s’arrête pas, Sonora Zen vous aide à retrouver le calme.",
-    image: imgInsomnie,
+    image: "/src/assets/insomnie.jpg",
   },
   {
     title: "Pour les enfants",
     text: "Une ambiance plus douce au coucher pour aider les plus petits à s’apaiser plus facilement.",
-    image: imgEnfant,
+    image: "/src/assets/enfant.jpg",
   },
   {
     title: "Pour les mamans",
     text: "Après une longue journée, accordez-vous enfin un vrai moment de repos et de sérénité.",
-    image: imgMaman,
+    image: "/src/assets/maman.jpg",
   },
   {
     title: "Pour les couples",
     text: "Des nuits plus paisibles à deux, dans une atmosphère douce et relaxante.",
-    image: imgCouple,
+    image: "/src/assets/couple.jpg",
   },
 ];
 
@@ -67,6 +63,10 @@ export default function ThirdPageSection() {
                   src={card.image}
                   alt={card.title}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    // Si l'image ne charge pas, on met un fond gris pour ne pas faire crasher le site
+                    (e.target as HTMLImageElement).src = "https://via.placeholder.com/400x300?text=Image+Sonora";
+                  }}
                 />
               </div>
               <div className="p-6">
@@ -77,7 +77,6 @@ export default function ThirdPageSection() {
           ))}
         </div>
 
-        {/* Bloc VIDÉO */}
         <div className="mt-16 rounded-[32px] bg-white p-8 shadow-sm">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
