@@ -43,4 +43,4 @@ export default function ThirdPageSection() {
       </div>
     </section>
   );
-}
+  }
