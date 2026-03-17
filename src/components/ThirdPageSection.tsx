@@ -4,17 +4,17 @@ const solutions = [
   {
     title: "Pour vos voyages",
     description: "Retrouvez le sommeil même en avion ou à l'hôtel.",
-    image: "/voyage.jpg", // Corrigé : tout en minuscule
+    image: "/voyage.jpg",
   },
   {
     title: "Contre l'insomnie",
     description: "Apaisez votre esprit avec des fréquences relaxantes.",
-    image: "/insomnie.jpg", // Corrigé
+    image: "/insomnie.png", // <--- On change .jpg par .png ici !
   },
   {
     title: "Pour les enfants",
     description: "Une aide douce pour des nuits calmes et sereines.",
-    image: "/enfant.jpg", // Corrigé
+    image: "/enfant.jpg",
   },
 ];
 
