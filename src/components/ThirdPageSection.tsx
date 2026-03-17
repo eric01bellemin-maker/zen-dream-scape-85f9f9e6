@@ -92,7 +92,8 @@ const ThirdPageSection = () => {
               playsInline
             >
               {/* Remplace 'video-sonora.mp4' par le vrai nom de ton fichier dans le dossier public/videos */}
-              <source src="/videos/video-sonora.mp4" type="video/mp4" />
+              {/* Utilisation du nom exact avec l'accent et les espaces */}
+<source src="/videos/vidéo sonora zen.mp4" type="video/mp4" />
               Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
           </motion.div>
