@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-
 const solutions = [
   {
     title: "Pour vos voyages",
     description: "Retrouvez le sommeil même en avion ou à l'hôtel.",
-    image: "/Photo voyage.jpg", // Assure-toi que le nom est EXACTEMENT celui sur GitHub
+    image: "/voyage.jpg", // Corrigé : tout en minuscule
   },
   {
     title: "Contre l'insomnie",
     description: "Apaisez votre esprit avec des fréquences relaxantes.",
-    image: "/Photo insomnie.jpg",
+    image: "/insomnie.jpg", // Corrigé
   },
   {
     title: "Pour les enfants",
     description: "Une aide douce pour des nuits calmes et sereines.",
-    image: "/Photo enfant.jpg",
+    image: "/enfant.jpg", // Corrigé
   },
 ];
+
 
 const ThirdPageSection = () => {
   return (
