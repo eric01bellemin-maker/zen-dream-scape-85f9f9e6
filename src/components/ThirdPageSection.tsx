@@ -19,7 +19,6 @@ const solutions = [
   },
 ];
 
-
 const testimonials = [
   {
     name: "Marc L.",
@@ -124,6 +123,7 @@ const ThirdPageSection = () => {
             
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
+                {/* ÉTOILES AJOUTÉES ICI */}
                 <div className="flex gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
