@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import SoundSection from "@/components/SoundSection";
+import SoundsSection from "@/components/SoundSection";
 import ProductSection from "@/components/ProductSection";
 import ThirdPageSection from "@/components/ThirdPageSection";
 
