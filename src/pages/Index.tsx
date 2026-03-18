@@ -6,12 +6,20 @@ import ThirdPageSection from "../components/ThirdPageSection";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-black text-white w-full">
       <Navbar />
-      <HeroSection />
-      <SoundsSection />
-      <ProductSection />
-      <ThirdPageSection />
+      <div id="hero">
+        <HeroSection />
+      </div>
+      <div id="sounds">
+        <SoundsSection />
+      </div>
+      <div id="product">
+        <ProductSection />
+      </div>
+      <div id="testimonials">
+        <ThirdPageSection />
+      </div>
     </main>
   );
 };
