@@ -8,12 +8,12 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-white text-gray-900 w-full relative overflow-hidden">
       
-      {/* 🌫️ EFFET BROUILLARD : Un voile blanc doux pour l'aspect pâle */}
-      <div className="fixed inset-0 bg-white/60 backdrop-blur-[3px] pointer-events-none z-10" />
+      {/* 🌫️ EFFET BROUILLARD : J'ai mis 70% pour que ce soit BIEN brumeux */}
+      <div className="fixed inset-0 bg-white/70 backdrop-blur-[4px] pointer-events-none z-10" />
 
-      {/* 🖼️ TON IMAGE PROPRE (Celle que tu as envoyée) */}
+      {/* 🖼️ TON IMAGE PROPRE */}
       <img
-       src="/fond-zen.jpg"
+        src="/fond-zen.jpg" 
         alt="Ambiance ZenDream"
         className="fixed inset-0 w-full h-full object-cover z-0"
       />
