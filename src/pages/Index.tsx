@@ -6,8 +6,7 @@ import ThirdPageSection from "../components/ThirdPageSection";
 
 const Index = () => {
   // Cette petite ligne permet de trouver le bon chemin automatiquement
-  const backgroundImage = "./fond-zen.jpg";
-
+  const backgroundImage = "./fond-zen.jpg?v=2";
   return (
     <main className="min-h-screen bg-white text-gray-900 w-full relative overflow-hidden">
       
