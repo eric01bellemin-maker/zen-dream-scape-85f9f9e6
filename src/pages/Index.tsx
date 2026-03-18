@@ -1,18 +1,20 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import SoundsSection from "@/components/SoundSection";
+import SoundsSection from "@/components/SoundsSection";
 import ProductSection from "@/components/ProductSection";
 import ThirdPageSection from "@/components/ThirdPageSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <main style={{ backgroundColor: '#000', minHeight: '100vh', color: 'white' }}>
       <Navbar />
-      <HeroSection />
-      <SoundSection />
-      <ProductSection />
-      <ThirdPageSection />
-    </div>
+      <div className="pt-20">
+        <HeroSection />
+        <SoundsSection />
+        <ProductSection />
+        <ThirdPageSection />
+      </div>
+    </main>
   );
 };
 
