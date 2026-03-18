@@ -12,7 +12,7 @@ const HeroSection = () => {
       <img 
         src={imagePath} 
         alt="Sommeil profond Sonora Zen"
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 mix-blend-luminosity grayscale"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-60"
         onError={(e) => {
           // Si l'image échoue, on essaye le chemin alternatif avec le nom du dossier
           const target = e.target as HTMLImageElement;
