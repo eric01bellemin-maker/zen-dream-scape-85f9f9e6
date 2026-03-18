@@ -6,13 +6,13 @@ import ThirdPageSection from "../components/ThirdPageSection";
 
 const Index = () => {
   return (
-    <div style={{ backgroundColor: 'black', minHeight: '100vh', color: 'white' }}>
+    <main className="min-h-screen bg-black text-white">
       <Navbar />
       <HeroSection />
       <SoundsSection />
       <ProductSection />
       <ThirdPageSection />
-    </div>
+    </main>
   );
 };
 
