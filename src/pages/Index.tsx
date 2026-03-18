@@ -1,8 +1,8 @@
 import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import SoundsSection from "../components/Soundssection";
-import ProductSection from "../components/ProductSection";
-import ThirdPageSection from "../components/ThirdPageSection";
+import HeroSection from "../components/HeroSection/HeroSection";
+import SoundsSection from "../components/Soundssection/SoundsSection";
+import ProductSection from "../components/ProductSection/ProductSection";
+import ThirdPageSection from "../components/ThirdPageSection/ThirdPageSection";
 
 const Index = () => {
   return (
