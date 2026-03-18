@@ -6,11 +6,11 @@ const HeroSection = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center bg-[#121212] text-white w-full overflow-hidden">
       
       {/* 1. L'image de la femme (récupérée dans le dossier public) */}
-      <img 
-        src="/woman-sleeping.jpg" 
-        alt="Sommeil profond Sonora Zen"
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 mix-blend-luminosity grayscale"
-      />
+     <img 
+       src="woman-sleeping.jpg" 
+       alt="Sommeil profond Sonora Zen"
+       className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 mix-blend-luminosity grayscale"
+   />
 
       {/* 2. Overlay de dégradé pour fondre l'image dans le noir du site */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#121212]/30 via-[#121212]/70 to-[#121212]" />
