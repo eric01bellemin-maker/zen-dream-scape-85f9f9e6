@@ -13,7 +13,7 @@ const Index = () => {
 
       {/* 🖼️ TON IMAGE PROPRE (Celle que tu as envoyée) */}
       <img
-        src="/zen-dream-scape/fond-zen.jpg" 
+       src="/fond-zen.jpg"
         alt="Ambiance ZenDream"
         className="fixed inset-0 w-full h-full object-cover z-0"
       />
