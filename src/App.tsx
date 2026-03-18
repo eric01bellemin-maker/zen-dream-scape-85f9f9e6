@@ -13,10 +13,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/zen-dream-scape">
         <Routes>
-         <Route path="/" element={<Index />} />
-         <Route path="/Caracteristiques" element={<Caracteristiques />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/Caracteristiques" element={<Caracteristiques />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
