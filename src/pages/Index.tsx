@@ -1,12 +1,12 @@
-import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import SoundsSection from "../components/Soundssection"; 
-import ProductSection from "../components/ProductSection";
-import ThirdPageSection from "../components/ThirdPageSection";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import SoundsSection from "@/components/SoundsSection";
+import ProductSection from "@/components/ProductSection";
+import ThirdPageSection from "@/components/ThirdPageSection";
 
 const Index = () => {
   return (
-    <main style={{ backgroundColor: '#000', minHeight: '100vh', color: 'white' }}>
+    <main className="min-h-screen bg-black text-white">
       <Navbar />
       <div className="pt-20">
         <HeroSection />
