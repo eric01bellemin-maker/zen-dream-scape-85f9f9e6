@@ -57,12 +57,16 @@ const SoundsSection = () => {
             >
               <div className="h-48 overflow-hidden relative group">
                 <img src={sound.image} alt={sound.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                <button 
-                  onClick={() => togglePlay(index)}
-                  className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  {playing === index ? <Pause className="w-12 h-12" /> : <Play className="w-12 h-12" />}
-                </button>
+               <button 
+                 onClick={() => togglePlay(index)}
+                 className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity z-10"
+              >
+                {playing === index ? (
+                  <Pause className="w-12 h-12 text-white fill-white" />
+               ) : (
+                   <Play className="w-12 h-12 text-white fill-white ml-1" />
+               )}
+             </button> 
                 <audio 
                   ref={el => el && (audioRefs.current[index] = el)} 
                   src={sound.audio} 
