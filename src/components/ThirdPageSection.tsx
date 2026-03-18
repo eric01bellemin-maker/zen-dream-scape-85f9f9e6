@@ -91,7 +91,7 @@ const ThirdPageSection = () => {
               controls
               playsInline
             >
-              <source src="/videos/vidéo sonora zen.mp4" type="video/mp4" />
+             <source src="/videos/video-sonora-zen.mp4" type="video/mp4" />
               Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
           </motion.div>
