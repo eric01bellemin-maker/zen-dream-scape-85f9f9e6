@@ -5,23 +5,23 @@ const solutions = [
   {
     title: "Pour vos voyages",
     description: "Retrouvez le sommeil même en avion ou à l'hôtel.",
-    image: "/voyage.jpg", // <--- Chemin direct depuis public
+    image: "/voyage.jpg",
   },
   {
     title: "Contre l'insomnie",
     description: "Apaisez votre esprit avec des fréquences relaxantes.",
-    image: "/insomnie.jpg", // <--- Le nom de ton fichier propre dans public
+    image: "/insomnie.jpg",
   },
   {
     title: "Pour les enfants",
     description: "Une aide douce pour des nuits calmes et sereines.",
-    image: "/enfant.jpg", // <--- Chemin direct depuis public
+    image: "/enfant.jpg",
   },
 ];
 
 const ThirdPageSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="bienfaits" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Une solution pour vous */}
         <div className="text-center mb-16">
@@ -46,7 +46,6 @@ const ThirdPageSection = () => {
                   src={sol.image} 
                   alt={sol.title} 
                   className="w-full h-full object-cover"
-                  // J'ai enlevé le onError qui affichait l'image de secours pour voir l'erreur réelle
                 />
               </div>
               <div className="p-6">
@@ -86,14 +85,16 @@ const ThirdPageSection = () => {
             viewport={{ once: true }}
             className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black"
           >
+            {/* --- TON NOUVEAU BLOC VIDÉO EST ICI --- */}
             <video 
               className="w-full h-full object-cover"
               controls
               playsInline
             >
-            <source src="/videos/video sonora zen.mp4" type="video/mp4" />
+              <source src="/videos/video.mp4" type="video/mp4" />
               Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
+            {/* -------------------------------------- */}
           </motion.div>
         </div>
       </div>
