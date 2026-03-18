@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ShoppingCart } from "lucide-react";
 
 const solutions = [
   {
@@ -57,7 +57,7 @@ const ThirdPageSection = () => {
         </div>
 
         {/* Section Vidéo Découverte */}
-        <div className="grid md:grid-cols-2 gap-12 items-center bg-zen-cloud rounded-3xl p-8 md:p-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center bg-zen-cloud rounded-3xl p-8 md:p-12 mb-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -85,7 +85,6 @@ const ThirdPageSection = () => {
             viewport={{ once: true }}
             className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black"
           >
-            {/* --- TON NOUVEAU BLOC VIDÉO EST ICI --- */}
             <video 
               className="w-full h-full object-cover"
               controls
@@ -94,8 +93,39 @@ const ThirdPageSection = () => {
               <source src="/videos/video.mp4" type="video/mp4" />
               Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
-            {/* -------------------------------------- */}
           </motion.div>
+        </div>
+
+        {/* --- NOUVELLE SECTION PRIX --- */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white border-2 border-primary/20 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-primary text-white px-6 py-2 rounded-bl-2xl font-bold">
+              OFFRE DE LANCEMENT
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl font-bold mb-4">Votre Pack Sonora Zen</h2>
+                <p className="text-muted-foreground mb-6">
+                  Comprend l'appareil, l'accès illimité à l'application et la garantie satisfait ou remboursé de 30 jours.
+                </p>
+                <div className="flex items-baseline gap-2 mb-6">
+                  <span className="text-5xl font-extrabold text-primary">49€90</span>
+                  <span className="text-xl text-muted-foreground line-through">79€90</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-col gap-4">
+                <button className="bg-primary hover:bg-primary/90 text-white text-lg font-bold py-6 px-8 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-3 group">
+                  <ShoppingCart className="group-hover:scale-110 transition-transform" />
+                  COMMANDER MAINTENANT
+                </button>
+                <p className="text-center text-xs text-muted-foreground">
+                  Livraison gratuite en France • Paiement 100% sécurisé
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
