@@ -120,8 +120,8 @@ const ThirdPageSection = () => {
                   <ShoppingCart className="group-hover:scale-110 transition-transform" />
                   COMMANDER MAINTENANT
                 </button>
-                <p className="text-center text-xs text-muted-foreground">
-                  Livraison gratuite en France • Paiement 100% sécurisé
+               <p className="text-center text-xs text-muted-foreground">
+  Livraison gratuite • Paiement 100% sécurisé
                 </p>
               </div>
             </div>
