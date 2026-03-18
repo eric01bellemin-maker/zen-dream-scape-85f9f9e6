@@ -95,8 +95,7 @@ const ThirdPageSection = () => {
             </video>
           </motion.div>
         </div>
-
-        {/* --- NOUVELLE SECTION PRIX --- */}
+{/* --- SECTION PRIX MISE À JOUR --- */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white border-2 border-primary/20 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-primary text-white px-6 py-2 rounded-bl-2xl font-bold">
@@ -109,9 +108,9 @@ const ThirdPageSection = () => {
                 <p className="text-muted-foreground mb-6">
                   Comprend l'appareil, l'accès illimité à l'application et la garantie satisfait ou remboursé de 30 jours.
                 </p>
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-5xl font-extrabold text-primary">49€90</span>
-                  <span className="text-xl text-muted-foreground line-through">79€90</span>
+                <div className="flex items-baseline gap-3 mb-6">
+                  <span className="text-6xl font-extrabold text-primary">35€</span>
+                  <span className="text-2xl text-muted-foreground line-through decoration-red-500/50">42€90</span>
                 </div>
               </div>
               
@@ -127,9 +126,4 @@ const ThirdPageSection = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
-
-export default ThirdPageSection;
+        
