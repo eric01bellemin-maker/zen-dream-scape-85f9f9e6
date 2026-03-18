@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 import { Play, Pause } from "lucide-react";
-// On définit les sons avec le chemin correct pour GitHub Pages (/zen-dream-scape/)
+
 const sounds = [
   { 
     image: "/zen-dream-scape/oiseaux.jpg", 
@@ -25,6 +25,60 @@ const sounds = [
     image: "/zen-dream-scape/vent.jpg", 
     title: "Souffle du vent", 
     desc: "La brise légère à travers les arbres", 
-    audio: "/zen-dream-scape/sounds/wind.mp3" 
-  },
+    audio: "/zen-dream-scape/sounds/wind.mp3"
+  }
 ];
+
+const SoundsSection = () => {
+  const [playing, setPlaying] = useState<number | null>(null);
+  const audioRefs = useRef<HTMLAudioElement[]>([]);
+
+  const togglePlay = (index: number) => {
+    if (playing === index) {
+      audioRefs.current[index].pause();
+      setPlaying(null);
+    } else {
+      if (playing !== null) audioRefs.current[playing].pause();
+      audioRefs.current[index].play();
+      setPlaying(index);
+    }
+  };
+
+  return (
+    <section id="sounds" className="py-20 px-6 bg-black">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-light text-center mb-16 tracking-widest uppercase">Atmosphères</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {sounds.map((sound, index) => (
+            <motion.div 
+              key={index}
+              whileHover={{ y: -10 }}
+              className="bg-zinc-900/50 rounded-2xl overflow-hidden border border-zinc-800"
+            >
+              <div className="h-48 overflow-hidden relative group">
+                <img src={sound.image} alt={sound.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <button 
+                  onClick={() => togglePlay(index)}
+                  className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  {playing === index ? <Pause className="w-12 h-12" /> : <Play className="w-12 h-12" />}
+                </button>
+                <audio 
+                  ref={el => el && (audioRefs.current[index] = el)} 
+                  src={sound.audio} 
+                  loop 
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-medium mb-2">{sound.title}</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{sound.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default SoundsSection;
