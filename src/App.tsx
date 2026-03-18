@@ -13,7 +13,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/zen-dream-scape">
+     
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/Caracteristiques" element={<Caracteristiques />} />
