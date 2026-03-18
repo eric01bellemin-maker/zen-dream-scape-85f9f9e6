@@ -95,7 +95,7 @@ const ThirdPageSection = () => {
             </video>
           </motion.div>
         </div>
-{/* --- SECTION PRIX MISE À JOUR --- */}
+{/* --- SECTION PRIX CORRIGÉE ET MISE À JOUR --- */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white border-2 border-primary/20 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-primary text-white px-6 py-2 rounded-bl-2xl font-bold">
@@ -104,11 +104,12 @@ const ThirdPageSection = () => {
             
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Votre Pack Sonora Zen</h2>
+                <h2 className="text-3xl font-bold mb-4">Votre Sonora Zen</h2> {/* J'ai enlevé le mot 'Pack' ici */}
                 <p className="text-muted-foreground mb-6">
                   Comprend l'appareil, l'accès illimité à l'application et la garantie satisfait ou remboursé de 30 jours.
                 </p>
                 <div className="flex items-baseline gap-3 mb-6">
+                  {/* VOICI LES NOUVEAUX PRIX */}
                   <span className="text-6xl font-extrabold text-primary">35€</span>
                   <span className="text-2xl text-muted-foreground line-through decoration-red-500/50">42€90</span>
                 </div>
@@ -126,4 +127,3 @@ const ThirdPageSection = () => {
             </div>
           </div>
         </div>
-        
