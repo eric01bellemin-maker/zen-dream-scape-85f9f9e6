@@ -5,17 +5,17 @@ const solutions = [
   {
     title: "Pour vos voyages",
     description: "Retrouvez le sommeil même en avion ou à l'hôtel.",
-    image: "/voyage.jpg",
+    image: "/zen-dream-scape/voyage.jpg",
   },
   {
     title: "Contre l'insomnie",
     description: "Apaisez votre esprit avec des fréquences relaxantes.",
-    image: "/insomnie.jpg",
+    image: "/zen-dream-scape/insomnie.jpg",
   },
   {
     title: "Pour les enfants",
     description: "Une aide douce pour des nuits calmes et sereines.",
-    image: "/enfant.jpg",
+    image: "/zen-dream-scape/enfant.jpg",
   },
 ];
 
