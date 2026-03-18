@@ -1,5 +1,5 @@
- import { motion } from "framer-motion";
-import { CheckCircle2, ShoppingCart } from "lucide-react";
+import { motion } from "framer-motion";
+import { CheckCircle2, ShoppingCart, Star } from "lucide-react";
 
 const solutions = [
   {
@@ -17,6 +17,24 @@ const solutions = [
     description: "Une aide douce pour des nuits calmes et sereines.",
     image: "/enfant.jpg",
   },
+];
+
+const testimonials = [
+  {
+    name: "Marc L.",
+    text: "Enfin des nuits complètes sans réveiller ma compagne ! Un vrai bonheur.",
+    rating: 5
+  },
+  {
+    name: "Sophie D.",
+    text: "L'application est super simple et le son est d'une clarté incroyable sous l'oreiller.",
+    rating: 5
+  },
+  {
+    name: "Thomas B.",
+    text: "Idéal pour mes déplacements pro. Je ne m'en sépare plus.",
+    rating: 4
+  }
 ];
 
 const ThirdPageSection = () => {
@@ -96,15 +114,23 @@ const ThirdPageSection = () => {
           </motion.div>
         </div>
 
-        {/* --- SECTION PRIX CORRIGÉE --- */}
+        {/* --- SECTION PRIX ET AVIS --- */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white border-2 border-primary/20 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+          <div className="bg-white border-2 border-primary/20 rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden mb-12">
             <div className="absolute top-0 right-0 bg-primary text-white px-6 py-2 rounded-bl-2xl font-bold">
               OFFRE DE LANCEMENT
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
+                {/* ÉTOILES AJOUTÉES ICI */}
+                <div className="flex gap-1 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                  <span className="text-sm text-muted-foreground ml-2">(128 avis)</span>
+                </div>
+                
                 <h2 className="text-3xl font-bold mb-4">Votre Sonora Zen</h2>
                 <p className="text-muted-foreground mb-6">
                   Comprend l'appareil, l'accès illimité à l'application et la garantie satisfait ou remboursé de 30 jours.
@@ -120,11 +146,26 @@ const ThirdPageSection = () => {
                   <ShoppingCart className="group-hover:scale-110 transition-transform" />
                   COMMANDER MAINTENANT
                 </button>
-               <p className="text-center text-xs text-muted-foreground">
-  Livraison gratuite • Paiement 100% sécurisé
+                <p className="text-center text-xs text-muted-foreground">
+                  Livraison gratuite • Paiement 100% sécurisé
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* SECTION TÉMOIGNAGES CLIENTS */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-secondary/10 p-6 rounded-2xl border border-border/50 text-center italic text-sm">
+                <div className="flex justify-center gap-1 mb-3">
+                  {[...Array(t.rating)].map((_, index) => (
+                    <Star key={index} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                "{t.text}"
+                <p className="mt-3 font-semibold not-italic text-foreground">— {t.name}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -133,4 +174,3 @@ const ThirdPageSection = () => {
 };
 
 export default ThirdPageSection;
-        
