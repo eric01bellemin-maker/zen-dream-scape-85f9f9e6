@@ -17,7 +17,7 @@ import lifestyleImage from "@/assets/product-lifestyle.png";
 import productDevice from "@/assets/product-device.png";
 
 const specs = [
-  { icon: Volume2, label: "2 haut-parleurs à conduction osseuse" },
+  { icon: Volume2, label: "1 haut-parleur à conduction osseuse" },
   { icon: Bluetooth, label: "Bluetooth 5.3 + carte TF" },
   { icon: Battery, label: "400 mAh — jusqu'à 16h d'autonomie" },
   { icon: Moon, label: "Minuterie & arrêt progressif" },
