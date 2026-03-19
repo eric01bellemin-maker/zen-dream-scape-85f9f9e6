@@ -67,13 +67,6 @@ const ProductSheetSection = () => {
                 className="w-full h-auto object-cover"
               />
             </div>
-            <div className="rounded-xl md:rounded-2xl overflow-hidden bg-zen-cloud p-6 md:p-10 flex items-center justify-center">
-              <img
-                src={productDevice}
-                alt="Palet sonore Sonora Zen — vue détaillée du produit"
-                className="w-full max-w-[180px] md:max-w-[260px] drop-shadow-xl"
-              />
-            </div>
           </motion.div>
 
           {/* Product info */}
