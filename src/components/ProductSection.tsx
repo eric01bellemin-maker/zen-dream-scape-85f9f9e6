@@ -7,14 +7,14 @@ const products = [
     name: "Brume de Sommeil Zen",
     price: "24.90 €",
     description: "Une brume apaisante aux extraits de lavande et de camomille.",
-    image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=1974&auto=format&fit=crop",
+    image: "./brume.jpg", // <--- Remplace ici par ton image
   },
   {
     id: 2,
     name: "Masque de Nuit Soie",
     price: "19.50 €",
     description: "Un confort absolu pour vos yeux, 100% soie naturelle.",
-    image: "https://images.unsplash.com/photo-1635048424329-a9bfb146d7aa?q=80&w=1964&auto=format&fit=crop",
+    image: "./masque.jpg", // <--- Remplace ici par ton image
   },
 ];
 
