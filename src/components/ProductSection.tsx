@@ -70,9 +70,7 @@ const ProductSection = () => {
               </div>
             </div>
 
-            <Button className="w-full md:w-auto px-10 py-7 bg-slate-900 hover:bg-emerald-700 text-white text-lg rounded-2xl shadow-lg transition-all transform hover:-translate-y-1">
-              <ShoppingCart className="mr-3 h-6 w-6" /> Ajouter à ma chambre
-            </Button>
+           
           </div>
         </div>
       </div>
