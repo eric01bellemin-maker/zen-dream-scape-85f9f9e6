@@ -14,10 +14,10 @@ import {
   Check,
 } from "lucide-react";
 import lifestyleImage from "@/assets/product-lifestyle.png";
-import productDevice from "@/assets/product-device.png";
+
 
 const specs = [
-  { icon: Volume2, label: "2 haut-parleurs à conduction osseuse" },
+  { icon: Volume2, label: "1 haut-parleur à conduction osseuse" },
   { icon: Bluetooth, label: "Bluetooth 5.3 + carte TF" },
   { icon: Battery, label: "400 mAh — jusqu'à 16h d'autonomie" },
   { icon: Moon, label: "Minuterie & arrêt progressif" },
@@ -65,13 +65,6 @@ const ProductSheetSection = () => {
                 src={lifestyleImage}
                 alt="Sonora Zen posé sur des draps blancs dans une ambiance sereine"
                 className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="rounded-xl md:rounded-2xl overflow-hidden bg-zen-cloud p-6 md:p-10 flex items-center justify-center">
-              <img
-                src={productDevice}
-                alt="Palet sonore Sonora Zen — vue détaillée du produit"
-                className="w-full max-w-[180px] md:max-w-[260px] drop-shadow-xl"
               />
             </div>
           </motion.div>
