@@ -14,7 +14,7 @@ import {
   Check,
 } from "lucide-react";
 import lifestyleImage from "@/assets/product-lifestyle.png";
-import productDevice from "@/assets/product-device.png";
+
 
 const specs = [
   { icon: Volume2, label: "1 haut-parleur à conduction osseuse" },
