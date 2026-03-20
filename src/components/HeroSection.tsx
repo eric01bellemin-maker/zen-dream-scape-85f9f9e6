@@ -4,14 +4,14 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-between bg-[#0f172a] overflow-hidden">
       
-      {/* 1. L'IMAGE DE FOND (CORRIGÉE EN .PNG) */}
+      {/* 1. L'IMAGE DE FOND (CORRIGÉE : fond-zen.jpg) */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="Présentation du produit.png" 
+          src="fond-zen.jpg" 
           alt="Ambiance sereine Sonora Zen" 
           className="w-full h-full object-cover object-center"
         />
-        {/* Voile sombre pour la lisibilité */}
+        {/* Voile sombre pour la lisibilité du texte */}
         <div className="absolute inset-0 bg-black/40 z-10"></div>
       </div>
 
