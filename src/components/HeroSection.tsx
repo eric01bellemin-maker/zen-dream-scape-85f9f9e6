@@ -4,34 +4,30 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-between bg-[#0f172a] overflow-hidden">
       
-      {/* 1. IMAGE DE FOND - ESSAYONS SANS LE SLASH SI LE SLASH A ÉCHOUÉ */}
+      {/* 1. L'IMAGE DE FOND (D'ambiance) */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="4.jpg" 
-          alt="Ambiance Sonora Zen" 
+          src="Présentation du produit.jpg" 
+          alt="Ambiance sereine Sonora Zen" 
           className="w-full h-full object-cover object-center"
-          onError={(e) => {
-            // Petit script de secours si l'image 4.jpg est introuvable
-            e.currentTarget.src = "Présentation du produit.jpg";
-          }}
         />
-        {/* Voile sombre pour garantir la lisibilité du texte blanc */}
+        {/* Voile sombre pour que le texte reste bien blanc et lisible */}
         <div className="absolute inset-0 bg-black/40 z-10"></div>
       </div>
 
-      {/* 2. TEXTE CENTRAL */}
+      {/* 2. ZONE DE TEXTE CENTRÉE */}
       <div className="container mx-auto px-6 relative z-20 flex-grow flex items-center justify-center pt-24 pb-12">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 drop-shadow-2xl">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 drop-shadow-lg">
             Sonora Zen
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
+          <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-0 max-w-2xl mx-auto drop-shadow-md">
             L'innovation sonore pour des nuits profondes. Retrouvez la sérénité grâce à la conduction osseuse.
           </p>
         </div>
       </div>
 
-      {/* 3. BOUTON DISCRET EN BAS */}
+      {/* 3. LE PETIT BOUTON EN BAS */}
       <div className="relative z-20 w-full text-center pb-12">
         <a 
           href="#video" 
