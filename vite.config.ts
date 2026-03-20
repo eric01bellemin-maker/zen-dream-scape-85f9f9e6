@@ -4,9 +4,10 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  
+  base: "/zen-dream-scape-85f9f9e6/",
   server: {
-    host: "::",
+    // ... le reste ne change pas
+      host: "::",
     port: 8080,
     hmr: {
       overlay: false,
