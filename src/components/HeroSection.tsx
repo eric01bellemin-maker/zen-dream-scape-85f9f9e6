@@ -5,10 +5,10 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-between bg-background overflow-hidden">
       
-      {/* 1. L'IMAGE DE FOND (Garde ton image actuelle) */}
+      {/* 1. L'IMAGE DE FOND (CORRIGÉE avec un /) */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="4.jpg" 
+          src="/4.jpg" // J'ai ajouté un / ici
           alt="Ambiance sereine Sonora Zen" 
           className="w-full h-full object-cover object-center"
         />
@@ -16,7 +16,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/50 z-10"></div>
       </div>
 
-      {/* 2. ZONE DE TEXTE (Centrée et remontée pour ne pas être cachée par le menu) */}
+      {/* 2. ZONE DE TEXTE (Centrée et remontée) */}
       <div className="container mx-auto px-6 relative z-20 flex-grow flex items-center justify-center pt-24 pb-12">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 drop-shadow-lg">
@@ -28,10 +28,10 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* 3. LE NOUVEAU BOUTON (En bas, plus petit, avec ancre vers la vidéo) */}
+      {/* 3. LE BOUTON (En bas, plus petit, avec ancre vers la vidéo) */}
       <div className="relative z-20 w-full text-center pb-12">
         <a 
-          href="#video" // C'est ici que l'ancre est définie
+          href="#video" 
           className="inline-flex items-center gap-2.5 bg-[#26A69A] hover:bg-[#26A69A]/90 text-white px-6 py-2.5 rounded-full font-semibold text-sm shadow-lg transition-all hover:scale-105 active:scale-95"
         >
           <Play className="h-4 w-4" />
