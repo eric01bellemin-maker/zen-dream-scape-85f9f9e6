@@ -14,7 +14,7 @@ const HeroSection = () => {
         {/* Ta nouvelle Image de Bannière Principale */}
         <div className="relative max-w-5xl mx-auto aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl mb-20 border border-gray-100 bg-gray-50">
           <img 
-            src="/background-final.jpg" 
+           src="/fond-zen.jpg"
             alt="Sommeil profond ZenDream" 
             className="w-full h-full object-cover"
           />
