@@ -14,7 +14,7 @@ const HeroSection = () => {
         {/* Ta Vidéo Principale */}
         <div className="relative max-w-5xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl mb-20 border border-gray-100 bg-gray-50">
           <video 
-            src="/video.mp4" 
+         src="/videos/video.mp4" 
             autoPlay 
             loop 
             muted 
