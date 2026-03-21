@@ -16,14 +16,14 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // CORRECTION : Utiliser des ancres (#) pour défiler sur la même page
-  const navLinks = [
-    { name: "Accueil", href: "#" },
-    { name: "Produit", href: "#produit" }, // Pointe vers une section avec id="produit"
-    { name: "Sons", href: "#sons" },       // Pointe vers une section avec id="sons"
-    { name: "Témoignages", href: "#temoignages" }, // Pointe vers une section avec id="temoignages"
-    { name: "FAQ", href: "#faq" },         // Pointe vers une section avec id="faq"
-  ];
+ // Extrait de ce que doit être ta Navbar pour ne plus avoir de 404
+const navLinks = [
+  { name: "Accueil", href: "#" },
+  { name: "Produit", href: "#produit" }, 
+  { name: "Sons", href: "#sons" },
+  { name: "Témoignages", href: "#temoignages" },
+  { name: "FAQ", href: "#faq" },
+];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
