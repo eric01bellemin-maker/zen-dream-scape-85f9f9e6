@@ -1,14 +1,5 @@
 import { useState } from "react";
-import { 
-  Check, 
-  Bluetooth, 
-  MapPin, 
-  Search, 
-  Tag, 
-  Truck, 
-  ShieldCheck, 
-  RefreshCw 
-} from "lucide-react";
+import { Check, Bluetooth, MapPin, Search } from "lucide-react";
 
 const productVariants = [
   {
@@ -35,155 +26,71 @@ const ProductPresentation = () => {
   return (
     <section id="produit" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        
-        {/* TITRE ET INTRODUCTION */}
         <div className="text-center mb-16 max-w-3xl mx-auto flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4 uppercase tracking-tighter">
             Votre Compagnon de Nuit
           </h2>
-          
           <div className="w-20 h-1.5 bg-[#26A69A] rounded-full mb-8"></div>
-          
           <p className="text-xl md:text-2xl font-semibold text-slate-800 mb-6 italic tracking-wide">
             Technologie par Conduction Osseuse
           </p>
-          
-          <div className="max-w-2xl mb-10">
+          <div className="max-w-2xl">
             <p className="text-lg text-slate-600 leading-relaxed font-medium">
               {selectedVariant.textDescription}
             </p>
           </div>
-
-          {/* BLOC PRIX ET RÉASSURANCE */}
-          <div className="bg-slate-50 border border-slate-100 rounded-[40px] p-8 flex flex-col items-center shadow-sm w-full max-w-lg">
-            <div className="flex items-center gap-2 text-[#26A69A] font-bold text-xs uppercase tracking-[0.2em] mb-3">
-              <Tag size={14} />
-              Offre de lancement
-            </div>
-            
-            <div className="flex items-baseline gap-4 mb-8">
-              <span className="text-5xl font-black text-slate-900 tracking-tighter">
-                35,00€
-              </span>
-              <span className="text-xl text-slate-400 line-through decoration-red-500/40 font-bold">
-                40,00€
-              </span>
-            </div>
-            
-            {/* LIGNE DE RÉASSURANCE (TRUST BADGES) */}
-            <div className="grid grid-cols-3 gap-2 w-full pt-6 border-t border-slate-200">
-              <div className="flex flex-col items-center text-center">
-                <Truck size={20} className="text-[#26A69A] mb-2" />
-                <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">Livraison<br/>Gratuite</span>
-              </div>
-              <div className="flex flex-col items-center text-center border-x border-slate-200">
-                <ShieldCheck size={20} className="text-[#26A69A] mb-2" />
-                <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">Paiement<br/>Sécurisé</span>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <RefreshCw size={20} className="text-[#26A69A] mb-2" />
-                <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">Garantie<br/>30 Jours</span>
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* SECTION DOUBLE VISUEL : PRODUIT + TECHNIQUE */}
         <div className="grid md:grid-cols-2 gap-8 items-stretch mb-20 max-w-6xl mx-auto">
-          
-          {/* BLOC A : LE PRODUIT */}
           <div className="flex flex-col bg-slate-50/50 rounded-[40px] border border-slate-100 overflow-hidden shadow-sm">
             <div className="flex-1 flex items-center justify-center p-6">
-              <img 
-                src={selectedVariant.mainImageUrl} 
-                alt="Palet Sonora Zen" 
-                className="w-full h-auto rounded-3xl object-contain transition-all duration-500 shadow-sm"
-              />
+              <img src={selectedVariant.mainImageUrl} alt="Sonora Zen" className="w-full h-auto rounded-3xl object-contain shadow-sm" />
             </div>
-            
             <div className="bg-white p-8 border-t border-slate-50 flex items-center justify-center">
               <div className="flex gap-6">
                 {productVariants.map(variant => (
-                  <button
-                    key={variant.id}
-                    onClick={() => setSelectedVariant(variant)}
-                    className={`px-10 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 ${variant.buttonClass} text-white
-                      ${selectedVariant.id === variant.id ? 'ring-4 ring-offset-2 scale-105 shadow-lg' : 'opacity-60 hover:opacity-100'}`}
-                  >
+                  <button key={variant.id} onClick={() => setSelectedVariant(variant)} className={`px-10 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all ${variant.buttonClass} text-white ${selectedVariant.id === variant.id ? 'ring-4 ring-offset-2 scale-105 shadow-lg' : 'opacity-60'}`}>
                     {variant.colorName}
                   </button>
                 ))}
               </div>
             </div>
           </div>
-
-          {/* BLOC B : TECHNIQUE ET CONNECTIVITÉ */}
           <div className="flex flex-col bg-[#0f172a] rounded-[40px] overflow-hidden shadow-xl text-white">
-            <div className="p-10 text-center">
-               <h3 className="text-xl font-serif tracking-[0.2em] uppercase opacity-90">Bluetooth Connectivity</h3>
-            </div>
+            <div className="p-10 text-center"><h3 className="text-xl font-serif tracking-[0.2em] uppercase opacity-90">Bluetooth Connectivity</h3></div>
             <div className="flex-1 flex items-center justify-center px-8">
-              <img 
-                src={selectedVariant.handImageUrl} 
-                alt="Usage Sonora Zen" 
-                className="w-full h-auto rounded-3xl object-cover"
-              />
+              <img src={selectedVariant.handImageUrl} alt="Usage" className="w-full h-auto rounded-3xl object-cover" />
             </div>
             <div className="p-10 flex items-center gap-6 bg-slate-900/50">
-                <div className="p-4 bg-[#26A69A]/20 rounded-full">
-                  <Bluetooth className="w-8 h-8 text-[#26A69A] animate-pulse"/>
-                </div>
-                <p className="text-sm leading-relaxed text-slate-300 font-medium">
-                    Puce Bluetooth 5.4 intégrée pour une connexion stable, 
-                    une latence ultra-faible et une consommation d'énergie réduite.
-                </p>
+              <div className="p-4 bg-[#26A69A]/20 rounded-full"><Bluetooth className="w-8 h-8 text-[#26A69A] animate-pulse"/></div>
+              <p className="text-sm text-slate-300 font-medium">Puce Bluetooth 5.4 intégrée pour une connexion stable et une latence ultra-faible.</p>
             </div>
           </div>
         </div>
 
-        {/* CARACTÉRISTIQUES ET COFFRET */}
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div className="p-10 bg-white rounded-3xl border border-slate-100 shadow-sm">
             <h4 className="text-lg font-black text-slate-900 mb-8 uppercase tracking-widest border-b pb-4">Caractéristiques</h4>
             <div className="space-y-6">
-              {[
-                { Icon: Search, text: "1 haut-parleur à conduction osseuse" },
-                { Icon: Bluetooth, text: "Bluetooth 5.3 + support carte TF" },
-                { Icon: MapPin, text: "Batterie 400 mAh — 16h d'autonomie" },
-                { Icon: Search, text: "Minuterie & arrêt progressif intelligent" },
-                { Icon: Bluetooth, text: "Recharge USB-C ultra-rapide" }
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-4 group">
-                  <item.Icon className="w-5 h-5 text-[#26A69A] group-hover:scale-110 transition-transform" />
-                  <p className="text-sm font-medium text-slate-600">{item.text}</p>
-                </div>
+              {[ { Icon: Search, text: "1 haut-parleur à conduction osseuse" }, { Icon: Bluetooth, text: "Bluetooth 5.3 + support carte TF" }, { Icon: MapPin, text: "Batterie 400 mAh — 16h d'autonomie" } ].map((item, i) => (
+                <div key={i} className="flex items-center gap-4"><item.Icon className="w-5 h-5 text-[#26A69A]" /><p className="text-sm font-medium text-slate-600">{item.text}</p></div>
               ))}
             </div>
           </div>
-
           <div className="p-10 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm">
             <h4 className="text-lg font-black text-slate-900 mb-8 uppercase tracking-widest border-b pb-4">Dans le coffret</h4>
             <div className="grid gap-3">
-              {[
-                "1x Palet sonore Sonora Zen",
-                "1x Câble de recharge USB-C",
-                "1x Guide d'utilisation",
-                "1x Pochette de protection"
-              ].map((item, i) => (
+              {["1x Palet Sonora Zen", "1x Câble USB-C", "1x Guide d'utilisation"].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-100">
-                  <div className="bg-[#26A69A] p-1 rounded-full">
-                    <Check className="w-3 h-3 text-white" />
-                  </div>
+                  <div className="bg-[#26A69A] p-1 rounded-full"><Check className="w-3 h-3 text-white" /></div>
                   <span className="text-sm font-bold text-slate-700">{item}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
 };
-
 export default ProductPresentation;
