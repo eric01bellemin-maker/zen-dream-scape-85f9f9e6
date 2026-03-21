@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import ProductInAction from "@/components/ProductInAction";
-// ON UTILISE LE NOM EXACT DU FICHIER : SoundsSection
 import SoundAmbiances from "@/components/SoundsSection"; 
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
@@ -14,23 +13,23 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       
-      {/* C'est ici que l'on crée les ancres pour que les boutons fonctionnent */}
-      <div id="produit">
+      {/* Ces IDs sont CRITIQUES pour éviter les 404. Ils disent au bouton où aller sur la page */}
+      <section id="produit">
         <BenefitsSection />
         <ProductInAction />
-      </div>
+      </section>
       
-      <div id="sons">
+      <section id="sons">
         <SoundAmbiances />
-      </div>
+      </section>
 
-      <div id="temoignages">
+      <section id="temoignages">
         <TestimonialsSection />
-      </div>
+      </section>
 
-      <div id="faq">
+      <section id="faq">
         <FAQSection />
-      </div>
+      </section>
 
       <Footer />
     </main>
