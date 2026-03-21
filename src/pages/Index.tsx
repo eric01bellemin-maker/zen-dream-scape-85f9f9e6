@@ -1,12 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import BenefitsSection from "@/components/BenefitsSection";
-import ProductInAction from "@/components/ProductInAction"; // Importé ici
-import SoundsSection from "@/components/SoundsSection"; 
-import ProductPresentation from "@/components/ProductPresentation";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
+// Supprime les imports des composants qui affichent des captures d'écran
+// Importe tes vraies sections si elles existent :
+// import BenefitsSection from "@/components/BenefitsSection";
+// import SoundsSection from "@/components/SoundsSection";
+// ...
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,16 +12,12 @@ const Index = () => {
     <main className="min-h-screen bg-[#f0f9ff]">
       <Navbar />
       <HeroSection />
-      <BenefitsSection />
       
-      {/* ON AJOUTE LA SECTION ICI POUR QU'ELLE S'AFFICHE */}
-      <ProductInAction /> 
+      {/* Affiche ici tes vraies sections de contenu, pas des images */}
+      {/* <BenefitsSection /> */}
+      {/* <SoundsSection /> */}
+      {/* ... */}
       
-      <SoundsSection />
-      <ProductPresentation />
-      <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
       <Footer />
     </main>
   );
