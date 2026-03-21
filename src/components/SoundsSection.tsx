@@ -1,74 +1,105 @@
 import { useState, useRef } from "react";
 import { Play, Pause, Volume2 } from "lucide-react";
-import { Button } from "./ui/button";
 
-const SoundsSection = () => {
+const ambiances = [
+  {
+    id: "oiseaux",
+    title: "Chant des Oiseaux",
+    audioSrc: "sounds/birds.mp3",  // Correspond à ton fichier birds.mp3
+    imageSrc: "oiseaux.jpg",       // Correspond à ton fichier oiseaux.jpg
+  },
+  {
+    id: "ruisseau",
+    title: "Ruisseau Paisible",
+    audioSrc: "sounds/river.mp3",  // Correspond à ton fichier river.mp3
+    imageSrc: "riviere.jpg",       // Correspond à ton fichier riviere.jpg
+  },
+  {
+    id: "vagues",
+    title: "Bruit des Vagues",
+    audioSrc: "sounds/waves.mp3",  // Correspond à ton fichier waves.mp3
+    imageSrc: "vagues.jpg",        // Correspond à ton fichier vagues.jpg
+  },
+  {
+    id: "vent",
+    title: "Souffle du Vent",
+    audioSrc: "sounds/wind.mp3",   // Correspond à ton fichier wind.mp3
+    imageSrc: "vent.jpg",          // Correspond à ton fichier vent.jpg
+  }
+];
+
+const SoundAmbiances = () => {
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const sounds = [
-    { id: "oiseaux", name: "Chant des Oiseaux", file: "/sons/oiseaux.mp3" },
-    { id: "riviere", name: "Ruisseau Paisible", file: "/sons/riviere.mp3" },
-    { id: "pluie", name: "Pluie Douce", file: "/sons/pluie.mp3" },
-    { id: "foret", name: "Ambiance Forêt", file: "/sons/foret.mp3" },
-  ];
-
-  const togglePlay = (id: string, file: string) => {
-    if (playingId === id) {
+  const toggleSound = (ambiance: typeof ambiances[0]) => {
+    // Si on clique sur le son déjà en cours, on l'arrête
+    if (playingId === ambiance.id) {
       audioRef.current?.pause();
       setPlayingId(null);
     } else {
-      if (audioRef.current) {
-        audioRef.current.pause();
+      // Sinon, on charge le nouveau son
+      if (!audioRef.current) {
+        audioRef.current = new Audio();
       }
-      audioRef.current = new Audio(file);
+      audioRef.current.src = ambiance.audioSrc;
       audioRef.current.loop = true;
       audioRef.current.play();
-      setPlayingId(id);
+      setPlayingId(ambiance.id);
     }
   };
 
   return (
-    <section id="sounds" className="py-24 bg-white font-sans">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 tracking-tighter text-black">
-          NOS AMBIANCES SONORES
-        </h2>
-        <p className="text-center text-gray-500 mb-16 max-w-2xl mx-auto uppercase tracking-widest text-sm">
-          Une immersion totale pour un endormissement rapide
-        </p>
+    <section id="sons" className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        
+        {/* EN-TÊTE */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-6">
+            NOS AMBIANCES SONORES
+          </h2>
+          <p className="text-slate-500 uppercase tracking-[0.3em] text-sm font-semibold">
+            UNE IMMERSION TOTALE POUR UN ENDORMISSEMENT RAPIDE
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          {sounds.map((sound) => (
+        {/* GRILLE DES CARTES */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          {ambiances.map((item) => (
             <div 
-              key={sound.id} 
-              className={`p-8 rounded-[2rem] transition-all duration-300 flex flex-col items-center border ${
-                playingId === sound.id ? "bg-black text-white border-black shadow-2xl scale-105" : "bg-gray-50 text-black border-gray-100 hover:border-gray-300"
-              }`}
+              key={item.id}
+              className="bg-[#f8f9fa] rounded-[50px] p-10 flex flex-col items-center shadow-sm border border-slate-50 transition-all hover:shadow-md"
             >
-              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${
-                playingId === sound.id ? "bg-white text-black" : "bg-black text-white"
-              }`}>
-                <Volume2 size={28} />
+              {/* CERCLE NOIR AVEC ICÔNE */}
+              <div className="w-24 h-24 bg-black rounded-full flex items-center justify-center mb-8 shadow-xl">
+                <Volume2 className="text-white w-10 h-10" />
               </div>
-              
-              <h3 className="font-bold text-lg mb-8 tracking-tight">{sound.name}</h3>
-              
-              <Button 
-                onClick={() => togglePlay(sound.id, sound.file)}
-                variant="ghost"
-                className={`rounded-full w-full py-6 border-2 ${
-                  playingId === sound.id 
-                    ? "bg-white text-black hover:bg-gray-100 border-white" 
-                    : "bg-transparent text-black border-black hover:bg-black hover:text-white"
-                }`}
+
+              {/* TITRE DU SON */}
+              <h3 className="text-2xl font-serif text-slate-800 mb-10">
+                {item.title}
+              </h3>
+
+              {/* BOUTON ÉCOUTER / PAUSE */}
+              <button
+                onClick={() => toggleSound(item)}
+                className={`w-full max-w-sm py-5 rounded-full border-2 border-black flex items-center justify-center gap-4 transition-all font-bold tracking-[0.2em] text-sm
+                  ${playingId === item.id 
+                    ? 'bg-black text-white' 
+                    : 'bg-transparent text-black hover:bg-slate-100'}`}
               >
-                {playingId === sound.id ? (
-                  <><Pause className="mr-2 h-5 w-5 fill-current" /> PAUSE</>
+                {playingId === item.id ? (
+                  <>
+                    <Pause className="w-5 h-5 fill-current" />
+                    PAUSE
+                  </>
                 ) : (
-                  <><Play className="mr-2 h-5 w-5 fill-current" /> ÉCOUTER</>
+                  <>
+                    <Play className="w-5 h-5 fill-current" />
+                    ÉCOUTER
+                  </>
                 )}
-              </Button>
+              </button>
             </div>
           ))}
         </div>
@@ -77,4 +108,4 @@ const SoundsSection = () => {
   );
 };
 
-export default SoundsSection;
+export default SoundAmbiances;
