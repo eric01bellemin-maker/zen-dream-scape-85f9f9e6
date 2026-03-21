@@ -26,7 +26,6 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    // On remplace le dégradé par le bleu uni pour que les bulles blanches ressortent bien
     <section id="faq" className="py-24 bg-[#f0f9ff]"> 
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="text-center mb-16">
@@ -41,7 +40,6 @@ const FAQSection = () => {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              // On passe à bg-white/90 pour un peu plus de contraste
               className="border-none bg-white/90 backdrop-blur-sm rounded-[25px] px-6 shadow-sm hover:shadow-md transition-all duration-300"
             >
               <AccordionTrigger className="text-left font-bold text-slate-600 hover:no-underline py-6">
@@ -57,3 +55,5 @@ const FAQSection = () => {
     </section>
   );
 };
+
+export default FAQSection;
