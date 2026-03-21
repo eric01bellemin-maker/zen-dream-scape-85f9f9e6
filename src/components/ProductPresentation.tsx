@@ -6,15 +6,17 @@ const productVariants = [
     id: "grey",
     colorName: "Gris Nuage",
     mainImageUrl: "palet-gris.jpg",
+    // --- 1. AJOUT DE L'IMAGE TECHNIQUE DANS LES DONNÉES ---
+    handImageUrl: "main-grise.jpg", // L'image de la main grise
     textDescription: "Le Sonora Zen Gris diffuse des ondes sonores apaisantes à travers votre oreiller pour une nuit de sérénité absolue.",
-    bgClass: "bg-[#f8fafc]"
   },
   {
     id: "blue",
     colorName: "Bleu Givré",
     mainImageUrl: "palet-bleu.jpg",
+    // --- 1. AJOUT DE L'IMAGE TECHNIQUE DANS LES DONNÉES ---
+    handImageUrl: "main-bleue.jpg", // L'image de la main bleue
     textDescription: "Le Sonora Zen Bleu vous enveloppe dans une bulle de confort acoustique pour un endormissement profond.",
-    bgClass: "bg-[#f0f9ff]"
   }
 ];
 
@@ -22,7 +24,7 @@ const ProductPresentation = () => {
   const [selectedVariant, setSelectedVariant] = useState(productVariants[0]);
 
   return (
-    <section id="produit" className="py-24 bg-[#f0f9ff]"> {/* Fond bleu très pâle comme les sons */}
+    <section id="produit" className="py-24 bg-[#f0f9ff]"> {/* Fond bleu très pâle */}
       <div className="container mx-auto px-6">
         
         {/* EN-TÊTE APPAISANT */}
@@ -31,7 +33,7 @@ const ProductPresentation = () => {
             Votre Compagnon de Nuit
           </h2>
           <div className="w-16 h-1 bg-[#26A69A]/30 mx-auto rounded-full mb-6"></div>
-          <p className="text-lg text-slate-400 font-medium italic max-w-2xl mx-auto">
+          <p className="text-lg text-slate-400 font-medium italic max-w-2xl mx-auto leading-relaxed">
             Technologie par Conduction Osseuse : Le silence, enfin partagé.
           </p>
         </div>
@@ -79,7 +81,12 @@ const ProductPresentation = () => {
                 Bluetooth Connectivity
               </h3>
               <div className="rounded-[30px] overflow-hidden border-4 border-white shadow-inner mb-8">
-                 <img src="main-grise.jpg" alt="Usage" className="w-full h-64 object-cover" />
+                 {/* --- 2. UTILISATION DE L'IMAGE DE LA VARIANTE SÉLECTIONNÉE --- */}
+                 <img 
+                    src={selectedVariant.handImageUrl} // <= ICI, on utilise selectedVariant.handImageUrl
+                    alt={`Usage du Sonora Zen ${selectedVariant.colorName}`} 
+                    className="w-full h-64 object-cover" 
+                 />
               </div>
             </div>
             
