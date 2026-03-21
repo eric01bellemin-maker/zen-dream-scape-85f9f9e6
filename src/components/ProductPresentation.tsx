@@ -5,16 +5,16 @@ const productVariants = [
   {
     id: "grey",
     colorName: "Gris",
-    mainImageUrl: "palet-gris.png",
-    handImageUrl: "main-grise.jpg",
+    mainImageUrl: "/palet-gris.jpg", // Le "/" au début est important
+    handImageUrl: "/usage-gris.jpg", // Adapté au format JPG
     textDescription: "Le Sonora Zen Gris diffuse des ondes sonores apaisantes à travers votre oreiller pour une nuit de sérénité.",
     buttonClass: "bg-slate-500 hover:bg-slate-600 ring-slate-200"
   },
   {
     id: "blue",
     colorName: "Bleu",
-    mainImageUrl: "palet-bleu.png",
-    handImageUrl: "main-bleue.jpg",
+    mainImageUrl: "/palet-bleu.jpg",
+    handImageUrl: "/usage-bleu.jpg", // Adapté au format JPG
     textDescription: "Le Sonora Zen Bleu diffuse des ondes sonores apaisantes à travers votre oreiller pour une nuit de sérénité.",
     buttonClass: "bg-[#26A69A] hover:bg-[#1f8a7f] ring-teal-100"
   },
