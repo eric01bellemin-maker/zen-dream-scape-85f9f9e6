@@ -1,8 +1,9 @@
 import { Play } from "lucide-react";
 
-const ambiances = [
- const ambiances = [
+const ambiances = [ // Une seule fois suffit !
   {
+    title: "Chant des Oiseaux",
+// ... la suite reste la même
     title: "Chant des Oiseaux",
     image: "oiseaux.jpg",
     audio: "/audio/oiseaux.mp3",
