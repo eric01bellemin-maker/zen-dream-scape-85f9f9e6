@@ -10,8 +10,8 @@ const ambiances = [
   },
   {
     title: "Bruit des Vagues",
-    image: "mer.jpg",
-    audio: "sounds/waves.mp3", // Ajout du dossier sounds/
+    image: "vagues.jpg", // <--- Remplace "mer.jpg" par "vagues.jpg"
+    audio: "sounds/waves.mp3",
     id: "vagues"
   },
   {
