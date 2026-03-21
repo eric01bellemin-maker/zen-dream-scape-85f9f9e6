@@ -5,25 +5,25 @@ const ambiances = [
   {
     title: "Chant des Oiseaux",
     image: "oiseaux.jpg",
-    audio: "/audio/oiseaux.mp3",
+    audio: "/birds.mp3", // Nom exact dans ton dossier
     id: "oiseaux"
   },
   {
     title: "Bruit des Vagues",
-    image: "vagues.jpg",
-    audio: "/audio/vagues.mp3",
+    image: "mer.jpg",     // Corrigé selon ton image "mer.jpg"
+    audio: "/waves.mp3", // Nom exact dans ton dossier
     id: "vagues"
   },
   {
     title: "Murmure de la Rivière",
     image: "riviere.jpg",
-    audio: "/audio/riviere.mp3",
+    audio: "/river.mp3", // Nom exact dans ton dossier
     id: "riviere"
   },
   {
     title: "Souffle du Vent",
     image: "vent.jpg",
-    audio: "/audio/vent.mp3",
+    audio: "/wind.mp3",  // Nom exact dans ton dossier
     id: "vent"
   }
 ];
