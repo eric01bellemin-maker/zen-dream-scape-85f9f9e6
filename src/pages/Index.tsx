@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import VideoSection from "@/components/VideoSection"; // On l'importe ici
-import ProductSection from "@/components/ProductSection";
+import ProductPresentation from "@/components/ProductPresentation";
 import ProductSheetSection from "@/components/ProductSheetSection";
 import SoundsSection from "@/components/SoundsSection";
 import BenefitsSection from "@/components/BenefitsSection";
