@@ -19,6 +19,7 @@ const productVariants = [
     buttonClass: "bg-[#26A69A] hover:bg-[#1f8a7f] ring-teal-100"
   }
 ];
+
 const ProductPresentation = () => {
   const [selectedVariant, setSelectedVariant] = useState(productVariants[0]);
 
@@ -45,10 +46,10 @@ const ProductPresentation = () => {
           </div>
         </div>
 
-       {/* SECTION DOUBLE VISUEL : PRODUIT + TECHNIQUE */}
+        {/* SECTION DOUBLE VISUEL : PRODUIT + TECHNIQUE */}
         <div className="grid md:grid-cols-2 gap-8 items-stretch mb-20 max-w-6xl mx-auto">
           
-          {/* BLOC A : LE PRODUIT (Optimisé pour tes JPG 1000x1000) */}
+          {/* BLOC A : LE PRODUIT */}
           <div className="flex flex-col bg-slate-50/50 rounded-[40px] border border-slate-100 overflow-hidden shadow-sm">
             <div className="flex-1 flex items-center justify-center p-6">
               <img 
@@ -58,7 +59,7 @@ const ProductPresentation = () => {
               />
             </div>
             
-            {/* BOUTONS DE COULEUR (Comme sur ton image impeccable) */}
+            {/* BOUTONS DE COULEUR */}
             <div className="bg-white p-8 border-t border-slate-50 flex items-center justify-center">
               <div className="flex gap-6">
                 {productVariants.map(variant => (
@@ -75,7 +76,7 @@ const ProductPresentation = () => {
             </div>
           </div>
 
-          {/* BLOC B : TECHNIQUE ET CONNECTIVITÉ (Le bloc bleu nuit) */}
+          {/* BLOC B : TECHNIQUE ET CONNECTIVITÉ */}
           <div className="flex flex-col bg-[#0f172a] rounded-[40px] overflow-hidden shadow-xl text-white">
             <div className="p-10 text-center">
                <h3 className="text-xl font-serif tracking-[0.2em] uppercase opacity-90">Bluetooth Connectivity</h3>
