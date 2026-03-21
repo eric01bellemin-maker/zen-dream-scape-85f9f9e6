@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import ProductInAction from "@/components/ProductInAction";
-import SoundAmbiances from "@/components/SoundsSection"; 
+import SoundAmbiances from "@/components/SoundsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
