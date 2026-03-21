@@ -1,96 +1,69 @@
-import { useState, useRef } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play } from "lucide-react";
 
 const ambiances = [
   {
-    id: "birds",
     title: "Chant des Oiseaux",
-    audioSrc: "sounds/birds.mp3",
-    imageSrc: "oiseaux.jpg", // Correspond à ton GitHub
+    image: "oiseaux.jpg", // Assure-toi que le nom du fichier image est correct
+    id: "oiseaux"
   },
   {
-    id: "waves",
     title: "Bruit des Vagues",
-    audioSrc: "sounds/waves.mp3",
-    imageSrc: "vagues.jpg", // Correspond à ton GitHub
+    image: "vagues.jpg",
+    id: "vagues"
   },
   {
-    id: "river",
     title: "Murmure de la Rivière",
-    audioSrc: "sounds/river.mp3",
-    imageSrc: "riviere.jpg", // Correspond à ton GitHub
+    image: "riviere.jpg",
+    id: "riviere"
   },
   {
-    id: "wind",
     title: "Souffle du Vent",
-    audioSrc: "sounds/wind.mp3",
-    imageSrc: "vent.jpg", // Correspond à ton GitHub
+    image: "vent.jpg",
+    id: "vent"
   }
 ];
 
 const SoundAmbiances = () => {
-  const [playingId, setPlayingId] = useState<string | null>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  const toggleSound = (ambiance: typeof ambiances[0]) => {
-    if (playingId === ambiance.id) {
-      audioRef.current?.pause();
-      setPlayingId(null);
-    } else {
-      if (!audioRef.current) {
-        audioRef.current = new Audio();
-      }
-      audioRef.current.src = ambiance.audioSrc;
-      audioRef.current.loop = true;
-      audioRef.current.play();
-      setPlayingId(ambiance.id);
-    }
-  };
-
   return (
-    <section id="sons" className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="sons" className="py-24 bg-[#f0f9ff]"> {/* Fond Bleu Ciel très Pâle */}
+      <div className="container mx-auto px-6 text-center">
         
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-6 uppercase">
-            Nos Ambiances Sonores
-          </h2>
-          <p className="text-slate-500 uppercase tracking-[0.3em] text-sm font-semibold">
-            Une immersion totale pour un endormissement rapide
-          </p>
-        </div>
+        {/* TITRE DOUX ET APPAISANT */}
+        <h2 className="text-3xl md:text-4xl font-sans font-semibold text-slate-500 mb-2 uppercase tracking-tight">
+          Nos Ambiances Sonores
+        </h2>
+        
+        {/* SOUS-TITRE DOUX */}
+        <p className="mt-1 mb-16 text-sm md:text-base font-medium text-slate-400 tracking-wide max-w-lg mx-auto leading-relaxed">
+          Une immersion totale pour un endormissement rapide
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          {ambiances.map((item) => (
+        {/* GRILLE DE CARTES HARMONIEUSES */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {ambiances.map((ambiance) => (
             <div 
-              key={item.id}
-              className="bg-[#f8f9fa] rounded-[50px] p-8 flex flex-col items-center shadow-sm border border-slate-50 transition-all hover:shadow-md"
+              key={ambiance.id} 
+              className="bg-[#e0f2fe] p-8 rounded-[40px] shadow-inner border border-[#d0eafc] flex flex-col items-center group transition-all duration-300 hover:shadow-lg hover:bg-[#d0eafc]"
             >
-              {/* IMAGE D'AMBIANCE */}
-              <div className="w-full h-64 mb-8 overflow-hidden rounded-[30px] shadow-inner">
+              
+              {/* IMAGE RONDE "BULLE" */}
+              <div className="w-full aspect-square rounded-full overflow-hidden mb-8 border-4 border-white shadow-lg shadow-blue-900/10">
                 <img 
-                  src={item.imageSrc} 
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  src={ambiance.image} 
+                  alt={ambiance.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
-              <h3 className="text-2xl font-serif text-slate-800 mb-8 font-bold">
-                {item.title}
+              {/* TITRE DE L'AMBIANCE DOUX */}
+              <h3 className="text-lg font-sans font-bold text-slate-600 mb-8 uppercase tracking-widest text-center h-12 flex items-center justify-center">
+                {ambiance.title}
               </h3>
 
-              <button
-                onClick={() => toggleSound(item)}
-                className={`w-full max-w-sm py-5 rounded-full border-2 border-black flex items-center justify-center gap-4 transition-all font-bold tracking-[0.2em] text-sm
-                  ${playingId === item.id 
-                    ? 'bg-black text-white' 
-                    : 'bg-transparent text-black hover:bg-slate-100'}`}
-              >
-                {playingId === item.id ? (
-                  <><Pause className="w-5 h-5 fill-current" /> PAUSE</>
-                ) : (
-                  <><Play className="w-5 h-5 fill-current" /> ÉCOUTER</>
-                )}
+              {/* BOUTON ÉPURÉ ET CLAIR */}
+              <button className="flex items-center gap-3 bg-white border border-slate-300 text-slate-500 px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all hover:bg-slate-50 active:scale-95 group-hover:border-[#26A69A]/30 group-hover:text-[#26A69A]">
+                <Play size={16} className="text-[#26A69A]"/>
+                Écouter
               </button>
             </div>
           ))}
