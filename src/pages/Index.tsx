@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import ProductInAction from "@/components/ProductInAction";
-import SoundAmbiances from "@/components/SoundAmbiances"; // Vérifie bien le nom du fichier
+import SoundAmbiances from "@/components/SoundsSection"; // CORRIGÉ ICI : SoundsSection au lieu de SoundAmbiances
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -13,7 +13,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       
-      {/* C'est ici qu'on donne les "noms" (ID) pour que les boutons fonctionnent */}
+      {/* Les IDs ici permettent aux liens de fonctionner */}
       <div id="produit">
         <BenefitsSection />
         <ProductInAction />
