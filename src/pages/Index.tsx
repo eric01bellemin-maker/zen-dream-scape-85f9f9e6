@@ -1,33 +1,24 @@
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import ProductPresentation from "@/components/ProductPresentation";
-import SoundsSection from "@/components/SoundsSection";
+import Hero from "@/components/Hero";
 import BenefitsSection from "@/components/BenefitsSection";
+import ProductPresentation from "@/components/ProductPresentation";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection"; // 1. ON AJOUTE L'IMPORT ICI
+import CTASection from "@/components/CTASection"; // Vérifie qu'il n'y a rien avant cette ligne
 import Footer from "@/components/Footer";
 
-const Index = () => {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-[#f0f9ff]">
       <Navbar />
-      <HeroSection />
-      
-      {/* Présentation technique (sans le prix) */}
-      <ProductPresentation />
-      
-      <SoundsSection />
+      <Hero />
       <BenefitsSection />
+      <ProductPresentation />
       <TestimonialsSection />
       <FAQSection />
-      
-      {/* 2. ON RE-AJOUTE LE BLOC FINAL ICI (Celui avec le prix de 35€ et la confiance) */}
       <CTASection />
-      
       <Footer />
-    </div>
+    </main>
   );
-};
-
+}
 export default Index;
