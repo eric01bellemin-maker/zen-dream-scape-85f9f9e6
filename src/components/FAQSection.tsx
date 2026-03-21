@@ -1,39 +1,52 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Comment fonctionne le Sonora Zen ?", a: "Placez le palet sous votre oreiller. Il diffuse des sons par vibrations douces, audibles uniquement par vous grâce à la conduction osseuse." },
-  { q: "Est-ce que mon partenaire peut l'entendre ?", a: "Non. La technologie de conduction permet un son localisé. Votre partenaire ne sera pas dérangé." },
-  { q: "Quelle est l'autonomie de la batterie ?", a: "Jusqu'à 8 heures d'utilisation continue, soit une nuit complète. Rechargement en 2h via USB-C." },
-  { q: "Puis-je utiliser mes propres sons ?", a: "Oui, via l'application Sonora Zen (iOS & Android), vous pouvez importer vos propres fichiers audio." },
-  { q: "Le produit émet-il des ondes pendant le sommeil ?", a: "Non. Un mode avion intégré coupe toute émission Bluetooth une fois la lecture lancée." },
-  { q: "Quelle est la politique de retour ?", a: "Satisfait ou remboursé sous 30 jours. Nous prenons en charge les frais de retour." },
+  {
+    question: "Comment fonctionne la conduction osseuse ?",
+    answer: "Contrairement aux écouteurs classiques, le Sonora Zen diffuse des micro-vibrations à travers votre oreiller. Le son parvient directement à votre oreille interne sans boucher vos conduits auditifs, ce qui est beaucoup plus reposant."
+  },
+  {
+    question: "Est-ce que mon partenaire entendra le son ?",
+    answer: "Non ! C'est l'avantage magique de notre technologie. Le son reste confiné à l'oreiller sur lequel il est posé. Votre partenaire pourra dormir dans un silence total à vos côtés."
+  },
+  {
+    question: "Quelle est l'autonomie de la batterie ?",
+    answer: "Le Sonora Zen offre jusqu'à 16 heures d'écoute continue. Avec une utilisation moyenne, vous n'aurez besoin de le recharger (via USB-C) qu'une seule fois par semaine."
+  },
+  {
+    question: "Puis-je l'utiliser avec n'importe quel oreiller ?",
+    answer: "Absolument. Qu'il soit en plume, en mousse à mémoire de forme ou synthétique, il suffit de glisser le palet dessous pour que la magie opère."
+  }
 ];
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-12 md:py-24 bg-secondary/30">
-      <div className="container mx-auto px-4 max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-8 md:mb-12"
-        >
-          <p className="text-primary font-medium tracking-[0.2em] uppercase text-xs md:text-sm mb-2">FAQ</p>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground">
-            Questions <span className="text-gradient-zen">fréquentes</span>
+    <section id="faq" className="py-24 bg-gradient-to-b from-white to-[#f0f9ff]">
+      <div className="container mx-auto px-6 max-w-3xl">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-sans font-semibold text-slate-500 mb-4 uppercase tracking-tight">
+            Des questions ?
           </h2>
-        </motion.div>
+          <p className="text-slate-400 font-medium italic">Tout ce que vous devez savoir pour vos futures nuits</p>
+        </div>
 
-        <Accordion type="single" collapsible className="space-y-2 md:space-y-3">
-          {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="border border-border/50 rounded-xl px-4 md:px-6 bg-card">
-              <AccordionTrigger className="text-left text-sm md:text-base font-medium text-foreground hover:no-underline py-3 md:py-4">
-                {faq.q}
+        <Accordion type="single" collapsible className="space-y-4">
+          {faqs.map((faq, index) => (
+            <AccordionItem 
+              key={index} 
+              value={`item-${index}`}
+              className="border-none bg-white/80 backdrop-blur-sm rounded-[25px] px-6 shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <AccordionTrigger className="text-left font-bold text-slate-600 hover:no-underline py-6">
+                {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-xs md:text-base text-muted-foreground leading-relaxed pb-3 md:pb-4">
-                {faq.a}
+              <AccordionContent className="text-slate-500 leading-relaxed pb-6">
+                {faq.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
