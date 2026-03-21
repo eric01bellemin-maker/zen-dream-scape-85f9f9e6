@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
-import ProductInAction from "@/components/ProductInAction";
-import SoundsSection from "@/components/SoundsSection"; // AJOUT ICI
+import ProductInAction from "@/components/ProductInAction"; // Importé ici
+import SoundsSection from "@/components/SoundsSection"; 
 import ProductPresentation from "@/components/ProductPresentation";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
@@ -15,7 +15,11 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <BenefitsSection />
-      <SoundsSection /> {/* AJOUT ICI */}
+      
+      {/* ON AJOUTE LA SECTION ICI POUR QU'ELLE S'AFFICHE */}
+      <ProductInAction /> 
+      
+      <SoundsSection />
       <ProductPresentation />
       <TestimonialsSection />
       <FAQSection />
