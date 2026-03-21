@@ -1,74 +1,46 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShoppingCart } from "lucide-react";
-import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
+import { ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const links = [
-    { label: "Accueil", href: "#hero" },
-    { label: "Produit", href: "#product" },
-    { label: "Sons", href: "#sounds" },
-    { label: "Témoignages", href: "#temoignages" },
-    { label: "FAQ", href: "#faq" },
-  ];
-
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
-      <div className="container mx-auto px-4 flex items-center justify-between h-20">
-        <a href="#hero" className="font-bold text-2xl tracking-tighter text-black">
-          SONORA<span className="font-light text-gray-500 text-lg ml-1">ZEN</span>
-        </a>
-
-        <div className="hidden md:flex items-center gap-10">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[13px] font-medium text-gray-600 hover:text-black transition-colors tracking-widest uppercase"
-            >
-              {link.label}
-            </a>
-          ))}
-          <Button size="sm" className="rounded-full px-6 bg-black text-white hover:bg-gray-800 transition-all shadow-lg">
-            <ShoppingCart className="w-4 h-4 mr-2" />
-            Commander
-          </Button>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        
+        {/* 1. BLOC GAUCHE (Liens) */}
+        <div className="flex items-center gap-6 flex-1">
+          <Link to="/" className="text-sm font-semibold text-slate-600 hover:text-[#26A69A] transition-colors">
+            ACCUEIL
+          </Link>
+          <a href="#produit" className="text-sm font-semibold text-slate-600 hover:text-[#26A69A] transition-colors">
+            PRODUIT
+          </a>
         </div>
 
-        <button className="md:hidden text-black" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+        {/* 2. BLOC CENTRE (Le Titre Sonora Zen) */}
+        <div className="flex-none text-center">
+          <Link to="/" className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
+            Sonora Zen
+          </Link>
+        </div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-gray-100"
+        {/* 3. BLOC DROITE (Liens + Bouton) */}
+        <div className="flex items-center justify-end gap-6 flex-1">
+          <Link to="/VideoSession" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-[#26A69A]">
+            SONS
+          </Link>
+          <a href="#temoignages" className="hidden md:block text-sm font-semibold text-slate-600 hover:text-[#26A69A]">
+            TÉMOIGNAGES
+          </a>
+          <Link 
+            to="/commander" 
+            className="bg-slate-900 text-white px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-[#26A69A] transition-all"
           >
-            <div className="px-4 py-6 flex flex-col gap-4">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-lg font-medium text-gray-800 hover:text-black py-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <Button size="lg" className="rounded-full mt-4 bg-black text-white w-full">
-                <ShoppingCart className="w-4 h-4 mr-2" />
-                Commander
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <ShoppingCart className="h-4 w-4" />
+            COMMANDER
+          </Link>
+        </div>
+
+      </div>
     </nav>
   );
 };
