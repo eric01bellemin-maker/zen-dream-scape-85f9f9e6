@@ -46,29 +46,27 @@ const ProductPresentation = () => {
           </div>
         </div>
 
-        {/* SECTION DOUBLE VISUEL : PRODUIT + TECHNIQUE */}
+       {/* SECTION DOUBLE VISUEL : PRODUIT + TECHNIQUE */}
         <div className="grid md:grid-cols-2 gap-8 items-stretch mb-20 max-w-6xl mx-auto">
           
-          {/* BLOC A : LE PRODUIT (Optimisé pour JPG 1000x1000) */}
-          <div className="flex flex-col bg-slate-50/50 rounded-3xl border border-slate-100 overflow-hidden shadow-sm">
-            <div className="flex-1 flex items-center justify-center p-6 md:p-10">
-              <div className="w-full max-w-[450px] aspect-square flex items-center justify-center overflow-hidden rounded-2xl bg-white shadow-inner">
-                <img 
-                  src={selectedVariant.mainImageUrl} 
-                  alt="Palet Sonora Zen" 
-                  className="w-full h-full object-cover transition-all duration-700 ease-in-out transform hover:scale-105"
-                />
-              </div>
+          {/* BLOC A : LE PRODUIT (Optimisé pour tes JPG 1000x1000) */}
+          <div className="flex flex-col bg-slate-50/50 rounded-[40px] border border-slate-100 overflow-hidden shadow-sm">
+            <div className="flex-1 flex items-center justify-center p-6">
+              <img 
+                src={selectedVariant.mainImageUrl} 
+                alt="Palet Sonora Zen" 
+                className="w-full h-auto rounded-3xl object-contain transition-all duration-500 shadow-sm"
+              />
             </div>
             
-            {/* BOUTONS DE COULEUR */}
-            <div className="bg-white p-6 border-t border-slate-100 flex items-center justify-center">
-              <div className="flex gap-4">
+            {/* BOUTONS DE COULEUR (Comme sur ton image impeccable) */}
+            <div className="bg-white p-8 border-t border-slate-50 flex items-center justify-center">
+              <div className="flex gap-6">
                 {productVariants.map(variant => (
                   <button
                     key={variant.id}
                     onClick={() => setSelectedVariant(variant)}
-                    className={`px-8 py-3 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${variant.buttonClass} text-white
+                    className={`px-10 py-4 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-300 ${variant.buttonClass} text-white
                       ${selectedVariant.id === variant.id ? 'ring-4 ring-offset-2 scale-105 shadow-lg' : 'opacity-60 hover:opacity-100'}`}
                   >
                     {variant.colorName}
@@ -78,23 +76,23 @@ const ProductPresentation = () => {
             </div>
           </div>
 
-          {/* BLOC B : TECHNIQUE ET CONNECTIVITÉ */}
-          <div className="flex flex-col bg-[#0f172a] rounded-3xl overflow-hidden shadow-xl text-white">
-            <div className="p-8 text-center">
-               <h3 className="text-xl font-bold tracking-widest uppercase">Bluetooth Connectivity</h3>
+          {/* BLOC B : TECHNIQUE ET CONNECTIVITÉ (Le bloc bleu nuit) */}
+          <div className="flex flex-col bg-[#0f172a] rounded-[40px] overflow-hidden shadow-xl text-white">
+            <div className="p-10 text-center">
+               <h3 className="text-xl font-serif tracking-[0.2em] uppercase opacity-90">Bluetooth Connectivity</h3>
             </div>
-            <div className="flex-1 flex items-center justify-center px-6">
+            <div className="flex-1 flex items-center justify-center px-8">
               <img 
                 src={selectedVariant.handImageUrl} 
                 alt="Usage Sonora Zen" 
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-auto rounded-3xl object-cover"
               />
             </div>
-            <div className="p-8 flex items-center gap-4 bg-slate-900/50">
-                <div className="p-3 bg-[#26A69A]/20 rounded-full">
+            <div className="p-10 flex items-center gap-6 bg-slate-900/50">
+                <div className="p-4 bg-[#26A69A]/20 rounded-full">
                   <Bluetooth className="w-8 h-8 text-[#26A69A] animate-pulse"/>
                 </div>
-                <p className="text-xs leading-relaxed text-slate-300 font-medium">
+                <p className="text-sm leading-relaxed text-slate-300 font-medium">
                     Puce Bluetooth 5.4 intégrée pour une connexion stable, 
                     une latence ultra-faible et une consommation d'énergie réduite.
                 </p>
