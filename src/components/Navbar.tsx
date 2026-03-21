@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // On garde Link juste pour le logo si besoin
 import { ShoppingCart, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Petit effet de transparence au scroll pour le style
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -17,12 +16,13 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // CORRECTION : Utiliser des ancres (#) pour défiler sur la même page
   const navLinks = [
     { name: "Accueil", href: "#" },
-    { name: "Produit", href: "#produit" },
-    { name: "Sons", href: "#sons" },
-    { name: "Témoignages", href: "#temoignages" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Produit", href: "#produit" }, // Pointe vers une section avec id="produit"
+    { name: "Sons", href: "#sons" },       // Pointe vers une section avec id="sons"
+    { name: "Témoignages", href: "#temoignages" }, // Pointe vers une section avec id="temoignages"
+    { name: "FAQ", href: "#faq" },         // Pointe vers une section avec id="faq"
   ];
 
   return (
@@ -68,8 +68,9 @@ const Navbar = () => {
             </a>
           ))}
           
+          {/* CORRECTION : Utiliser un chemin relatif pour éviter la 404 sur GitHub Pages */}
           <Link
-            to="/commander"
+            to="./commander" 
             className="flex items-center gap-2 bg-[#26A69A] text-white px-4 py-2 rounded-full text-[10px] font-bold hover:bg-[#1f8a80] transition-all shadow-md active:scale-95"
           >
             <ShoppingCart size={14} />
@@ -99,8 +100,9 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            {/* CORRECTION : Chemin relatif ici aussi */}
             <Link
-              to="/commander"
+              to="./commander"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 bg-[#26A69A] text-white py-3 rounded-xl font-bold"
             >
