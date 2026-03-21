@@ -1,26 +1,26 @@
 import React from 'react';
 
 const ProductInAction = () => {
-  const features = [
+ const features = [
     {
       title: "Des nuits douces pour vos enfants",
       description: "La conduction osseuse permet de diffuser nos ambiances sonores directement sous l'oreiller. Une solution sûre et apaisante pour aider vos enfants à s'endormir sereinement.",
-      image: "enfant.jpg",
+      image: "/enfant.jpg", // Ajoute le / au début
       alt: "Enfant dormant paisiblement"
     },
     {
       title: "Votre oasis de calme, partout",
       description: "Compact et léger, Sonora Zen est le compagnon de voyage idéal. Que ce soit à l'hôtel ou en déplacement, votre sanctuaire de paix vous accompagne partout.",
-      image: "travel-bag.jpg",
+      image: "/travel-bag.jpg", // Ajoute le / au début
       alt: "Appareil dans un sac de voyage"
     },
     {
       title: "Une immersion totale pour adultes",
       description: "Retrouvez un sommeil profond grâce à une immersion sonore totale. Le design ergonomique se glisse sous n'importe quel oreiller pour une expérience invisible et efficace.",
-      image: "adult-sleep.jpg",
+      image: "/adult-sleep.jpg", // Ajoute le / au début
       alt: "Adulte dormant sereinement"
     }
-  ];
+  ]; 
 
   return (
     <section className="py-24 bg-white">
