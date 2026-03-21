@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import SoundsSection from "@/components/SoundsSection"; // AJOUT ICI
 import ProductPresentation from "@/components/ProductPresentation";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
@@ -13,6 +14,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <BenefitsSection />
+      <SoundsSection /> {/* AJOUT ICI */}
       <ProductPresentation />
       <TestimonialsSection />
       <FAQSection />
