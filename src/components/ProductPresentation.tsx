@@ -5,16 +5,16 @@ const productVariants = [
   {
     id: "grey",
     colorName: "Gris",
-    mainImageUrl: "palet-gris.png",  // <--- Pas de / au début
-    handImageUrl: "main-grise.jpg",  // <--- Pas de / au début
+    mainImageUrl: "palet-gris.png",
+    handImageUrl: "main-grise.jpg",
     textDescription: "Le Sonora Zen Gris diffuse des ondes sonores apaisantes à travers votre oreiller pour une nuit de sérénité.",
     buttonClass: "bg-slate-500 hover:bg-slate-600 ring-slate-200"
   },
   {
     id: "blue",
     colorName: "Bleu",
-    mainImageUrl: "palet-bleu.png",  // <--- Pas de / au début
-    handImageUrl: "main-bleue.jpg",  // <--- Pas de / au début
+    mainImageUrl: "palet-bleu.png",
+    handImageUrl: "main-bleue.jpg",
     textDescription: "Le Sonora Zen Bleu diffuse des ondes sonores apaisantes à travers votre oreiller pour une nuit de sérénité.",
     buttonClass: "bg-[#26A69A] hover:bg-[#1f8a7f] ring-teal-100"
   },
@@ -27,34 +27,39 @@ const ProductPresentation = () => {
     <section id="produit" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         
-        {/* TITRE ET INTRODUCTION */}
-        <div className="text-center mb-16 max-w-2xl mx-auto flex flex-col items-center">
-          <h2 className="text-4xl font-extrabold text-slate-900 leading-tight mb-2 uppercase tracking-tight">
+        {/* TITRE ET INTRODUCTION - BIEN CENTRÉS */}
+        <div className="text-center mb-16 max-w-3xl mx-auto flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4 uppercase tracking-tighter">
             Votre Compagnon de Nuit
           </h2>
-          <div className="w-16 h-1 bg-[#26A69A] mb-8"></div>
-          <p className="text-xl font-medium text-slate-800 mb-6 italic">
+          
+          <div className="w-20 h-1.5 bg-[#26A69A] rounded-full mb-8"></div>
+          
+          <p className="text-xl md:text-2xl font-semibold text-slate-800 mb-6 italic tracking-wide">
             Technologie par Conduction Osseuse
           </p>
-          <p className="text-base text-slate-600">
-            {selectedVariant.textDescription}
-          </p>
+          
+          <div className="max-w-2xl">
+            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+              {selectedVariant.textDescription}
+            </p>
+          </div>
         </div>
 
         {/* SECTION DOUBLE VISUEL : PRODUIT + TECHNIQUE */}
         <div className="grid md:grid-cols-2 gap-8 items-stretch mb-20 max-w-6xl mx-auto">
           
-          {/* BLOC A : LE PRODUIT ET BOUTONS SEULS */}
+          {/* BLOC A : LE PRODUIT (Images de taille égale) */}
           <div className="flex flex-col bg-slate-50/50 rounded-3xl border border-slate-100 overflow-hidden shadow-sm">
             <div className="flex-1 flex items-center justify-center p-10">
-             <img 
-  src={selectedVariant.mainImageUrl} 
-  alt="Palet Sonora Zen" 
-  className="h-72 w-full object-contain transition-all duration-500 ease-in-out transform hover:scale-105"
-/>
+              <img 
+                src={selectedVariant.mainImageUrl} 
+                alt="Palet Sonora Zen" 
+                className="h-72 w-full object-contain transition-all duration-500 ease-in-out transform hover:scale-105"
+              />
             </div>
             
-            {/* BOUTONS CENTRÉS SANS TEXTE DE COULEUR */}
+            {/* BOUTONS CENTRÉS */}
             <div className="bg-white p-6 border-t border-slate-100 flex items-center justify-center">
               <div className="flex gap-4">
                 {productVariants.map(variant => (
