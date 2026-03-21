@@ -35,7 +35,7 @@ const benefits = [
 
 const BenefitsSection = () => {
   return (
-    <section id="bienfaits" className="py-24 bg-[#f0f9ff]"> {/* Fond Bleu Zen */}
+    <section id="produit" className="py-24 bg-[#f0f9ff]"> {/* ID changé de bienfaits à produit */}
       <div className="container mx-auto px-6">
         
         {/* EN-TÊTE DOUCE */}
