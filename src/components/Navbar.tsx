@@ -3,49 +3,35 @@ import { ShoppingCart } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm">
-      <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         
-        {/* 1. BLOC GAUCHE : Écart réduit (gap-3 pour PC, gap-1 pour mobile) */}
-        <div className="flex items-center gap-1 md:gap-3 flex-1">
-          <Link to="/" className="text-[10px] md:text-xs font-bold text-slate-500 hover:text-[#26A69A] transition-colors tracking-tight">
-            ACCUEIL
-          </Link>
-          <a href="#produit" className="text-[10px] md:text-xs font-bold text-slate-500 hover:text-[#26A69A] transition-colors tracking-tight">
-            PRODUIT
-          </a>
-          <a href="#faq" className="text-[10px] md:text-xs font-bold text-slate-500 hover:text-[#26A69A] transition-colors tracking-tight">
-            FAQ
-          </a>
-        </div>
+        {/* GROUPE DE GAUCHE : ACCUEIL, PRODUIT, FAQ */}
+        <nav className="flex items-center gap-8 text-slate-500">
+          <Link to="/" className="text-sm font-medium hover:text-[#26A69A]">ACCUEIL</Link>
+          <Link to="/#produit" className="text-sm font-medium hover:text-[#26A69A]">PRODUIT</Link>
+          <Link to="/#faq" className="text-sm font-medium hover:text-[#26A69A]">FAQ</Link>
+        </nav>
 
-        {/* 2. BLOC CENTRE : SONORA ZEN RÉDUIT ET COULEUR APAISANTE */}
-        <div className="flex-none px-1 md:px-4 text-center">
-          <Link 
-            to="/" 
-            className="text-lg md:text-xl font-extrabold tracking-tighter text-slate-600 uppercase hover:text-[#26A69A] transition-colors"
-          >
-            Sonora Zen
-          </Link>
-        </div>
+        {/* LE TITRE CENTRE : SONORA ZEN (Même couleur turquoise que la capture) */}
+        <Link to="/" className="text-3xl font-serif font-semibold tracking-tight flex-shrink-0 mx-8 text-[#26A69A]">
+          Sonora Zen
+          {/* <span className="text-[#26A69A]">Zen</span> */}
+        </Link>
 
-        {/* 3. BLOC DROITE : Écart réduit (gap-3 pour PC, gap-1 pour mobile) */}
-        <div className="flex items-center justify-end gap-1 md:gap-3 flex-1">
-          <Link to="/VideoSession" className="text-[10px] md:text-xs font-bold text-slate-500 hover:text-[#26A69A] tracking-tight">
-            SONS
-          </Link>
-          <a href="#temoignages" className="text-[10px] md:text-xs font-bold text-slate-500 hover:text-[#26A69A] tracking-tight">
-            TÉMOIGNAGES
-          </a>
+        {/* GROUPE DE DROITE : SONS, TÉMOIGNAGES et COMMANDER */}
+        <nav className="flex items-center gap-8 text-slate-500">
+          <Link to="/VideoSession" className="text-sm font-medium hover:text-[#26A69A]">SONS</Link>
+          <Link to="/#temoignages" className="text-sm font-medium hover:text-[#26A69A]">TÉMOIGNAGES</Link>
           
           <Link 
             to="/commander" 
-            className="bg-[#26A69A] text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[10px] md:text-xs font-extrabold flex items-center gap-1 md:gap-1.5 hover:bg-[#26A69A]/90 transition-all transform hover:scale-105"
+            className="flex items-center gap-2 bg-[#26A69A] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#26A69A]/90 transition-colors"
           >
-            <ShoppingCart className="h-3 w-3 md:h-3.5 md:h-3.5" />
-            COMMANDER
+            <ShoppingCart className="h-4 w-4" />
+            Commander
           </Link>
-        </div>
+        </nav>
 
       </div>
     </nav>
