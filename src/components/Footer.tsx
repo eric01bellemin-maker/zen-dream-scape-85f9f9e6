@@ -18,20 +18,21 @@ const Footer = () => {
               La technologie de conduction osseuse au service de votre sérénité. 
               Retrouvez un sommeil profond et naturel, où que vous soyez.
             </p>
+            {/* BOUTONS RESEAUX SOCIAUX (Mise en fonction) */}
             <div className="flex gap-4 pt-2">
-              <a href="#" className="p-2 bg-white rounded-full shadow-sm hover:text-[#26A69A] transition-colors">
+              <a href="https://instagram.com/sonorazen" target="_blank" rel="noopener noreferrer" className="p-2 bg-white rounded-full shadow-sm hover:text-[#26A69A] transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="p-2 bg-white rounded-full shadow-sm hover:text-[#26A69A] transition-colors">
+              <a href="https://facebook.com/sonorazen" target="_blank" rel="noopener noreferrer" className="p-2 bg-white rounded-full shadow-sm hover:text-[#26A69A] transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="p-2 bg-white rounded-full shadow-sm hover:text-[#26A69A] transition-colors">
+              <a href="https://twitter.com/sonorazen" target="_blank" rel="noopener noreferrer" className="p-2 bg-white rounded-full shadow-sm hover:text-[#26A69A] transition-colors">
                 <Twitter size={20} />
               </a>
             </div>
           </div>
 
-          {/* COLONNE 2 : LIENS UTILES (CEUX QUE TU VOULAIS) */}
+          {/* COLONNE 2 : LIENS UTILES (Ancres corrigées) */}
           <div>
             <h4 className="font-bold mb-6 text-slate-800 uppercase tracking-widest text-sm">
               Liens Utiles
@@ -64,7 +65,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* COLONNE 3 : CONTACT */}
+          {/* COLONNE 3 : CONTACT (Boutons mis en fonction) */}
           <div>
             <h4 className="font-bold mb-6 text-slate-800 uppercase tracking-widest text-sm">
               Contact
@@ -72,20 +73,26 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-600">
                 <MapPin size={18} className="text-[#26A69A] shrink-0 mt-1" />
-                <span>Paris, France</span>
+                <a href="https://maps.google.com/?q=Paris,France" target="_blank" rel="noopener noreferrer" className="hover:text-[#26A69A]">
+                  Paris, France
+                </a>
               </li>
               <li className="flex items-center gap-3 text-slate-600">
                 <Mail size={18} className="text-[#26A69A] shrink-0" />
-                <span>contact@sonora-zen.com</span>
+                <a href="mailto:contact@sonora-zen.com" className="hover:text-[#26A69A]">
+                  contact@sonora-zen.com
+                </a>
               </li>
               <li className="flex items-center gap-3 text-slate-600">
                 <Phone size={18} className="text-[#26A69A] shrink-0" />
-                <span>+33 (0)1 23 45 67 89</span>
+                <a href="tel:+33123456789" className="hover:text-[#26A69A]">
+                  +33 (0)1 23 45 67 89
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* COLONNE 4 : NEWSLETTER */}
+          {/* COLONNE 4 : NEWSLETTER (Formulaire fonctionnel basique) */}
           <div>
             <h4 className="font-bold mb-6 text-slate-800 uppercase tracking-widest text-sm">
               Newsletter
@@ -93,13 +100,14 @@ const Footer = () => {
             <p className="text-sm text-slate-500 mb-4">
               Recevez nos conseils pour un meilleur sommeil.
             </p>
-            <form className="flex gap-2">
+            <form className="flex gap-2" onSubmit={(e) => { e.preventDefault(); alert('Merci pour votre inscription ! (Simulé)'); }}>
               <input 
                 type="email" 
                 placeholder="Votre email" 
+                required
                 className="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-[#26A69A]"
               />
-              <button className="bg-[#26A69A] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#1f8a80] transition-colors">
+              <button type="submit" className="bg-[#26A69A] text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-[#1f8a80] transition-colors">
                 OK
               </button>
             </form>
