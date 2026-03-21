@@ -26,33 +26,34 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-24 bg-gradient-to-b from-white to-[#f0f9ff]">
-      <div className="container mx-auto px-6 max-w-3xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-sans font-semibold text-slate-500 mb-4 uppercase tracking-tight">
-            Des questions ?
-          </h2>
-          <p className="text-slate-400 font-medium italic">Tout ce que vous devez savoir pour vos futures nuits</p>
-        </div>
+  <section id="faq" className="py-24 bg-[#f0f9ff]"> {/* On a enlevé le 'from-white' */}
+  <div className="container mx-auto px-6 max-w-3xl">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-sans font-semibold text-slate-500 mb-4 uppercase tracking-tight">
+        Des questions ?
+      </h2>
+      <p className="text-slate-400 font-medium italic">Tout ce que vous devez savoir pour vos futures nuits</p>
+    </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
-          {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
-              value={`item-${index}`}
-              className="border-none bg-white/80 backdrop-blur-sm rounded-[25px] px-6 shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              <AccordionTrigger className="text-left font-bold text-slate-600 hover:no-underline py-6">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-slate-500 leading-relaxed pb-6">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
-    </section>
+    <Accordion type="single" collapsible className="space-y-4">
+      {faqs.map((faq, index) => (
+        <AccordionItem 
+          key={index} 
+          value={`item-${index}`}
+          // Ici le bg-white/80 va maintenant ressortir sur le fond bleu
+          className="border-none bg-white/90 backdrop-blur-sm rounded-[25px] px-6 shadow-sm hover:shadow-md transition-all duration-300"
+        >
+          <AccordionTrigger className="text-left font-bold text-slate-600 hover:no-underline py-6">
+            {faq.question}
+          </AccordionTrigger>
+          <AccordionContent className="text-slate-500 leading-relaxed pb-6">
+            {faq.answer}
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  </div>
+</section>  
   );
 };
 
