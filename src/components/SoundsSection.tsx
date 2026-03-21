@@ -3,28 +3,28 @@ import { Play, Pause, Volume2 } from "lucide-react";
 
 const ambiances = [
   {
-    id: "oiseaux",
+    id: "birds",
     title: "Chant des Oiseaux",
-    audioSrc: "sounds/birds.mp3",  // Correspond à ton fichier birds.mp3
-    imageSrc: "oiseaux.jpg",       // Correspond à ton fichier oiseaux.jpg
+    audioSrc: "sounds/birds.mp3",
+    imageSrc: "oiseaux.jpg", // Vérifie bien cette ligne
   },
   {
-    id: "ruisseau",
-    title: "Ruisseau Paisible",
-    audioSrc: "sounds/river.mp3",  // Correspond à ton fichier river.mp3
-    imageSrc: "riviere.jpg",       // Correspond à ton fichier riviere.jpg
-  },
-  {
-    id: "vagues",
+    id: "waves",
     title: "Bruit des Vagues",
-    audioSrc: "sounds/waves.mp3",  // Correspond à ton fichier waves.mp3
-    imageSrc: "vagues.jpg",        // Correspond à ton fichier vagues.jpg
+    audioSrc: "sounds/waves.mp3",
+    imageSrc: "mer.jpg", // Vérifie si c'est 'mer.jpg' ou 'vagues.jpg' sur ton GitHub
   },
   {
-    id: "vent",
+    id: "river",
+    title: "Murmure de la Rivière",
+    audioSrc: "sounds/river.mp3",
+    imageSrc: "riviere.jpg", // Vérifie bien cette ligne
+  },
+  {
+    id: "wind",
     title: "Souffle du Vent",
-    audioSrc: "sounds/wind.mp3",   // Correspond à ton fichier wind.mp3
-    imageSrc: "vent.jpg",          // Correspond à ton fichier vent.jpg
+    audioSrc: "sounds/wind.mp3",
+    imageSrc: "vent.jpg", // Vérifie bien cette ligne
   }
 ];
 
