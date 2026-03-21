@@ -5,16 +5,16 @@ const productVariants = [
   {
     id: "grey",
     colorName: "Gris",
-    mainImageUrl: "/palet-gris.jpg", // Le "/" au début est important
-    handImageUrl: "/usage-gris.jpg", // Adapté au format JPG
+    mainImageUrl: "palet-gris.jpg",  // <-- Corrigé en .jpg
+    handImageUrl: "main-grise.jpg",
     textDescription: "Le Sonora Zen Gris diffuse des ondes sonores apaisantes à travers votre oreiller pour une nuit de sérénité.",
     buttonClass: "bg-slate-500 hover:bg-slate-600 ring-slate-200"
   },
   {
     id: "blue",
     colorName: "Bleu",
-    mainImageUrl: "/palet-bleu.jpg",
-    handImageUrl: "/usage-bleu.jpg", // Adapté au format JPG
+    mainImageUrl: "palet-bleu.jpg",  // <-- Corrigé en .jpg
+    handImageUrl: "main-bleue.jpg",
     textDescription: "Le Sonora Zen Bleu diffuse des ondes sonores apaisantes à travers votre oreiller pour une nuit de sérénité.",
     buttonClass: "bg-[#26A69A] hover:bg-[#1f8a7f] ring-teal-100"
   },
@@ -27,7 +27,7 @@ const ProductPresentation = () => {
     <section id="produit" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         
-        {/* TITRE ET INTRODUCTION - BIEN CENTRÉS */}
+        {/* TITRE ET INTRODUCTION */}
         <div className="text-center mb-16 max-w-3xl mx-auto flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4 uppercase tracking-tighter">
             Votre Compagnon de Nuit
@@ -49,17 +49,19 @@ const ProductPresentation = () => {
         {/* SECTION DOUBLE VISUEL : PRODUIT + TECHNIQUE */}
         <div className="grid md:grid-cols-2 gap-8 items-stretch mb-20 max-w-6xl mx-auto">
           
-          {/* BLOC A : LE PRODUIT (Images de taille égale) */}
+          {/* BLOC A : LE PRODUIT (Optimisé pour JPG 1000x1000) */}
           <div className="flex flex-col bg-slate-50/50 rounded-3xl border border-slate-100 overflow-hidden shadow-sm">
-            <div className="flex-1 flex items-center justify-center p-10">
-              <img 
-                src={selectedVariant.mainImageUrl} 
-                alt="Palet Sonora Zen" 
-                className="h-72 w-full object-contain transition-all duration-500 ease-in-out transform hover:scale-105"
-              />
+            <div className="flex-1 flex items-center justify-center p-6 md:p-10">
+              <div className="w-full max-w-[450px] aspect-square flex items-center justify-center overflow-hidden rounded-2xl bg-white shadow-inner">
+                <img 
+                  src={selectedVariant.mainImageUrl} 
+                  alt="Palet Sonora Zen" 
+                  className="w-full h-full object-cover transition-all duration-700 ease-in-out transform hover:scale-105"
+                />
+              </div>
             </div>
             
-            {/* BOUTONS CENTRÉS */}
+            {/* BOUTONS DE COULEUR */}
             <div className="bg-white p-6 border-t border-slate-100 flex items-center justify-center">
               <div className="flex gap-4">
                 {productVariants.map(variant => (
@@ -102,7 +104,6 @@ const ProductPresentation = () => {
 
         {/* CARACTÉRISTIQUES ET COFFRET */}
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {/* Fiche Technique */}
           <div className="p-10 bg-white rounded-3xl border border-slate-100 shadow-sm">
             <h4 className="text-lg font-black text-slate-900 mb-8 uppercase tracking-widest border-b pb-4">Caractéristiques</h4>
             <div className="space-y-6">
@@ -121,7 +122,6 @@ const ProductPresentation = () => {
             </div>
           </div>
 
-          {/* Contenu du Coffret */}
           <div className="p-10 bg-slate-50 rounded-3xl border border-slate-100 shadow-sm">
             <h4 className="text-lg font-black text-slate-900 mb-8 uppercase tracking-widest border-b pb-4">Dans le coffret</h4>
             <div className="grid gap-3">
