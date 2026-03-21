@@ -1,55 +1,59 @@
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ShoppingCart, Truck, RotateCcw, Shield } from "lucide-react";
+import { ShoppingCart, Tag, Truck, ShieldCheck, RefreshCw } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-zen-glow/5" />
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto"
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4">
-            Prêt à <span className="text-gradient-zen">mieux dormir</span> ?
-          </h2>
-          <p className="text-sm md:text-lg text-muted-foreground mb-6 md:mb-8">
-            Offrez-vous le sommeil que vous méritez. Livraison gratuite et retour sous 30 jours.
-          </p>
+    <section id="commander" className="py-24 bg-slate-50 border-t border-slate-100">
+      <div className="container mx-auto px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tighter">
+          Prêt à mieux dormir ?
+        </h2>
+        <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">
+          Rejoignez des milliers d'utilisateurs qui ont retrouvé un sommeil profond grâce au Sonora Zen.
+        </p>
 
-          <div className="bg-card border border-border/50 rounded-2xl md:rounded-3xl p-5 md:p-8 mb-6 md:mb-8 shadow-xl shadow-primary/5">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-3 mb-4">
-              <div className="flex items-baseline gap-2">
-                <span className="text-base md:text-2xl text-muted-foreground line-through">30,00 €</span>
-                <span className="text-3xl md:text-5xl font-bold text-foreground">25,00 €</span>
-              </div>
-              <span className="text-xs font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full">-17%</span>
-            </div>
-
-            <Button size="lg" className="rounded-full px-8 md:px-12 text-sm md:text-lg shadow-lg shadow-primary/25 w-full sm:w-auto">
-              <ShoppingCart className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-              Ajouter au panier
-            </Button>
+        {/* LE BLOC PRIX ET CONFIANCE FINAL */}
+        <div className="bg-white p-10 md:p-16 rounded-[50px] shadow-2xl inline-flex flex-col items-center border border-slate-100 max-w-2xl w-full">
+          <div className="flex items-center gap-2 text-[#26A69A] font-bold text-sm uppercase tracking-[0.2em] mb-4">
+            <Tag size={16} />
+            Offre de lancement
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm text-muted-foreground">
-            <div className="flex items-center gap-1.5">
-              <Truck className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
-              Livraison gratuite
+          <div className="flex items-baseline gap-4 mb-10">
+            <span className="text-6xl md:text-7xl font-black text-slate-900 tracking-tighter">
+              35,00€
+            </span>
+            <span className="text-2xl text-slate-400 line-through font-bold decoration-red-500/40">
+              40,00€
+            </span>
+          </div>
+
+          <button className="w-full md:w-auto bg-[#26A69A] hover:bg-[#1f8a7f] text-white px-12 py-6 rounded-full font-black text-lg uppercase tracking-widest shadow-xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-4 mb-10">
+            <ShoppingCart size={24} />
+            Commander mon Sonora Zen
+          </button>
+
+          {/* RÉASSURANCE (LES ICÔNES DE CONFIANCE) */}
+          <div className="grid grid-cols-3 gap-4 w-full pt-8 border-t border-slate-100">
+            <div className="flex flex-col items-center text-center">
+              <Truck size={24} className="text-[#26A69A] mb-2" />
+              <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">
+                Livraison<br/>Gratuite
+              </span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <RotateCcw className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
-              Retour 30 jours
+            <div className="flex flex-col items-center text-center border-x border-slate-100">
+              <ShieldCheck size={24} className="text-[#26A69A] mb-2" />
+              <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">
+                Paiement<br/>Sécurisé
+              </span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <Shield className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
-              Garantie 2 ans
+            <div className="flex flex-col items-center text-center">
+              <RefreshCw size={24} className="text-[#26A69A] mb-2" />
+              <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">
+                Garantie<br/>30 Jours
+              </span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
