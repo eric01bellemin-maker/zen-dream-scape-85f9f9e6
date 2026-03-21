@@ -1,5 +1,14 @@
 import { useState } from "react";
-import { Check, Bluetooth, MapPin, Search, Tag } from "lucide-react";
+import { 
+  Check, 
+  Bluetooth, 
+  MapPin, 
+  Search, 
+  Tag, 
+  Truck, 
+  ShieldCheck, 
+  RefreshCw 
+} from "lucide-react";
 
 const productVariants = [
   {
@@ -45,14 +54,14 @@ const ProductPresentation = () => {
             </p>
           </div>
 
-          {/* BLOC PRIX ET PROMO */}
-          <div className="bg-slate-50 border border-slate-100 rounded-3xl p-6 flex flex-col items-center shadow-sm">
+          {/* BLOC PRIX ET RÉASSURANCE */}
+          <div className="bg-slate-50 border border-slate-100 rounded-[40px] p-8 flex flex-col items-center shadow-sm w-full max-w-lg">
             <div className="flex items-center gap-2 text-[#26A69A] font-bold text-xs uppercase tracking-[0.2em] mb-3">
               <Tag size={14} />
               Offre de lancement
             </div>
             
-            <div className="flex items-baseline gap-4">
+            <div className="flex items-baseline gap-4 mb-8">
               <span className="text-5xl font-black text-slate-900 tracking-tighter">
                 35,00€
               </span>
@@ -61,9 +70,21 @@ const ProductPresentation = () => {
               </span>
             </div>
             
-            <p className="text-[10px] text-slate-500 mt-3 font-bold uppercase tracking-widest">
-              Livraison offerte • Stock limité
-            </p>
+            {/* LIGNE DE RÉASSURANCE (TRUST BADGES) */}
+            <div className="grid grid-cols-3 gap-2 w-full pt-6 border-t border-slate-200">
+              <div className="flex flex-col items-center text-center">
+                <Truck size={20} className="text-[#26A69A] mb-2" />
+                <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">Livraison<br/>Gratuite</span>
+              </div>
+              <div className="flex flex-col items-center text-center border-x border-slate-200">
+                <ShieldCheck size={20} className="text-[#26A69A] mb-2" />
+                <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">Paiement<br/>Sécurisé</span>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <RefreshCw size={20} className="text-[#26A69A] mb-2" />
+                <span className="text-[10px] font-bold uppercase text-slate-500 leading-tight">Garantie<br/>30 Jours</span>
+              </div>
+            </div>
           </div>
         </div>
 
