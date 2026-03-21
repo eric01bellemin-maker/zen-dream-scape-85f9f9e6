@@ -1,9 +1,8 @@
-import { Play } from "lucide-react";
+import React, { useState, useRef } from "react"; // Ajout de React pour gérer le son proprement
+import { Play, Square } from "lucide-react"; // Ajout de l'icône Stop
 
-const ambiances = [ // Une seule fois suffit !
+const ambiances = [
   {
-    title: "Chant des Oiseaux",
-// ... la suite reste la même
     title: "Chant des Oiseaux",
     image: "oiseaux.jpg",
     audio: "/audio/oiseaux.mp3",
@@ -30,29 +29,48 @@ const ambiances = [ // Une seule fois suffit !
 ];
 
 const SoundAmbiances = () => {
+  const [playingId, setPlayingId] = useState(null);
+  const audioRef = useRef(null);
+
+  const toggleAudio = (ambiance) => {
+    // Si un son joue déjà, on l'arrête
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
+
+    // Si on a cliqué sur le même son qui jouait, on s'arrête là (effet Toggle)
+    if (playingId === ambiance.id) {
+      setPlayingId(null);
+      return;
+    }
+
+    // Sinon, on lance le nouveau son
+    const audio = new Audio(ambiance.audio);
+    audio.play().catch(e => console.error("Erreur :", e));
+    audioRef.current = audio;
+    setPlayingId(ambiance.id);
+
+    // Quand le son finit, on remet le bouton en mode "Écouter"
+    audio.onended = () => setPlayingId(null);
+  };
+
   return (
-    <section id="sons" className="py-24 bg-[#f0f9ff]"> {/* Fond Bleu Ciel très Pâle */}
+    <section id="sons" className="py-24 bg-[#f0f9ff]">
       <div className="container mx-auto px-6 text-center">
-        
-        {/* TITRE DOUX ET APPAISANT */}
         <h2 className="text-3xl md:text-4xl font-sans font-semibold text-slate-500 mb-2 uppercase tracking-tight">
           Nos Ambiances Sonores
         </h2>
-        
-        {/* SOUS-TITRE DOUX */}
         <p className="mt-1 mb-16 text-sm md:text-base font-medium text-slate-400 tracking-wide max-w-lg mx-auto leading-relaxed">
           Une immersion totale pour un endormissement rapide
         </p>
 
-        {/* GRILLE DE CARTES HARMONIEUSES */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {ambiances.map((ambiance) => (
             <div 
               key={ambiance.id} 
               className="bg-[#e0f2fe] p-8 rounded-[40px] shadow-inner border border-[#d0eafc] flex flex-col items-center group transition-all duration-300 hover:shadow-lg hover:bg-[#d0eafc]"
             >
-              
-              {/* IMAGE RONDE "BULLE" */}
               <div className="w-full aspect-square rounded-full overflow-hidden mb-8 border-4 border-white shadow-lg shadow-blue-900/10">
                 <img 
                   src={ambiance.image} 
@@ -61,21 +79,24 @@ const SoundAmbiances = () => {
                 />
               </div>
 
-              {/* TITRE DE L'AMBIANCE DOUX */}
               <h3 className="text-lg font-sans font-bold text-slate-600 mb-8 uppercase tracking-widest text-center h-12 flex items-center justify-center">
                 {ambiance.title}
               </h3>
 
-             <button 
-               className="flex items-center gap-3 bg-white border border-slate-300 text-slate-500 px-8 py-3.5 rounded-full hover:bg-slate-50 transition-colors"
-               onClick={() => {
-               const audio = new Audio(ambiance.audio);
-                audio.play().catch(e => console.error("Erreur de lecture :", e));
-               }}
-             >
-            <Play size={16} className="text-[#26A69A]"/>
-           Écouter
-          </button> 
+              <button 
+                className={`flex items-center gap-3 px-8 py-3.5 rounded-full transition-all ${
+                  playingId === ambiance.id 
+                  ? "bg-[#26A69A] text-white" 
+                  : "bg-white border border-slate-300 text-slate-500 hover:bg-slate-50"
+                }`}
+                onClick={() => toggleAudio(ambiance)}
+              >
+                {playingId === ambiance.id ? (
+                  <><Square size={16} fill="white" /> Stop</>
+                ) : (
+                  <><Play size={16} className="text-[#26A69A]"/> Écouter</>
+                )}
+              </button> 
             </div>
           ))}
         </div>
