@@ -47,11 +47,11 @@ const ProductPresentation = () => {
           {/* BLOC A : LE PRODUIT ET BOUTONS SEULS */}
           <div className="flex flex-col bg-slate-50/50 rounded-3xl border border-slate-100 overflow-hidden shadow-sm">
             <div className="flex-1 flex items-center justify-center p-10">
-              <img 
-                src={selectedVariant.mainImageUrl} 
-                alt="Palet Sonora Zen" 
-                className="max-h-72 object-contain transition-all duration-500 ease-in-out transform hover:scale-105"
-              />
+             <img 
+  src={selectedVariant.mainImageUrl} 
+  alt="Palet Sonora Zen" 
+  className="h-72 w-full object-contain transition-all duration-500 ease-in-out transform hover:scale-105"
+/>
             </div>
             
             {/* BOUTONS CENTRÉS SANS TEXTE DE COULEUR */}
