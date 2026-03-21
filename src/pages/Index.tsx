@@ -22,4 +22,4 @@ const Index = () => {
   );
 };
 
-export default Index; // UN SEUL EXPORT ICI
+export default Index;
