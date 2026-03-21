@@ -4,7 +4,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import ProductPresentation from "@/components/ProductPresentation";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection"; 
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
