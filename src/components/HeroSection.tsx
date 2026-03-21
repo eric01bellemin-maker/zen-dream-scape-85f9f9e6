@@ -7,9 +7,9 @@ const HeroSection = () => {
       {/* 1. L'IMAGE DE FOND (CORRIGÉE : fond-zen.jpg) */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="fond-zen.jpg" 
-          alt="Ambiance sereine Sonora Zen" 
-          className="w-full h-full object-cover object-center"
+         src="fond-zen.jpg" 
+         alt="Ambiance sereine Sonora Zen" 
+         className="w-full h-full object-cover object-[75%_center] md:object-center"
         />
         {/* Voile sombre pour la lisibilité du texte */}
         <div className="absolute inset-0 bg-black/40 z-10"></div>
