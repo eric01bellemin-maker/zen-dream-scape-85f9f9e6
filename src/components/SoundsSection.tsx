@@ -1,24 +1,29 @@
 import { Play } from "lucide-react";
 
 const ambiances = [
+ const ambiances = [
   {
     title: "Chant des Oiseaux",
-    image: "oiseaux.jpg", // Assure-toi que le nom du fichier image est correct
+    image: "oiseaux.jpg",
+    audio: "/audio/oiseaux.mp3",
     id: "oiseaux"
   },
   {
     title: "Bruit des Vagues",
     image: "vagues.jpg",
+    audio: "/audio/vagues.mp3",
     id: "vagues"
   },
   {
     title: "Murmure de la Rivière",
     image: "riviere.jpg",
+    audio: "/audio/riviere.mp3",
     id: "riviere"
   },
   {
     title: "Souffle du Vent",
     image: "vent.jpg",
+    audio: "/audio/vent.mp3",
     id: "vent"
   }
 ];
