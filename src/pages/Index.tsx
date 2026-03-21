@@ -12,16 +12,19 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 
 const Index = () => {
-  return (
+ return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <HeroSection />
-
-      {/* La vidéo s'affiche maintenant ici, juste après la bannière */}
+      
+      {/* La vidéo */}
       <VideoSection />
 
-      <ProductSection />
-      <ProductSheetSection />
+      {/* C'EST ICI QUE ÇA SE PASSE : ON AJOUTE LE NOUVEAU BLOC */}
+      <ProductPresentation />
+
+      {/* On peut enlever ProductSection et ProductSheetSection car tout est dans Presentation désormais */}
+      
       <SoundsSection />
       <BenefitsSection />
       <TestimonialsSection />
@@ -29,7 +32,4 @@ const Index = () => {
       <CTASection />
       <Footer />
     </div>
-  );
-};
-
-export default Index;
+  ); 
