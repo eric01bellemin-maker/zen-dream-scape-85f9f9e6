@@ -32,4 +32,4 @@ const Index = () => {
       <CTASection />
       <Footer />
     </div>
-  ); 
+  ); //
