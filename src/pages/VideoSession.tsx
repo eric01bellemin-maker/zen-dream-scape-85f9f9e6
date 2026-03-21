@@ -5,23 +5,25 @@ const VideoSession = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-[#0f172a] text-white flex flex-col items-center pt-20 md:justify-center p-6">
       
-      {/* BOUTON RETOUR (Pour revenir à l'accueil facilement) */}
-      <button 
-        onClick={() => navigate("/")}
-        className="absolute top-8 left-8 flex items-center gap-2 text-white/70 hover:text-[#26A69A] transition-all group"
-      >
-        <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
-        Retour à l'accueil
-      </button>
+      {/* BOUTON RETOUR (Corrigé pour ne plus chevaucher le titre) */}
+      <div className="w-full max-w-5xl mb-8">
+        <button 
+          onClick={() => navigate("/")}
+          className="flex items-center gap-2 text-white/70 hover:text-[#26A69A] transition-all group text-sm md:text-base"
+        >
+          <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
+          Retour à l'accueil
+        </button>
+      </div>
 
       <div className="max-w-5xl w-full">
         <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-[#26A69A] mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-[#26A69A] mb-4 leading-tight">
             Votre Séance de Relaxation
           </h1>
-          <p className="text-white/60 text-lg">
+          <p className="text-white/60 text-base md:text-lg">
             Installez-vous confortablement et laissez Sonora Zen vous guider.
           </p>
         </div>
