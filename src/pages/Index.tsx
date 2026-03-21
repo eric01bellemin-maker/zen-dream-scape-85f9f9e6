@@ -4,10 +4,10 @@ import BenefitsSection from "@/components/BenefitsSection";
 import ProductPresentation from "@/components/ProductPresentation";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection"; // Vérifie qu'il n'y a rien avant cette ligne
+import CTASection from "@/components/CTASection"; 
 import Footer from "@/components/Footer";
 
-export default function Home() {
+const Index = () => {
   return (
     <main className="min-h-screen bg-[#f0f9ff]">
       <Navbar />
@@ -20,5 +20,6 @@ export default function Home() {
       <Footer />
     </main>
   );
-}
-export default Index;
+};
+
+export default Index; // UN SEUL EXPORT ICI
