@@ -5,9 +5,15 @@
 @tailwind utilities;
 
 @layer base {
+  /* AJOUTE LA LIGNE ICI */
+  html {
+    scroll-behavior: smooth;
+  }
+
   :root {
     --background: 0 0% 100%; /* Blanc pur */
     --foreground: 220 30% 15%;
+    /* ... la suite de tes variables CSS ... */
 
     --card: 0 0% 100%;
     --card-foreground: 220 30% 15%;
