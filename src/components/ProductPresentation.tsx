@@ -14,7 +14,7 @@ const productVariants = [
     id: "blue",
     colorName: "Bleu",
     mainImageUrl: "/palet-bleu.jpg",
-    handImageUrl: "/main-bleue.jpg", // Maintenant OK !
+    handImageUrl: "/main-bleue.jpg",
     textDescription: "Le Sonora Zen Bleu diffuse des ondes sonores apaisantes à travers votre oreiller pour une nuit de sérénité.",
     buttonClass: "bg-[#26A69A] hover:bg-[#1f8a7f] ring-teal-100"
   },
@@ -44,7 +44,7 @@ const ProductPresentation = () => {
         {/* SECTION DOUBLE VISUEL : PRODUIT + TECHNIQUE */}
         <div className="grid md:grid-cols-2 gap-8 items-stretch mb-20 max-w-6xl mx-auto">
           
-          {/* BLOC A : LE PRODUIT ET CHOIX COULEUR */}
+          {/* BLOC A : LE PRODUIT ET BOUTONS SEULS */}
           <div className="flex flex-col bg-slate-50/50 rounded-3xl border border-slate-100 overflow-hidden shadow-sm">
             <div className="flex-1 flex items-center justify-center p-10">
               <img 
@@ -54,15 +54,15 @@ const ProductPresentation = () => {
               />
             </div>
             
-            <div className="bg-white p-6 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-sm font-bold text-slate-700 uppercase tracking-wider">Couleur : {selectedVariant.colorName}</span>
-              <div className="flex gap-3">
+            {/* BOUTONS CENTRÉS SANS TEXTE DE COULEUR */}
+            <div className="bg-white p-6 border-t border-slate-100 flex items-center justify-center">
+              <div className="flex gap-4">
                 {productVariants.map(variant => (
                   <button
                     key={variant.id}
                     onClick={() => setSelectedVariant(variant)}
-                    className={`px-6 py-2 rounded-full text-[10px] font-black uppercase transition-all duration-300 ${variant.buttonClass} text-white
-                      ${selectedVariant.id === variant.id ? 'ring-4 ring-offset-2' : 'opacity-70 hover:opacity-100'}`}
+                    className={`px-8 py-3 rounded-full text-[11px] font-black uppercase tracking-widest transition-all duration-300 ${variant.buttonClass} text-white
+                      ${selectedVariant.id === variant.id ? 'ring-4 ring-offset-2 scale-105 shadow-lg' : 'opacity-60 hover:opacity-100'}`}
                   >
                     {variant.colorName}
                   </button>
