@@ -65,11 +65,16 @@ const SoundAmbiances = () => {
                 {ambiance.title}
               </h3>
 
-              {/* BOUTON ÉPURÉ ET CLAIR */}
-              <button className="flex items-center gap-3 bg-white border border-slate-300 text-slate-500 px-8 py-3.5 rounded-full text-xs font-black uppercase tracking-widest transition-all hover:bg-slate-50 active:scale-95 group-hover:border-[#26A69A]/30 group-hover:text-[#26A69A]">
-                <Play size={16} className="text-[#26A69A]"/>
-                Écouter
-              </button>
+             <button 
+               className="flex items-center gap-3 bg-white border border-slate-300 text-slate-500 px-8 py-3.5 rounded-full hover:bg-slate-50 transition-colors"
+               onClick={() => {
+               const audio = new Audio(ambiance.audio);
+                audio.play().catch(e => console.error("Erreur de lecture :", e));
+               }}
+             >
+            <Play size={16} className="text-[#26A69A]"/>
+           Écouter
+          </button> 
             </div>
           ))}
         </div>
