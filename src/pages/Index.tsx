@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import ProductInAction from "@/components/ProductInAction";
 import SoundsSection from "@/components/SoundsSection"; // AJOUT ICI
 import ProductPresentation from "@/components/ProductPresentation";
 import TestimonialsSection from "@/components/TestimonialsSection";
