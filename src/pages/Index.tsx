@@ -2,7 +2,8 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import ProductInAction from "@/components/ProductInAction";
-import SoundAmbiances from "@/components/SoundsSection"; // CORRIGÉ ICI : SoundsSection au lieu de SoundAmbiances
+// ON UTILISE LE NOM EXACT DU FICHIER : SoundsSection
+import SoundAmbiances from "@/components/SoundsSection"; 
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -13,7 +14,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       
-      {/* Les IDs ici permettent aux liens de fonctionner */}
+      {/* C'est ici que l'on crée les ancres pour que les boutons fonctionnent */}
       <div id="produit">
         <BenefitsSection />
         <ProductInAction />
