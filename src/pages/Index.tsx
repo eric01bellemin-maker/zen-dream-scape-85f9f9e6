@@ -14,9 +14,9 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       
-      {/* L'ID "produit" permet au lien de la Navbar de descendre ici sans erreur 404 */}
+     {/* L'ID "produit" affiche maintenant ta galerie interactive avec les boutons de couleur */}
       <section id="produit">
-        <BenefitsSection />
+        <ProduitDetailsPage />
         <ProductInAction />
       </section>
       
