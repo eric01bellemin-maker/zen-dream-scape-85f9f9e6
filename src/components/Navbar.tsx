@@ -19,8 +19,8 @@ const Navbar = () => {
  // Extrait de ce que doit être ta Navbar pour ne plus avoir de 404
 const navLinks = [
   { name: "Accueil", href: "#" },
-  { name: "Produit", href: "#produit" }, 
-  { name: "Sons", href: "#sons" },
+  { name: "Produit", href: "#details" },      // Redirige vers la fiche technique
+  { name: "Sons", href: "#sons" },            // Redirige vers les ambiances sonores
   { name: "Témoignages", href: "#temoignages" },
   { name: "FAQ", href: "#faq" },
 ];
