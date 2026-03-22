@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import ProduitDetailsPage from "./ProduitDetails";
 import ProductInAction from "@/components/ProductInAction";
 import SoundAmbiances from "@/components/SoundsSection"; 
 import TestimonialsSection from "@/components/TestimonialsSection";
