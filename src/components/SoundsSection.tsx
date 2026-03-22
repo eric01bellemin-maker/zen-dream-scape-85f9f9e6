@@ -9,7 +9,7 @@ const ambiances = [
   { title: "Souffle du Vent", image: `${baseUrl}/vent.jpg`, audio: `${baseUrl}/sounds/wind.mp3`, id: "vent" }
 ];
 
-const SoundSection = () => { // On renomme la fonction pour matcher le fichier
+const SoundSection = () => {
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -30,7 +30,7 @@ const SoundSection = () => { // On renomme la fonction pour matcher le fichier
     }
     if (audioRef.current) { audioRef.current.pause(); }
     const newAudio = new Audio(ambiance.audio);
-    newAudio.play().catch(error => console.error("Erreur de lecture :", error));
+    newAudio.play().catch(error => console.error("Erreur :", error));
     audioRef.current = newAudio;
     setPlayingId(ambiance.id);
     newAudio.onended = () => setPlayingId(null);
@@ -41,23 +41,21 @@ const SoundSection = () => { // On renomme la fonction pour matcher le fichier
       <div className="container mx-auto px-6 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Volume2 className="text-[#26A69A]" size={20} />
-          <span className="text-[#26A69A] text-xs font-black uppercase tracking-[0.3em]">Immersion Sonore</span>
+          <span className="text-[#26A69A] text-xs font-black uppercase tracking-[0.3em]">Immersion</span>
         </div>
-        <h2 className="text-3xl md:text-5xl font-sans font-bold text-slate-700 mb-6 tracking-tight">
-          Nos <span className="text-[#26A69A]">Ambiances</span> Naturelles
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <h2 className="text-3xl font-bold text-slate-700 mb-16">Nos Ambiances Naturelles</h2>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {ambiances.map((ambiance) => (
-            <div key={ambiance.id} className="bg-white/60 backdrop-blur-sm p-8 rounded-[40px] shadow-xl border border-white flex flex-col items-center group transition-all">
-              <div className="w-full aspect-square rounded-full overflow-hidden mb-8 border-4 border-white shadow-md">
-                <img src={ambiance.image} alt={ambiance.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div key={ambiance.id} className="bg-white p-8 rounded-[40px] shadow-lg flex flex-col items-center">
+              <div className="w-full aspect-square rounded-full overflow-hidden mb-6 border-4 border-white shadow-md">
+                <img src={ambiance.image} alt={ambiance.title} className="w-full h-full object-cover" />
               </div>
-              <h3 className="text-lg font-bold text-slate-600 mb-8 uppercase tracking-widest">{ambiance.title}</h3>
+              <h3 className="text-sm font-bold text-slate-600 mb-6 uppercase tracking-widest">{ambiance.title}</h3>
               <button 
-                className={`flex items-center gap-3 px-8 py-3.5 rounded-full font-bold shadow-sm ${playingId === ambiance.id ? "bg-[#26A69A] text-white" : "bg-white text-[#26A69A]"}`}
                 onClick={() => toggleAudio(ambiance)}
+                className={`px-8 py-3 rounded-full font-bold ${playingId === ambiance.id ? "bg-[#26A69A] text-white" : "bg-slate-100 text-[#26A69A]"}`}
               >
-                {playingId === ambiance.id ? <><Square size={14} fill="white" /> STOP</> : <><Play size={14} fill="currentColor" /> ÉCOUTER</>}
+                {playingId === ambiance.id ? "STOP" : "ÉCOUTER"}
               </button>
             </div>
           ))}
@@ -67,4 +65,4 @@ const SoundSection = () => { // On renomme la fonction pour matcher le fichier
   );
 };
 
-export default SoundSection; // CETTE LIGNE EST CRUCIALE
+export default SoundSection;
