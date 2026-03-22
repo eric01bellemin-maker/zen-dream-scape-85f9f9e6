@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ProduitDetailsPage from "./ProduitDetails"; // Ton nouveau composant
+import ProduitDetailsPage from "./ProduitDetails"; // Import de la nouvelle page
 import ProductInAction from "@/components/ProductInAction";
 import SoundAmbiances from "@/components/SoundsSection"; 
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -13,9 +13,9 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       
-      {/* On remplace BenefitsSection par ProduitDetailsPage ici */}
+      {/* L'ID "produit" affiche maintenant ta galerie interactive avec les boutons de couleur */}
       <section id="produit">
-        <ProduitDetailsPage /> 
+        <ProduitDetailsPage /> {/* On utilise le nouveau composant ici */}
         <ProductInAction />
       </section>
       
