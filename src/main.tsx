@@ -1,13 +1,12 @@
 // REMPLACER :
 import { BrowserRouter } from 'react-router-dom';
 // PAR :
-import { HashRouter as Router } from 'react-router-dom';
+import { HashRouter } from "react-router-dom";
 
-// Et entourez votre composant <App /> avec <Router>
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Router>
+    <HashRouter>
       <App />
-    </Router>
-  </React.StrictMode>,
-)
+    </HashRouter>
+  </React.StrictMode>
+);
