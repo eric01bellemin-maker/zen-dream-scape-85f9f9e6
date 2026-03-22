@@ -15,13 +15,12 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Configuration des liens pour une navigation sur une seule page (Single Page)
   const navLinks = [
     { name: "Accueil", href: "#" },
-    { name: "Produit", href: "#details" },      // Correspond à l'ID dans ProduitDetails.tsx
-    { name: "Sons", href: "#sons" },            // Correspond à l'ID dans SoundSection.tsx
+    { name: "Produit", href: "#produit" },
+    { name: "Sons", href: "#sons" },
     { name: "Témoignages", href: "#temoignages" },
-    { name: "FAQ", href: "#faq" },               // Correspond à l'ID dans FAQSection.tsx
+    { name: "FAQ", href: "#faq" },
   ];
 
   return (
@@ -30,7 +29,6 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         
-        {/* 1. BLOC GAUCHE (Desktop) */}
         <div className="hidden md:flex items-center gap-6 flex-1 text-slate-500">
           {navLinks.slice(0, 3).map((link) => (
             <a
@@ -43,7 +41,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* 2. BLOC CENTRE : LOGO */}
         <div className="flex-none text-center">
           <a href="#" className="flex flex-col items-center">
             <span className="text-xl md:text-2xl font-black tracking-tighter text-[#26A69A] uppercase leading-none">
@@ -55,7 +52,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* 3. BLOC DROITE (Desktop) */}
         <div className="hidden md:flex items-center justify-end gap-6 flex-1 text-slate-500">
           {navLinks.slice(3).map((link) => (
             <a
@@ -67,9 +63,8 @@ const Navbar = () => {
             </a>
           ))}
           
-          {/* Bouton de commande redirigeant vers la section produit (évite la 404) */}
           <a
-            href="#details" 
+            href="#produit"
             className="flex items-center gap-2 bg-[#26A69A] text-white px-4 py-2 rounded-full text-[10px] font-bold hover:bg-[#1f8a80] transition-all shadow-md active:scale-95"
           >
             <ShoppingCart size={14} />
@@ -77,7 +72,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* BOUTON BURGER (Mobile) */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-slate-600 p-1">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,7 +79,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MENU MOBILE DÉROULANT */}
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg animate-in slide-in-from-top duration-300">
           <div className="flex flex-col p-4 gap-4">
@@ -100,7 +93,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#details"
+              href="#produit"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 bg-[#26A69A] text-white py-3 rounded-xl font-bold"
             >
