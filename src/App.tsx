@@ -2,8 +2,6 @@ import Navbar from "./components/Navbar";
 import ProduitDetailsPage from "./pages/ProduitDetails";
 import SoundSection from "./components/SoundSection";
 import FAQSection from "./components/FAQSection";
-
-// On importe le smooth scroll pour tout le site
 import "./App.css"; 
 
 function App() {
@@ -11,24 +9,47 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* Toutes les sections sont sur la même page */}
+      {/* SECTION ACCUEIL ET PRODUIT */}
       <div id="accueil">
-        <ProduitDetailsPage />
+        <ProduitDetailsPage /> 
       </div>
 
+      {/* SECTION SONS */}
       <div id="sons">
         <SoundSection />
       </div>
 
+      {/* SECTION TÉMOIGNAGES (Ajoutée pour éviter le vide) */}
+      <section id="temoignages" className="py-24 bg-white border-t border-slate-50">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-black text-slate-800 mb-12 uppercase tracking-tighter">
+            Ils dorment mieux avec <span className="text-[#26A69A]">Sonora Zen</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-8 bg-slate-50 rounded-[30px] border border-slate-100 shadow-sm">
+              <p className="text-slate-600 italic mb-4">"Une révolution pour mes nuits."</p>
+              <p className="font-bold text-[#26A69A]">Sophie R.</p>
+            </div>
+            <div className="p-8 bg-slate-50 rounded-[30px] border border-slate-100 shadow-sm">
+              <p className="text-slate-600 italic mb-4">"On s'endort vraiment plus vite."</p>
+              <p className="font-bold text-[#26A69A]">Marc A.</p>
+            </div>
+            <div className="p-8 bg-slate-50 rounded-[30px] border border-slate-100 shadow-sm">
+              <p className="text-slate-600 italic mb-4">"Qualité sonore exceptionnelle."</p>
+              <p className="font-bold text-[#26A69A]">Léa M.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION FAQ */}
       <div id="faq">
         <FAQSection />
       </div>
 
-      {/* Section Témoignages (Optionnelle, pour éviter le vide) */}
-      <section id="temoignages" className="py-20 bg-white text-center">
-        <h2 className="text-3xl font-black text-slate-800 mb-8 uppercase">Témoignages</h2>
-        <p className="text-slate-500 italic">"Une expérience sonore incroyable pour s'endormir." - Client satisfait</p>
-      </section>
+      <footer className="py-8 bg-slate-50 text-center border-t border-slate-100 font-bold text-slate-400 text-[10px] uppercase tracking-widest">
+        © 2026 Sonora Zen. Tous droits réservés.
+      </footer>
     </div>
   );
 }
