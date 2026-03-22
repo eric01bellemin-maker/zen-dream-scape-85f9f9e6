@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Play, Square, Volume2 } from "lucide-react";
+import { Volume2 } from "lucide-react";
 
 const baseUrl = import.meta.env.BASE_URL;
 const ambiances = [
@@ -9,20 +9,11 @@ const ambiances = [
   { title: "Souffle du Vent", image: `${baseUrl}/vent.jpg`, audio: `${baseUrl}/sounds/wind.mp3`, id: "vent" }
 ];
 
-const SoundSection = () => {
+export default function SoundSection() {
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  useEffect(() => {
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
-
-  const toggleAudio = (ambiance: typeof ambiances[0]) => {
+  const toggleAudio = (ambiance: any) => {
     if (playingId === ambiance.id) {
       if (audioRef.current) { audioRef.current.pause(); audioRef.current = null; }
       setPlayingId(null);
@@ -30,14 +21,13 @@ const SoundSection = () => {
     }
     if (audioRef.current) { audioRef.current.pause(); }
     const newAudio = new Audio(ambiance.audio);
-    newAudio.play().catch(error => console.error("Erreur lecture:", error));
+    newAudio.play().catch(e => console.log(e));
     audioRef.current = newAudio;
     setPlayingId(ambiance.id);
-    newAudio.onended = () => setPlayingId(null);
   };
 
   return (
-    <section id="sons" className="py-24 bg-[#f0f9ff]">
+    <section className="py-24 bg-[#f0f9ff]">
       <div className="container mx-auto px-6 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Volume2 className="text-[#26A69A]" size={20} />
@@ -63,6 +53,5 @@ const SoundSection = () => {
       </div>
     </section>
   );
-};
-
-export default SoundSection;
+}
+          
