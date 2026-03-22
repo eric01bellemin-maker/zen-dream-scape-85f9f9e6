@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Bluetooth, Zap, Ear, Radio, Layers3, MoonStar, Target, Star, ChevronLeft, ChevronRight } from "lucide-react";
-
+import { Bluetooth, Zap, Ear, Radio, Layers3, MoonStar, Target, Star, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 const images = {
   blue: [
     { src: "/palet-bleu.jpg", alt: "Sonora Zen Bleu sur lit" },
