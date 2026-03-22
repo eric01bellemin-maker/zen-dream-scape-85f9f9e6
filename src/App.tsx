@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import ProduitDetailsPage from "./pages/ProduitDetails";
-import SoundSection from "./components/SoundSection";
+import SoundAmbiances from "./components/SoundSection"; // Vérifie bien que le fichier s'appelle SoundSection.tsx dans le dossier components
 import FAQSection from "./components/FAQSection";
 import "./App.css"; 
 
@@ -9,17 +9,15 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* SECTION ACCUEIL ET PRODUIT */}
       <div id="accueil">
-        <ProduitDetailsPage /> 
+        <ProduitDetailsPage />
       </div>
 
-      {/* SECTION SONS */}
       <div id="sons">
-        <SoundSection />
+        {/* Utilisation du nom correct du composant importé */}
+        <SoundAmbiances /> 
       </div>
 
-      {/* SECTION TÉMOIGNAGES (Ajoutée pour éviter le vide) */}
       <section id="temoignages" className="py-24 bg-white border-t border-slate-50">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-black text-slate-800 mb-12 uppercase tracking-tighter">
@@ -42,7 +40,6 @@ function App() {
         </div>
       </section>
 
-      {/* SECTION FAQ */}
       <div id="faq">
         <FAQSection />
       </div>
