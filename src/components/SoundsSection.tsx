@@ -1,33 +1,32 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Play, Square, Volume2 } from "lucide-react";
-
+const baseUrl = import.meta.env.BASE_URL;
 const ambiances = [
   {
     title: "Chant des Oiseaux",
-    image: "oiseaux.jpg",
-    audio: "/sounds/birds.mp3", // Note le "/" au début pour pointer vers le dossier public
+    image: `${baseUrl}/oiseaux.jpg`,
+    audio: `${baseUrl}/sounds/birds.mp3`,
     id: "oiseaux"
   },
   {
     title: "Bruit des Vagues",
-    image: "vagues.jpg",
-    audio: "/sounds/waves.mp3",
+    image: `${baseUrl}/vagues.jpg`,
+    audio: `${baseUrl}/sounds/waves.mp3`,
     id: "vagues"
   },
   {
     title: "Murmure de la Rivière",
-    image: "riviere.jpg",
-    audio: "/sounds/river.mp3",
+    image: `${baseUrl}/riviere.jpg`,
+    audio: `${baseUrl}/sounds/river.mp3`,
     id: "riviere"
   },
   {
     title: "Souffle du Vent",
-    image: "vent.jpg",
-    audio: "/sounds/wind.mp3",
+    image: `${baseUrl}/vent.jpg`,
+    audio: `${baseUrl}/sounds/wind.mp3`,
     id: "vent"
   }
 ];
-
 const SoundAmbiances = () => {
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
