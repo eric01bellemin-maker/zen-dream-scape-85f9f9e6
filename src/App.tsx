@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import ProduitDetailsPage from "./pages/ProduitDetails";
-import SoundSection from "./components/SoundSection"; // Import direct
+import SoundSection from "./components/SoundSection";
 import FAQSection from "./components/FAQSection";
 import "./App.css"; 
 
