@@ -1,42 +1,42 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 1. COMPORTEMENT DE LA PAGE */
+html {
+  /* Active le défilement fluide lors du clic sur la Navbar */
+  scroll-behavior: smooth;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif; /* Ou ta police actuelle */
+  background-color: #ffffff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 2. AJUSTEMENT DES SECTIONS POUR LA NAV FIXE */
+section {
+  /* Évite que le haut de la section soit caché derrière la Navbar après le scroll */
+  scroll-margin-top: 80px; 
+}
+
+/* 3. RESET DES LIENS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 4. ANIMATIONS (Optionnel : pour rendre le site plus vivant) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* 5. RESPONSIVE */
+@media (max-width: 768px) {
+  section {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
