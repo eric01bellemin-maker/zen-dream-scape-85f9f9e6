@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Bluetooth, Zap, Ear, Radio, Layers3, MoonStar, Target, Star, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+const baseUrl = import.meta.env.BASE_URL; // Récupère le chemin de base du projet
 const images = {
   blue: [
-    { src: "/palet-bleu.jpg", alt: "Sonora Zen Bleu sur lit" },
-    { src: "/main-bleue.jpg", alt: "Sonora Zen Bleu et téléphone" },
+    { src: `${baseUrl}/palet-bleu.jpg`, alt: "Sonora Zen Bleu sur lit" },
+    { src: `${baseUrl}/main-bleue.jpg.jpg`, alt: "Sonora Zen Bleu et téléphone" },
   ],
   grey: [
-    { src: "/palet-gris.jpg", alt: "Sonora Zen Gris sur lit" },
-    { src: "/main-grise.jpg", alt: "Sonora Zen Gris et téléphone" },
+    { src: `${baseUrl}/palet-gris.jpg`, alt: "Sonora Zen Gris sur lit" },
+    { src: `${baseUrl}/main-grise.jpg.jpg`, alt: "Sonora Zen Gris et téléphone" },
   ],
 };
 
