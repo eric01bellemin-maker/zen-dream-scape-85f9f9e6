@@ -30,7 +30,7 @@ const SoundSection = () => {
     }
     if (audioRef.current) { audioRef.current.pause(); }
     const newAudio = new Audio(ambiance.audio);
-    newAudio.play().catch(error => console.error("Erreur :", error));
+    newAudio.play().catch(error => console.error("Erreur lecture:", error));
     audioRef.current = newAudio;
     setPlayingId(ambiance.id);
     newAudio.onended = () => setPlayingId(null);
@@ -43,17 +43,17 @@ const SoundSection = () => {
           <Volume2 className="text-[#26A69A]" size={20} />
           <span className="text-[#26A69A] text-xs font-black uppercase tracking-[0.3em]">Immersion</span>
         </div>
-        <h2 className="text-3xl font-bold text-slate-700 mb-16 uppercase tracking-tighter">Nos Ambiances Naturelles</h2>
+        <h2 className="text-3xl font-bold text-slate-700 mb-16 uppercase tracking-tighter">Nos Ambiances</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {ambiances.map((ambiance) => (
-            <div key={ambiance.id} className="bg-white/60 backdrop-blur-sm p-8 rounded-[40px] shadow-lg border border-white flex flex-col items-center group transition-all duration-300 hover:scale-[1.02]">
+            <div key={ambiance.id} className="bg-white/60 p-8 rounded-[40px] shadow-lg flex flex-col items-center">
               <div className="w-full aspect-square rounded-full overflow-hidden mb-6 border-4 border-white shadow-md">
-                <img src={ambiance.image} alt={ambiance.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <img src={ambiance.image} alt={ambiance.title} className="w-full h-full object-cover" />
               </div>
               <h3 className="text-sm font-bold text-slate-600 mb-6 uppercase tracking-widest">{ambiance.title}</h3>
               <button 
                 onClick={() => toggleAudio(ambiance)}
-                className={`px-8 py-3 rounded-full font-bold transition-all ${playingId === ambiance.id ? "bg-[#26A69A] text-white" : "bg-slate-100 text-[#26A69A] hover:bg-white"}`}
+                className={`px-8 py-3 rounded-full font-bold ${playingId === ambiance.id ? "bg-[#26A69A] text-white" : "bg-slate-100 text-[#26A69A]"}`}
               >
                 {playingId === ambiance.id ? "STOP" : "ÉCOUTER"}
               </button>
