@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // On garde Link juste pour le logo si besoin
 import { ShoppingCart, Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -16,14 +15,14 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
- // Extrait de ce que doit être ta Navbar pour ne plus avoir de 404
-const navLinks = [
-  { name: "Accueil", href: "#" },
-  { name: "Produit", href: "#details" },      // Doit correspondre à l'ID du produit
-  { name: "Sons", href: "#sons" },            // Doit correspondre à l'ID des sons
-  { name: "Témoignages", href: "#temoignages" },
-  { name: "FAQ", href: "#faq" },
-];
+  // Configuration des liens pour une navigation sur une seule page (Single Page)
+  const navLinks = [
+    { name: "Accueil", href: "#" },
+    { name: "Produit", href: "#details" },      // Correspond à l'ID dans ProduitDetails.tsx
+    { name: "Sons", href: "#sons" },            // Correspond à l'ID dans SoundSection.tsx
+    { name: "Témoignages", href: "#temoignages" },
+    { name: "FAQ", href: "#faq" },               // Correspond à l'ID dans FAQSection.tsx
+  ];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -68,17 +67,17 @@ const navLinks = [
             </a>
           ))}
           
-          {/* CORRECTION : Utiliser un chemin relatif pour éviter la 404 sur GitHub Pages */}
-          <Link
-            to="./commander" 
+          {/* Bouton de commande redirigeant vers la section produit (évite la 404) */}
+          <a
+            href="#details" 
             className="flex items-center gap-2 bg-[#26A69A] text-white px-4 py-2 rounded-full text-[10px] font-bold hover:bg-[#1f8a80] transition-all shadow-md active:scale-95"
           >
             <ShoppingCart size={14} />
             <span className="hidden sm:inline">Commander</span>
-          </Link>
+          </a>
         </div>
 
-        {/* BOUTON BURGER (Mobile uniquement) */}
+        {/* BOUTON BURGER (Mobile) */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-slate-600 p-1">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -100,15 +99,14 @@ const navLinks = [
                 {link.name}
               </a>
             ))}
-            {/* CORRECTION : Chemin relatif ici aussi */}
-            <Link
-              to="./commander"
+            <a
+              href="#details"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 bg-[#26A69A] text-white py-3 rounded-xl font-bold"
             >
               <ShoppingCart size={18} />
               Commander
-            </Link>
+            </a>
           </div>
         </div>
       )}
