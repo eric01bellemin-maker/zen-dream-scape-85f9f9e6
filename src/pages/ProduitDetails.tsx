@@ -8,11 +8,11 @@ const baseUrl = import.meta.env.BASE_URL;
 const images = {
   blue: [
     { src: `${baseUrl}/palet-bleu.jpg`, alt: "Sonora Zen Bleu sur lit" },
-    { src: `${baseUrl}/main-bleue.jpg.jpg`, alt: "Sonora Zen Bleu et téléphone" },
+    { src: `${baseUrl}/main-bleue.jpg`, alt: "Sonora Zen Bleu et téléphone" },
   ],
   grey: [
     { src: `${baseUrl}/palet-gris.jpg`, alt: "Sonora Zen Gris sur lit" },
-    { src: `${baseUrl}/main-grise.jpg.jpg`, alt: "Sonora Zen Gris et téléphone" },
+    { src: `${baseUrl}/main-grise.jpg`, alt: "Sonora Zen Gris et téléphone" },
   ],
 };
 
