@@ -15,7 +15,7 @@ const Index = () => {
       
       {/* L'ID "produit" affiche maintenant ta galerie interactive avec les boutons de couleur */}
       <section id="produit">
-        <ProduitDetailsPage /> {/* On utilise le nouveau composant ici */}
+        <ProduitDetailsPage /> 
         <ProductInAction />
       </section>
       
