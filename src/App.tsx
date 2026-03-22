@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import ProduitDetailsPage from "./pages/ProduitDetails";
-import SoundAmbiances from "./components/SoundSection"; 
+import SoundAmbiances from "./components/SoundSection"; // Import direct
 import FAQSection from "./components/FAQSection";
 import "./App.css"; 
 
@@ -9,7 +9,6 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* Chaque zone a un ID qui correspond aux liens de ta Navbar */}
       <div id="accueil">
         <ProduitDetailsPage />
       </div>
@@ -18,7 +17,6 @@ function App() {
         <SoundAmbiances /> 
       </div>
 
-      {/* Section Témoignages intégrée pour éviter les liens vides */}
       <section id="temoignages" className="py-24 bg-white border-t border-slate-50">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-black text-slate-800 mb-12 uppercase tracking-tighter">
@@ -30,11 +28,11 @@ function App() {
               <p className="font-bold text-[#26A69A]">Sophie R.</p>
             </div>
             <div className="p-8 bg-slate-50 rounded-[30px] border border-slate-100 shadow-sm">
-              <p className="text-slate-600 italic mb-4">"On s'endort vraiment plus vite."</p>
+              <p className="text-slate-600 italic mb-4">"Le mode conduction osseuse est bluffant."</p>
               <p className="font-bold text-[#26A69A]">Marc A.</p>
             </div>
             <div className="p-8 bg-slate-50 rounded-[30px] border border-slate-100 shadow-sm">
-              <p className="text-slate-600 italic mb-4">"Qualité sonore exceptionnelle."</p>
+              <p className="text-slate-600 italic mb-4">"Qualité exceptionnelle."</p>
               <p className="font-bold text-[#26A69A]">Léa M.</p>
             </div>
           </div>
