@@ -2,8 +2,6 @@ import React from 'react';
 import { Ear, Brain, Feather, Star } from "lucide-react";
 import mainGrisImage from '../assets/main-gris.jpg';
 
-const baseUrl = import.meta.env.BASE_URL;
-
 function ProduitDetailsPage() {
   const caracteristiques = [
     {
@@ -36,32 +34,28 @@ function ProduitDetailsPage() {
         <div className="rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 border border-white p-2 bg-white/50 backdrop-blur-sm">
           <img 
             src={mainGrisImage}
-            alt="Détails Sonora Zen Gris" 
+            alt="Détails Sonora Zen" 
             className="w-full h-auto rounded-2xl object-cover"
           />
         </div>
 
         {/* Colonne de droite - Texte */}
         <div className="space-y-12">
-          
-          {/* Titre et Intro */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-6xl font-sans font-black text-slate-800 leading-tight tracking-tighter">
               Une Nouvelle Façon<br /> D'écouter
             </h1>
             
-            {/* --- LA MODIFICATION EST ICI --- */}
+            {/* Phrase modifiée selon votre demande */}
             <p className="text-xl md:text-2xl text-slate-500 font-sans italic max-w-xl">
               Des sons naturels qui calment votre esprit et vous aident à dormir profondément.
             </p>
-            {/* ------------------------------- */}
             
             <button className="bg-[#26A69A] text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:bg-[#208a80] transition duration-300">
               Réserver le mien — 149€
             </button>
           </div>
 
-          {/* Caractéristiques */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {caracteristiques.map((item, index) => (
               <div key={index} className="flex items-start gap-4">
@@ -75,7 +69,6 @@ function ProduitDetailsPage() {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </div>
@@ -83,3 +76,4 @@ function ProduitDetailsPage() {
 }
 
 export default ProduitDetailsPage;
+                
