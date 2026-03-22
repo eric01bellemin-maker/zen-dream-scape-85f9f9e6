@@ -5,7 +5,7 @@ const ProduitDetailsPage = () => {
   const [selectedColor, setSelectedColor] = useState<'gris' | 'bleu'>('gris');
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
-  // ON REPREND TES NOMS DE FICHIERS EXACTS DANS /PUBLIC
+  // Chemins exacts vers ton dossier public
   const productInfo = {
     gris: {
       name: "SONORA ZEN - GRIS SIDÉRAL",
@@ -20,83 +20,79 @@ const ProduitDetailsPage = () => {
   };
 
   return (
-    <div className="pt-32 pb-20 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+    <div className="pt-24 pb-16 bg-white min-h-screen">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
           
-          {/* BLOC IMAGE GAUCHE */}
+          {/* IMAGE PRINCIPALE (Tes fichiers .jpg) */}
           <div className="w-full lg:w-1/2 relative">
-            <div className="aspect-square rounded-[50px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-slate-50">
+            <div className="aspect-square rounded-[40px] overflow-hidden bg-slate-100 shadow-2xl">
               <img 
                 src={productInfo[selectedColor].image} 
-                className="w-full h-full object-cover transition-all duration-700" 
                 alt="Produit Sonora" 
+                className="w-full h-full object-cover" 
               />
             </div>
             <button 
               onClick={() => setIsVideoOpen(true)}
-              className="absolute inset-0 m-auto w-24 h-24 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-10"
+              className="absolute inset-0 m-auto w-20 h-20 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform"
             >
-              <Play className="text-[#26A69A] fill-[#26A69A] ml-1" size={40} />
+              <Play className="text-[#26A69A] fill-[#26A69A] ml-1" size={32} />
             </button>
           </div>
 
-          {/* BLOC TEXTE DROITE */}
-          <div className="w-full lg:w-1/2 space-y-10">
-            <div className="inline-block px-4 py-1.5 bg-[#26A69A]/10 rounded-full text-[#26A69A] text-[11px] font-black uppercase tracking-[0.2em]">
-              <Star className="inline-block mr-2 mt-[-2px]" size={14} fill="#26A69A" /> 
-              Édition Limitée 2026
+          {/* CONTENU TEXTE */}
+          <div className="w-full lg:w-1/2 space-y-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#26A69A]/10 rounded-full text-[#26A69A] text-[10px] font-black uppercase tracking-widest">
+              <Star size={14} fill="#26A69A" /> MEILLEUR CHOIX 2026
             </div>
             
-            <h1 className="text-6xl font-black text-slate-800 uppercase tracking-tighter leading-[0.9]">
+            <h1 className="text-5xl font-black text-slate-800 uppercase tracking-tighter leading-none">
               {productInfo[selectedColor].name}
             </h1>
 
-            <div className="flex items-baseline gap-6">
-              <span className="text-5xl font-black text-[#26A69A] italic">{productInfo[selectedColor].price}</span>
-              <span className="text-slate-300 line-through text-2xl font-bold">199,00 €</span>
+            <div className="flex items-center gap-4">
+              <span className="text-3xl font-black text-[#26A69A]">{productInfo[selectedColor].price}</span>
+              <span className="text-slate-400 line-through font-bold">199,00 €</span>
             </div>
 
-            <p className="text-slate-500 text-xl leading-relaxed font-medium">
-              L'immersion sonore par conduction osseuse. Une clarté inégalée pour vos moments de détente et vos nuits.
+            <p className="text-slate-500 text-lg leading-relaxed">
+              Vivez une immersion sonore totale. La technologie Sonora Zen vous accompagne vers un sommeil profond.
             </p>
 
-            {/* TES PALETS - RETOUR AU DESIGN D'ORIGINE */}
-            <div className="pt-4 space-y-6">
-              <p className="text-xs font-black uppercase tracking-widest text-slate-400">Variante de couleur</p>
-              <div className="flex gap-6">
+            {/* TES PALETS CLICQUABLES (palet-gris.jpg / palet-bleu.jpg) */}
+            <div className="space-y-4">
+              <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Choisir la couleur</p>
+              <div className="flex gap-4">
                 <button 
                   onClick={() => setSelectedColor('gris')} 
-                  className={`group relative w-20 h-20 rounded-full p-1 transition-all ${selectedColor === 'gris' ? 'ring-2 ring-[#26A69A] ring-offset-4' : 'opacity-40 hover:opacity-100'}`}
+                  className={`w-16 h-16 rounded-full border-4 overflow-hidden transition-all ${selectedColor === 'gris' ? 'border-[#26A69A] scale-110' : 'border-transparent opacity-60'}`}
                 >
-                  <img src="/palet-gris.jpg" className="w-full h-full rounded-full object-cover shadow-lg" alt="Gris" />
+                  <img src="/palet-gris.jpg" className="w-full h-full object-cover" alt="Gris" />
                 </button>
                 
                 <button 
                   onClick={() => setSelectedColor('bleu')} 
-                  className={`group relative w-20 h-20 rounded-full p-1 transition-all ${selectedColor === 'bleu' ? 'ring-2 ring-[#26A69A] ring-offset-4' : 'opacity-40 hover:opacity-100'}`}
+                  className={`w-16 h-16 rounded-full border-4 overflow-hidden transition-all ${selectedColor === 'bleu' ? 'border-[#26A69A] scale-110' : 'border-transparent opacity-60'}`}
                 >
-                  <img src="/palet-bleu.jpg" className="w-full h-full rounded-full object-cover shadow-lg" alt="Bleu" />
+                  <img src="/palet-bleu.jpg" className="w-full h-full object-cover" alt="Bleu" />
                 </button>
               </div>
             </div>
 
-            <div className="pt-8">
-              <button className="group w-full bg-slate-900 text-white py-7 rounded-3xl text-sm font-black uppercase tracking-[0.3em] hover:bg-[#26A69A] transition-all shadow-2xl flex items-center justify-center gap-4">
-                <ShoppingCart size={20} className="group-hover:animate-bounce" /> 
-                Ajouter à mon expérience
-              </button>
-            </div>
+            <button className="w-full bg-[#26A69A] text-white py-6 rounded-2xl text-sm font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-xl flex items-center justify-center gap-3">
+              <ShoppingCart size={20} /> COMMANDER MAINTENANT
+            </button>
           </div>
         </div>
       </div>
 
       {/* MODAL VIDÉO */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-[100] bg-slate-900/95 backdrop-blur-xl flex items-center justify-center p-6" onClick={() => setIsVideoOpen(false)}>
-           <div className="w-full max-w-5xl aspect-video bg-black rounded-[40px] overflow-hidden shadow-[0_0_100px_rgba(38,166,154,0.3)]">
-              <video src="/votre-video.mp4" controls autoPlay className="w-full h-full" />
-           </div>
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={() => setIsVideoOpen(false)}>
+          <div className="w-full max-w-4xl aspect-video bg-slate-900 rounded-3xl overflow-hidden shadow-2xl">
+            <video src="/votre-video.mp4" controls autoPlay className="w-full h-full" />
+          </div>
         </div>
       )}
     </div>
