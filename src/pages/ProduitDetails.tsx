@@ -113,8 +113,7 @@ const ProduitDetailsPage = () => {
           </div>
         </div>
       </section>
-      <Footer />
-    </main>
+      </main>
   );
 };
 
