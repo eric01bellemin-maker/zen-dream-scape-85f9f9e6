@@ -1,31 +1,36 @@
-import SoundAmbiances from "./components/SoundAmbiances";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// REMPLACE BrowserRouter PAR HashRouter LIGNE CI-DESSOUS
-import { HashRouter, Routes, Route } from "react-router-dom"; 
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import VideoSession from "./pages/VideoSession";
+import Navbar from "./components/Navbar";
+import ProduitDetailsPage from "./pages/ProduitDetails";
+import SoundSection from "./components/SoundSection";
+import FAQSection from "./components/FAQSection";
 
-const queryClient = new QueryClient();
+// On importe le smooth scroll pour tout le site
+import "./App.css"; 
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      {/* REMPLACE BrowserRouter PAR HashRouter LIGNE CI-DESSOUS */}
-      <HashRouter> 
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/VideoSession" element={<VideoSession />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </HashRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      
+      {/* Toutes les sections sont sur la même page */}
+      <div id="accueil">
+        <ProduitDetailsPage />
+      </div>
+
+      <div id="sons">
+        <SoundSection />
+      </div>
+
+      <div id="faq">
+        <FAQSection />
+      </div>
+
+      {/* Section Témoignages (Optionnelle, pour éviter le vide) */}
+      <section id="temoignages" className="py-20 bg-white text-center">
+        <h2 className="text-3xl font-black text-slate-800 mb-8 uppercase">Témoignages</h2>
+        <p className="text-slate-500 italic">"Une expérience sonore incroyable pour s'endormir." - Client satisfait</p>
+      </section>
+    </div>
+  );
+}
 
 export default App;
