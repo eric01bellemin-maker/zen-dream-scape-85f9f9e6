@@ -6,11 +6,11 @@ import { Bluetooth, Zap, Ear, Radio, Layers3, MoonStar, Target, Star, ChevronLef
 const images = {
   blue: [
     { src: "/palet-bleu.jpg", alt: "Sonora Zen Bleu sur lit" },
-    { src: "/main-bleue.jpg.jpg", alt: "Sonora Zen Bleu et téléphone" },
+    { src: "/main-bleue.jpg", alt: "Sonora Zen Bleu et téléphone" },
   ],
   grey: [
     { src: "/palet-gris.jpg", alt: "Sonora Zen Gris sur lit" },
-    { src: "/main-grise.jpg.jpg", alt: "Sonora Zen Gris et téléphone" },
+    { src: "/main-grise.jpg", alt: "Sonora Zen Gris et téléphone" },
   ],
 };
 
