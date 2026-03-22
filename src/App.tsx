@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import ProduitDetailsPage from "./pages/ProduitDetails";
-// IMPORT CORRIGÉ : On ajoute bien les 's' pour correspondre à ton fichier SoundsSections.tsx
-import SoundSection from "./components/SoundsSections"; 
+// IMPORTATION EXACTE : Basée sur ta capture d'écran "SoundsSection.tsx"
+import SoundSection from "./components/SoundsSection"; 
 import FAQSection from "./components/FAQSection";
 
 function App() {
@@ -9,22 +9,18 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       
-      {/* Section Accueil */}
       <div id="accueil">
         <ProduitDetailsPage />
       </div>
 
-      {/* Section Produit / Détails */}
       <div id="details">
-         {/* Tu peux ajouter ici une autre section si besoin */}
+         {/* Espace pour les détails si nécessaire */}
       </div>
 
-      {/* Section des Sons - ID pour la Navbar */}
       <div id="sons">
         <SoundSection /> 
       </div>
 
-      {/* Section Témoignages - ID pour la Navbar */}
       <div id="temoignages" className="py-20 bg-slate-50 text-center">
         <h2 className="text-3xl font-black text-slate-800 uppercase tracking-tighter">Témoignages</h2>
         <div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
@@ -33,7 +29,6 @@ function App() {
         </div>
       </div>
 
-      {/* Section FAQ - ID pour la Navbar */}
       <div id="faq">
         <FAQSection />
       </div>
