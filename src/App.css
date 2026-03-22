@@ -1,42 +1,13 @@
-/* 1. COMPORTEMENT DE LA PAGE */
 html {
-  /* Active le défilement fluide lors du clic sur la Navbar */
   scroll-behavior: smooth;
+}
+
+/* Important : décale l'arrivée du scroll pour ne pas que la Navbar cache le titre */
+section, div[id] {
+  scroll-margin-top: 100px;
 }
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif; /* Ou ta police actuelle */
-  background-color: #ffffff;
-}
-
-/* 2. AJUSTEMENT DES SECTIONS POUR LA NAV FIXE */
-section {
-  /* Évite que le haut de la section soit caché derrière la Navbar après le scroll */
-  scroll-margin-top: 80px; 
-}
-
-/* 3. RESET DES LIENS */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* 4. ANIMATIONS (Optionnel : pour rendre le site plus vivant) */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-/* 5. RESPONSIVE */
-@media (max-width: 768px) {
-  section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+  overflow-x: hidden;
 }
