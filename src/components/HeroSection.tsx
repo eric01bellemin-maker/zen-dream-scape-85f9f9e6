@@ -15,7 +15,7 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-black/20 z-10"></div>
       </div>
 
-      <div className="flex-grow flex items-end justify-center text-center px-6 pb-32">
+      <div className="flex-grow flex items-end justify-center text-center px-6 pb-40">
   <div className="max-w-xl text-white z-10">
     
     <h1 className="text-3xl md:text-5xl font-bold mb-4">
