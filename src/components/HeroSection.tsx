@@ -22,10 +22,9 @@ const HeroSection = () => {
   Endormez-vous plus rapidement, sans écouteurs inconfortables.
 </h1>
   
-    <p> className="text-base md:text-lg mb-6 opacity-90">
-      Sonora Zen diffuse un son relaxant sous votre oreiller pour vous aider à trouver le sommeil naturellement.
-    </p>
-
+   <p className="text-base md:text-lg mb-6 opacity-90">
+  Sonora Zen diffuse un son relaxant sous votre oreiller pour vous aider à trouver le sommeil naturellement.
+</p>
   </div>
 </div>
 
