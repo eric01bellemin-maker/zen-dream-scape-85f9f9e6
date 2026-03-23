@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProduitDetailsPage from "./ProduitDetails"; // Import de la nouvelle page
 import ProductInAction from "@/components/ProductInAction";
-import SoundAmbiances from "@/components/SoundsSection"; 
+import SoundsSection from "@/components/SoundsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -18,9 +18,9 @@ const Index = () => {
         <ProduitDetailsPage /> 
         <ProductInAction />
       </section>
-      
+      <SoundsSection />
       <section id="sons">
-        <SoundAmbiances />
+        
       </section>
 
       <section id="temoignages">
