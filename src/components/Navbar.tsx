@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // On garde Link juste pour le logo si besoin
 import { ShoppingCart, Menu, X } from "lucide-react";
 
 const Navbar = () => {
@@ -16,14 +15,13 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
- // Extrait de ce que doit être ta Navbar pour ne plus avoir de 404
-const navLinks = [
-  { name: "Accueil", href: "#" },
-  { name: "Produit", href: "#details" },      // Doit correspondre à l'ID du produit
-  { name: "Sons", href: "#sons" },            // Doit correspondre à l'ID des sons
-  { name: "Témoignages", href: "#temoignages" },
-  { name: "FAQ", href: "#faq" },
-];
+  const navLinks = [
+    { name: "Accueil", href: "#" },
+    { name: "Produit", href: "#produit" },
+    { name: "Sons", href: "#sons" },
+    { name: "Témoignages", href: "#temoignages" },
+    { name: "FAQ", href: "#faq" },
+  ];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -31,7 +29,6 @@ const navLinks = [
     }`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         
-        {/* 1. BLOC GAUCHE (Desktop) */}
         <div className="hidden md:flex items-center gap-6 flex-1 text-slate-500">
           {navLinks.slice(0, 3).map((link) => (
             <a
@@ -44,7 +41,6 @@ const navLinks = [
           ))}
         </div>
 
-        {/* 2. BLOC CENTRE : LOGO */}
         <div className="flex-none text-center">
           <a href="#" className="flex flex-col items-center">
             <span className="text-xl md:text-2xl font-black tracking-tighter text-[#26A69A] uppercase leading-none">
@@ -56,7 +52,6 @@ const navLinks = [
           </a>
         </div>
 
-        {/* 3. BLOC DROITE (Desktop) */}
         <div className="hidden md:flex items-center justify-end gap-6 flex-1 text-slate-500">
           {navLinks.slice(3).map((link) => (
             <a
@@ -68,17 +63,15 @@ const navLinks = [
             </a>
           ))}
           
-          {/* CORRECTION : Utiliser un chemin relatif pour éviter la 404 sur GitHub Pages */}
-          <Link
-            to="./commander" 
+          <a
+            href="#produit"
             className="flex items-center gap-2 bg-[#26A69A] text-white px-4 py-2 rounded-full text-[10px] font-bold hover:bg-[#1f8a80] transition-all shadow-md active:scale-95"
           >
             <ShoppingCart size={14} />
             <span className="hidden sm:inline">Commander</span>
-          </Link>
+          </a>
         </div>
 
-        {/* BOUTON BURGER (Mobile uniquement) */}
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-slate-600 p-1">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,7 +79,6 @@ const navLinks = [
         </div>
       </div>
 
-      {/* MENU MOBILE DÉROULANT */}
       {isOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg animate-in slide-in-from-top duration-300">
           <div className="flex flex-col p-4 gap-4">
@@ -100,15 +92,14 @@ const navLinks = [
                 {link.name}
               </a>
             ))}
-            {/* CORRECTION : Chemin relatif ici aussi */}
-            <Link
-              to="./commander"
+            <a
+              href="#produit"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 bg-[#26A69A] text-white py-3 rounded-xl font-bold"
             >
               <ShoppingCart size={18} />
               Commander
-            </Link>
+            </a>
           </div>
         </div>
       )}
