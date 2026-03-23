@@ -18,7 +18,7 @@ const HeroSection = () => {
       <div className="flex-grow flex items-end justify-center text-center px-6 pb-32">
   <div className="max-w-lg text-white z-10">
     
-    <h1 className="text-3xl md:text-5xl font-bold mb-6"  
+    <h1> className="text-3xl md:text-5xl font-bold mb-6"  
       Endormez-vous plus rapidement, sans écouteurs inconfortables.
     </h1>
 
