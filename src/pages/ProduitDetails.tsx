@@ -125,4 +125,3 @@ const ProduitDetailsPage = () => {
 };
 
 export default ProduitDetailsPage;
-    
