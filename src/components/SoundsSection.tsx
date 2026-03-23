@@ -27,7 +27,7 @@ const ambiances = [
     id: "vent"
   }
 ];
-const SoundAmbiances = () => {
+const SoundsSection =() => {
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -136,4 +136,4 @@ const SoundAmbiances = () => {
   );
 };
 
-export default SoundAmbiances;
+export default SoundsSection;
