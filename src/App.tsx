@@ -1,50 +1,31 @@
-import Navbar from "./components/Navbar";
-import ProduitDetailsPage from "./pages/ProduitDetails";
-// IMPORT CORRIGÉ : On ajoute bien les 's' pour correspondre à ton fichier SoundsSections.tsx
-import SoundSection from "./components/SoundsSections"; 
-import FAQSection from "./components/FAQSection";
+import SoundAmbiances from "./components/SoundAmbiances";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// REMPLACE BrowserRouter PAR HashRouter LIGNE CI-DESSOUS
+import { HashRouter, Routes, Route } from "react-router-dom"; 
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+import VideoSession from "./pages/VideoSession";
 
-function App() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      
-      {/* Section Accueil */}
-      <div id="accueil">
-        <ProduitDetailsPage />
-      </div>
+const queryClient = new QueryClient();
 
-      {/* Section Produit / Détails */}
-      <div id="details">
-         {/* Tu peux ajouter ici une autre section si besoin */}
-      </div>
-
-      {/* Section des Sons - ID pour la Navbar */}
-      <div id="sons">
-        <SoundSection /> 
-      </div>
-
-      {/* Section Témoignages - ID pour la Navbar */}
-      <div id="temoignages" className="py-20 bg-slate-50 text-center">
-        <h2 className="text-3xl font-black text-slate-800 uppercase tracking-tighter">Témoignages</h2>
-        <div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
-          <p className="text-slate-600 italic">"Une immersion sonore bluffante. Je m'endors beaucoup plus vite depuis que j'utilise Sonora Zen."</p>
-          <p className="text-[#26A69A] font-bold mt-4">— Marc D.</p>
-        </div>
-      </div>
-
-      {/* Section FAQ - ID pour la Navbar */}
-      <div id="faq">
-        <FAQSection />
-      </div>
-
-      <footer className="py-12 bg-slate-900 text-center">
-        <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">
-          © 2026 Sonora Zen — Pure Immersion Sonore
-        </p>
-      </footer>
-    </div>
-  );
-}
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      {/* REMPLACE BrowserRouter PAR HashRouter LIGNE CI-DESSOUS */}
+      <HashRouter> 
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/VideoSession" element={<VideoSession />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </HashRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;
