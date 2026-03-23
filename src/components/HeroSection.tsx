@@ -17,11 +17,11 @@ const HeroSection = () => {
 
       <div className="flex-grow flex items-end justify-center text-center px-6 pb-32">
   <div className="max-w-lg text-white z-10">
-    
-    <h1 className="text-3xl md:text-5xl font-bold mb-6"  
-      Endormez-vous plus rapidement, sans écouteurs inconfortables.
-    </h1>
-
+  
+    <h1 className="text-3xl md:text-5xl font-bold mb-6">
+  Endormez-vous plus rapidement, sans écouteurs inconfortables.
+</h1>
+  
     <p> className="text-base md:text-lg mb-6 opacity-90">
       Sonora Zen diffuse un son relaxant sous votre oreiller pour vous aider à trouver le sommeil naturellement.
     </p>
