@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* 1. L'IMAGE DE FOND AVEC LE SLASH / */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/fond-zen.jpg" 
+          src="/zen-dream-scape-85f9f9e6/fond-zen.jpg"
           alt="Ambiance sereine Sonora Zen" 
           className="w-full h-full object-cover object-[25%_center] md:object-center"
         />
